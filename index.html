@@ -264,6 +264,7 @@
     <nav class="tn-links">
       <button class="tn-link on" data-tab="home">Home</button>
       <button class="tn-link" data-tab="courses">Courses</button>
+      <button class="tn-link" data-tab="partners">For Courses</button>
       <button class="tn-link" data-tab="pass">My Pass</button>
     </nav>
     <button class="btn tn-join" id="tn-join">Join · $399</button>
@@ -289,6 +290,62 @@
   <section class="screen" id="screen-pass">
     <div class="topbar"><div class="logo"><span class="mk">⛳</span> My Pass</div><div class="credits">Season <b>2026</b></div></div>
     <div id="pass-body"></div>
+  </section>
+
+  <!-- ============ FOR COURSES (B2B recruitment — the supply-side cold-start tool) ============ -->
+  <section class="screen" id="screen-partners">
+    <div class="hero" style="text-align:center">
+      <div class="inner">
+        <div class="eyebrow">For Course Owners</div>
+        <h1>Fill Your<br/>Empty Tee Times.</h1>
+        <p>Fairway Freedom drives regional and traveling golfers straight to your first tee — and pays you for every round. $0 to join. No discounting your rack rate. Keep 100% of carts, range, F&amp;B and pro-shop.</p>
+        <div class="hero-cta"><button class="btn" id="b2b-cta">Become a founding course</button></div>
+      </div>
+    </div>
+
+    <div class="statband">
+      <div class="s"><b>$0</b><span>to join — zero risk</span></div>
+      <div class="s"><b>100%</b><span>of cart, F&amp;B &amp; pro-shop</span></div>
+      <div class="s"><b>Guaranteed</b><span>season-end payout</span></div>
+    </div>
+
+    <div class="section">
+      <div class="eyebrow">The deal</div>
+      <h2>Built for courses with open inventory</h2>
+      <div class="steps" style="margin-top:18px">
+        <div class="step"><div class="num">1</div><div><b>The problem</b><p>Corporate booking apps take a cut of every green fee just to list you — and conglomerates price out everyday golfers.</p></div></div>
+        <div class="step"><div class="num">2</div><div><b>The solution</b><p>A multi-course pass that sends passholders to your weekday and off-peak tee sheet — capped at 2 visits each, so you never lose your regulars.</p></div></div>
+        <div class="step"><div class="num">3</div><div><b>How you get paid</b><p>Every passholder round is logged by QR check-in. At season's end you get a guaranteed lump-sum check from the escrow pool — plus 100% of everything they spend on-site.</p></div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="eyebrow">Why it works</div>
+      <h2>You only fill what's empty</h2>
+      <ul class="clean" style="max-width:640px">
+        <li>Redemptions are <b>weekday &amp; off-peak</b>, advance-booked — they fill tee times that would otherwise go empty, not displace paying weekend play.</li>
+        <li><b>Capped at 2 rounds</b> per passholder, per season — no one cannibalizes your loyal locals.</li>
+        <li>You set blackout dates. You keep your rack rate. You never discount walk-ups.</li>
+        <li>Geographic "breakage" means most passholders never visit every course — which makes the per-round check generous.</li>
+      </ul>
+    </div>
+
+    <div class="section" id="b2b-form-wrap">
+      <div class="card" style="max-width:560px;margin:0 auto;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:24px">
+        <div class="eyebrow" style="color:var(--red)">Founding courses · Texas launch</div>
+        <h2 style="font-size:24px;margin-top:6px">Secure your territory</h2>
+        <p class="note" style="margin:8px 0 16px">Join as a founding course before your local competitors do. Tell us about your course — we'll send the founding-course terms.</p>
+        <div id="b2b-form">
+          <div class="formfield"><label>Course name</label><input id="b2b-course" placeholder="e.g. Cedar Creek Golf Course" /></div>
+          <div class="formfield"><label>Your name</label><input id="b2b-name" placeholder="Jordan Fairway" /></div>
+          <div class="formfield"><label>Email</label><input id="b2b-email" type="email" placeholder="you@course.com" /></div>
+          <div class="formfield"><label>Metro</label><input id="b2b-metro" placeholder="Austin / San Antonio / DFW / Houston" /></div>
+          <button class="btn mt20" id="b2b-submit">Request founding-course terms</button>
+        </div>
+        <p class="note center mt14">Demo form — no data is sent yet.</p>
+      </div>
+    </div>
+    <p class="note pad mt14" style="padding-bottom:8px">United We Swing — saving independent golf, one tee sheet at a time.</p>
   </section>
 </div>
 
@@ -391,6 +448,19 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>go(b.dataset.tab));
 document.querySelectorAll('.tn-link').forEach(b=>b.onclick=()=>go(b.dataset.tab));
 document.getElementById('tn-join').onclick=()=>{ S.member ? go('pass') : openJoin(); };
 
+/* For Courses (B2B) — static page handlers, bound once */
+const _b2bCta=document.getElementById('b2b-cta');
+if(_b2bCta) _b2bCta.onclick=()=>document.getElementById('b2b-form-wrap').scrollIntoView({behavior:'smooth'});
+const _b2bSubmit=document.getElementById('b2b-submit');
+if(_b2bSubmit) _b2bSubmit.onclick=()=>{
+  const course=(document.getElementById('b2b-course').value||'').trim();
+  const email=(document.getElementById('b2b-email').value||'').trim();
+  if(course.length<2){ toast('Enter your course name'); return; }
+  if(!/.+@.+\..+/.test(email)){ toast('Enter a valid email'); return; }
+  document.getElementById('b2b-form').innerHTML=`<div class="redeem-ok" style="padding:8px 0"><div class="ring">✓</div><div class="ttl" style="font-size:22px">You're on the list.</div><p class="note mt8">We'll send ${course} the founding-course terms shortly.</p></div>`;
+  toast('⛳ Founding-course request received');
+};
+
 /* ---- HOME ---- */
 function renderHome(){
   const el=$('#screen-home');
@@ -437,8 +507,15 @@ function renderHome(){
           <div class="seg escrow"><div class="pct">85%</div><div class="amt">${money2(ESCROW_PER_PASS)} / pass</div><div class="lbl">Locked in escrow — paid to courses at season's end, by rounds played</div></div>
         </div>
       </div>
+      <div class="section" style="text-align:center;background:var(--bg2);margin-top:26px;padding:34px 20px 36px">
+        <div class="eyebrow">Own a course?</div>
+        <h2 style="font-size:26px">Put your empty tee times to work</h2>
+        <p class="sub" style="max-width:440px;margin:8px auto 0">$0 to join, keep 100% of cart &amp; F&amp;B, and get a guaranteed season-end check.</p>
+        <button class="btn navy mt20" id="home-b2b" style="width:auto;padding:14px 26px;margin-left:auto;margin-right:auto">For course owners →</button>
+      </div>
       <p class="note pad mt20" style="padding-bottom:8px">Concept prototype · payout figures illustrative, based on consumer-breakage assumptions.</p>`;
     $('#join-btn').onclick=openJoin; $('#browse-btn').onclick=()=>go('courses');
+    { const hb=document.getElementById('home-b2b'); if(hb) hb.onclick=()=>go('partners'); }
     bindRail();
   } else {
     const t=totalRounds(), val=valueCaptured(), pct=Math.min(100,Math.round(val/PRICE*100));
