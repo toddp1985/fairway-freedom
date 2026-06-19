@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
-<meta name="theme-color" content="#15140f" />
+<meta name="theme-color" content="#0b1b2c" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Fairway Freedom" />
 <title>Fairway Freedom Pass</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <style>
   :root{
-    --ink:#15140f; --bg:#ffffff; --bg2:#f6f5f1; --card:#ffffff;
-    --green:#1f7a4d; --green-dk:#11402a; --gold:#bE9b2e; --muted:#74726a; --line:#ececE6;
+    --ink:#0b1b2c; --navy:#0b1b2c; --bg:#ffffff; --bg2:#f3f4f6; --card:#ffffff;
+    --red:#e3261f; --red-dk:#c21d18; --green:#1f7a4d; --green-dk:#11402a; --gold:#bE9b2e;
+    --muted:#5e6b78; --line:#e6e8ec;
     --safe-bottom: env(safe-area-inset-bottom, 0px);
     --safe-top: env(safe-area-inset-top, 0px);
   }
@@ -27,7 +30,8 @@
   .screen.active{display:block}
   @keyframes fade{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}
   button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-  h1,h2,h3{line-height:1.08;letter-spacing:-0.035em;font-weight:800}
+  h1,h2{line-height:.94;letter-spacing:-0.02em;font-weight:800;text-transform:uppercase}
+  h3{line-height:1.08;letter-spacing:-0.03em;font-weight:800}
   .pad{padding:0 20px}
   img{display:block;max-width:100%}
 
@@ -36,34 +40,37 @@
     padding:calc(var(--safe-top) + 16px) 20px 12px;display:flex;align-items:center;justify-content:space-between;
     border-bottom:1px solid var(--line)}
   .topbar .logo{font-size:18px;font-weight:800;letter-spacing:-.04em;display:flex;align-items:center;gap:7px}
-  .topbar .logo .mk{width:24px;height:24px;border-radius:7px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .topbar .logo .mk{width:24px;height:24px;border-radius:6px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
   .topbar .credits{font-size:12.5px;font-weight:700;background:var(--bg2);border:1px solid var(--line);padding:7px 12px;border-radius:999px;display:flex;gap:6px;align-items:center}
   .topbar .credits b{color:var(--green)}
 
   /* Buttons */
   .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
-    background:var(--ink);color:#fff;font-weight:700;font-size:16px;padding:17px;border-radius:999px;letter-spacing:-.01em;
-    transition:transform .08s,opacity .2s}
+    background:var(--red);color:#fff;font-weight:800;font-size:15px;padding:16px;border-radius:8px;letter-spacing:.02em;text-transform:uppercase;
+    transition:transform .08s,filter .2s}
   .btn:active{transform:scale(.98)}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.navy{background:var(--navy)}
   .btn.green{background:var(--green)}
   .btn.outline{background:transparent;border:1.6px solid var(--ink);color:var(--ink)}
   .btn.ghost{background:var(--bg2);color:var(--ink)}
   .btn[disabled]{opacity:.4;pointer-events:none}
 
-  /* Hero (non-member) */
-  .hero{position:relative;height:62vh;min-height:440px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
-  .hero .photo{position:absolute;inset:0}
-  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,12,.05) 0%,rgba(10,20,12,.15) 45%,rgba(10,18,11,.82) 100%)}
-  .hero .inner{position:relative;padding:0 22px 30px}
-  .hero .eyebrow{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#e9d8a6;margin-bottom:12px}
-  .hero h1{font-size:42px;font-weight:800;letter-spacing:-.045em;line-height:.98}
-  .hero p{font-size:15.5px;color:#eef2ec;margin-top:12px;max-width:380px;letter-spacing:-.005em}
-  .hero .price{display:flex;align-items:baseline;gap:8px;margin-top:18px;font-weight:600;font-size:14px;color:#dfe7df}
-  .hero .price b{font-size:30px;font-weight:800;color:#fff;letter-spacing:-.04em}
+  /* Hero (non-member) — Indy-Pass-style clean white hero, giant uppercase type */
+  .hero{position:relative;background:var(--bg);color:var(--ink);padding:60px 22px 44px;text-align:center;border-bottom:1px solid var(--line)}
+  .hero .photo,.hero .scrim{display:none}
+  .hero .inner{position:relative;max-width:920px;margin:0 auto}
+  .hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+  .hero h1{font-size:clamp(44px,12vw,68px);font-weight:800;letter-spacing:-.02em;line-height:.9}
+  .hero p{font-size:16.5px;color:var(--muted);margin:18px auto 0;max-width:460px;text-transform:none;letter-spacing:-.005em}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .hero-cta .btn{width:auto;padding:15px 28px}
+  .hero .price{display:block;margin-top:20px;font-weight:700;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .hero .price b{font-size:18px;color:var(--ink)}
 
   /* Sections */
   .section{padding:26px 20px 6px}
-  .section .eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .section .eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
   .section h2{font-size:26px;margin-top:8px}
   .section .sub{color:var(--muted);font-size:14.5px;margin-top:7px;letter-spacing:-.005em}
 
@@ -115,6 +122,12 @@
 
   /* Course cards — photo-forward */
   .courses{display:grid;gap:20px;padding:6px 20px}
+  /* map finder */
+  .coursemap{ height:280px; width:100%; background:var(--bg2); z-index:0; }
+  .leaflet-container{ font:inherit; }
+  .ffp-pin{ background:var(--red); width:24px; height:24px; border-radius:50% 50% 50% 0; transform:rotate(-45deg);
+    border:2px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.3); }
+  .ffp-pin.used{ background:#9aa6b2; }
   .ccard{background:var(--card);border-radius:20px;overflow:hidden;border:1px solid var(--line);
     box-shadow:0 6px 22px rgba(20,20,15,.06);transition:transform .1s}
   .ccard:active{transform:scale(.99)}
@@ -209,11 +222,11 @@
       backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
     .tn-inner{ max-width:1160px; margin:0 auto; display:flex; align-items:center; gap:8px; padding:13px 28px; }
     .tn-logo{ font-size:19px; font-weight:800; letter-spacing:-.04em; display:flex; align-items:center; gap:8px; }
-    .tn-logo .mk{ width:26px; height:26px; border-radius:8px; background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; }
-    .tn-links{ display:flex; gap:4px; margin-left:18px; }
-    .tn-link{ font-size:15px; font-weight:600; color:var(--muted); padding:9px 14px; border-radius:999px; }
-    .tn-link:hover{ color:var(--ink); background:var(--bg2); }
-    .tn-link.on{ color:var(--ink); }
+    .tn-logo .mk{ width:26px; height:26px; border-radius:6px; background:var(--red); color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; }
+    .tn-links{ display:flex; gap:6px; margin-left:22px; }
+    .tn-link{ font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:.02em; color:var(--ink); padding:9px 12px; border-radius:6px; }
+    .tn-link:hover{ color:var(--red); }
+    .tn-link.on{ color:var(--red); }
     .tn-join{ margin-left:auto; width:auto; padding:11px 22px; font-size:15px; }
     /* full-bleed hero, headline aligned to the page container */
     .hero{ height:78vh; min-height:560px; max-height:800px; }
@@ -228,6 +241,10 @@
     .searchwrap .field{ max-width:520px; }
     /* multi-column course grid */
     .courses{ grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); padding:12px 28px; gap:24px; }
+    /* split map finder: scrollable list left, sticky map right */
+    .finder{ display:grid; grid-template-columns:1.05fr .95fr; max-width:1160px; margin:0 auto; align-items:start; }
+    .finder .courses{ order:1; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); max-width:none; margin:0; padding:16px 24px 30px; }
+    .coursemap{ order:2; height:calc(100vh - 132px); position:sticky; top:64px; border-left:1px solid var(--line); }
     .steps{ grid-template-columns:repeat(3, 1fr); gap:28px; }
     .split{ max-width:720px; }
     .statband .s{ padding:30px 16px; } .statband .s b{ font-size:30px; } .statband .s span{ font-size:13px; }
@@ -262,7 +279,10 @@
     </div>
     <div class="searchwrap"><div class="field"><span>🔍</span><input id="search" type="search" placeholder="Search courses or city" autocomplete="off" /></div></div>
     <div class="chips" id="state-chips"></div>
-    <div class="courses" id="course-list"></div>
+    <div class="finder">
+      <div id="map" class="coursemap"></div>
+      <div class="courses" id="course-list"></div>
+    </div>
     <p class="note pad mt14" style="padding-bottom:6px">Sample network for this demo · two 18-hole rounds per course, per season.</p>
   </section>
 
@@ -289,20 +309,20 @@
 const PRICE = 399, ESCROW_PER_PASS = 339.15, ROUNDS_PER_COURSE = 2, AVG_GREEN_FEE = 55;
 
 const COURSES = [
-  { id:'c1',  name:'Cedar Hollow Links',     city:'Medina',        state:'OH', fee:48, blurb:'Rolling links-style muni with bentgrass greens and a famous walk-up burger.' },
-  { id:'c2',  name:'Sandy Run Golf Club',    city:'Akron',         state:'OH', fee:42, blurb:'Family-run since 1961. Tight tree-lined par 70, generous senior rates.' },
-  { id:'c3',  name:'Maple Ridge Country',    city:'Hudson',        state:'OH', fee:55, blurb:'Hidden gem with the best pro-shop coffee in the county.' },
-  { id:'c4',  name:'Birch Creek Greens',     city:'Toledo',        state:'OH', fee:39, blurb:'Wide-open and beginner-friendly; lights for twilight nines.' },
-  { id:'c5',  name:'Lakeside National',      city:'Sandusky',      state:'OH', fee:62, blurb:'Lake-breeze layout with five water holes and a killer patio.' },
-  { id:'c6',  name:'Stonebrook Fairways',    city:'Ann Arbor',     state:'MI', fee:58, blurb:'Classic 1920s design, recently restored bunkering, walkable.' },
-  { id:'c7',  name:'Whispering Pines',       city:'Traverse City', state:'MI', fee:67, blurb:'Northern-Michigan beauty tucked into the pines. Cart highly advised.' },
-  { id:'c8',  name:'River Bend Club',        city:'Grand Rapids',  state:'MI', fee:51, blurb:'Two nines that play completely differently. Honest, fair, fun.' },
-  { id:'c9',  name:'Heron Marsh Golf',       city:'Kalamazoo',     state:'MI', fee:44, blurb:'Low-key wetlands track; bring extra balls for the back nine.' },
-  { id:'c10', name:'Pinehurst Commons',      city:'Asheville',     state:'NC', fee:64, blurb:'Mountain-view fairways and the friendliest starter in the Carolinas.' },
-  { id:'c11', name:'Blue Ridge Run',         city:'Boone',         state:'NC', fee:59, blurb:'Elevation changes for days. Play it forward and enjoy the views.' },
-  { id:'c12', name:'Catawba Valley Golf',    city:'Hickory',       state:'NC', fee:46, blurb:'Affordable everyday track that locals are fiercely loyal to.' },
-  { id:'c13', name:'Tobacco Road Public',    city:'Sanford',       state:'NC', fee:71, blurb:'Bold, sandy, unforgettable. The bucket-lister of the network.' },
-  { id:'c14', name:'Eagle Point Municipal',  city:'Columbus',      state:'OH', fee:38, blurb:'The best value in the network — and a perfect first-timer course.' },
+  { id:'c1',  name:'Cedar Hollow Links',     city:'Medina',        state:'OH', fee:48, lat:41.14, lng:-81.86, blurb:'Rolling links-style muni with bentgrass greens and a famous walk-up burger.' },
+  { id:'c2',  name:'Sandy Run Golf Club',    city:'Akron',         state:'OH', fee:42, lat:41.08, lng:-81.52, blurb:'Family-run since 1961. Tight tree-lined par 70, generous senior rates.' },
+  { id:'c3',  name:'Maple Ridge Country',    city:'Hudson',        state:'OH', fee:55, lat:41.24, lng:-81.44, blurb:'Hidden gem with the best pro-shop coffee in the county.' },
+  { id:'c4',  name:'Birch Creek Greens',     city:'Toledo',        state:'OH', fee:39, lat:41.66, lng:-83.56, blurb:'Wide-open and beginner-friendly; lights for twilight nines.' },
+  { id:'c5',  name:'Lakeside National',      city:'Sandusky',      state:'OH', fee:62, lat:41.45, lng:-82.71, blurb:'Lake-breeze layout with five water holes and a killer patio.' },
+  { id:'c6',  name:'Stonebrook Fairways',    city:'Ann Arbor',     state:'MI', fee:58, lat:42.28, lng:-83.74, blurb:'Classic 1920s design, recently restored bunkering, walkable.' },
+  { id:'c7',  name:'Whispering Pines',       city:'Traverse City', state:'MI', fee:67, lat:44.76, lng:-85.62, blurb:'Northern-Michigan beauty tucked into the pines. Cart highly advised.' },
+  { id:'c8',  name:'River Bend Club',        city:'Grand Rapids',  state:'MI', fee:51, lat:42.96, lng:-85.67, blurb:'Two nines that play completely differently. Honest, fair, fun.' },
+  { id:'c9',  name:'Heron Marsh Golf',       city:'Kalamazoo',     state:'MI', fee:44, lat:42.29, lng:-85.59, blurb:'Low-key wetlands track; bring extra balls for the back nine.' },
+  { id:'c10', name:'Pinehurst Commons',      city:'Asheville',     state:'NC', fee:64, lat:35.60, lng:-82.55, blurb:'Mountain-view fairways and the friendliest starter in the Carolinas.' },
+  { id:'c11', name:'Blue Ridge Run',         city:'Boone',         state:'NC', fee:59, lat:36.22, lng:-81.67, blurb:'Elevation changes for days. Play it forward and enjoy the views.' },
+  { id:'c12', name:'Catawba Valley Golf',    city:'Hickory',       state:'NC', fee:46, lat:35.73, lng:-81.34, blurb:'Affordable everyday track that locals are fiercely loyal to.' },
+  { id:'c13', name:'Tobacco Road Public',    city:'Sanford',       state:'NC', fee:71, lat:35.48, lng:-79.18, blurb:'Bold, sandy, unforgettable. The bucket-lister of the network.' },
+  { id:'c14', name:'Eagle Point Municipal',  city:'Columbus',      state:'OH', fee:38, lat:39.96, lng:-82.99, blurb:'The best value in the network — and a perfect first-timer course.' },
 ];
 
 /* Premium golf-landscape gradient "photos" (deterministic, always render) */
@@ -365,12 +385,14 @@ function renderHome(){
     const feat = COURSES.slice(0,6).map(c=>railCard(c)).join('');
     el.innerHTML = `
       <div class="hero">
-        ${photoEl(COURSES[12],'100%')}
-        <div class="scrim"></div>
         <div class="inner">
           <div class="eyebrow">Independent Course Co-op</div>
-          <h1>Play local.<br/>One pass.</h1>
-          <p>Two free 18-hole rounds at every independent, family-owned course in the network.</p>
+          <h1>United<br/>We Swing.</h1>
+          <p>One pass. Two free 18-hole rounds at every independent, family-owned course in the national network.</p>
+          <div class="hero-cta">
+            <button class="btn" id="join-btn">Become a Founding Member</button>
+            <button class="btn outline" id="browse-btn">Explore the courses</button>
+          </div>
           <div class="price"><b>${money(PRICE)}</b> / year · 2 rounds, every course</div>
         </div>
       </div>
@@ -378,10 +400,6 @@ function renderHome(){
         <div class="s"><b>Hundreds</b><span>of independent courses</span></div>
         <div class="s"><b>2 rounds</b><span>free at every course</span></div>
         <div class="s"><b>${money(PRICE)}/yr</b><span>flat — no per-round fees</span></div>
-      </div>
-      <div class="section">
-        <button class="btn" id="join-btn">Become a Founding Member</button>
-        <button class="btn ghost mt14" id="browse-btn">Explore the courses</button>
       </div>
       <div class="section">
         <div class="eyebrow">How it works</div>
@@ -492,8 +510,34 @@ function renderCourses(){
   const list=COURSES.filter(c=>(filterState==='ALL'||c.state===filterState)&&(!q||c.name.toLowerCase().includes(q)||c.city.toLowerCase().includes(q)));
   $('#course-list').innerHTML = list.length?list.map(ccard).join(''):`<p class="note pad mt14">No courses match. Try another search.</p>`;
   bindRail();
+  updateMap(list);
 }
 $('#search').addEventListener('input',e=>{filterText=e.target.value;renderCourses();});
+
+/* ---- Map finder (Leaflet + free CARTO light tiles, no API key) ---- */
+let MAP=null, MARKERS=[];
+function initMap(){
+  if(MAP || typeof L==='undefined' || !document.getElementById('map')) return;
+  MAP = L.map('map',{ scrollWheelZoom:false, attributionControl:true }).setView([40.2,-83.0],5);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { maxZoom:18, attribution:'&copy; OpenStreetMap &copy; CARTO' }).addTo(MAP);
+}
+function updateMap(list){
+  initMap(); if(!MAP) return;
+  MARKERS.forEach(m=>MAP.removeLayer(m)); MARKERS=[];
+  const pts=[];
+  list.forEach(c=>{
+    if(c.lat==null) return;
+    const used = usedAt(c.id)>=ROUNDS_PER_COURSE;
+    const icon = L.divIcon({ className:'', html:`<div class="ffp-pin${used?' used':''}"></div>`, iconSize:[24,24], iconAnchor:[12,22] });
+    const m = L.marker([c.lat,c.lng],{icon}).addTo(MAP)
+      .bindTooltip(`<b>${c.name}</b><br>${c.city}, ${c.state} · ~${money(c.fee)} · ${used?'played':(ROUNDS_PER_COURSE-usedAt(c.id))+' free'}`, {direction:'top',offset:[0,-18]})
+      .on('click',()=>openCourse(c.id));
+    MARKERS.push(m); pts.push([c.lat,c.lng]);
+  });
+  if(pts.length) MAP.fitBounds(pts,{ padding:[44,44], maxZoom:7 });
+  setTimeout(()=>MAP.invalidateSize(),60);
+}
 
 /* ---- COURSE DETAIL + REDEEM ---- */
 function openCourse(id){
