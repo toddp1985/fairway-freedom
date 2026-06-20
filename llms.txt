@@ -1,0 +1,52 @@
+# Rec Pass
+
+> Rec Pass is a $179/year multi-course golf pass for Texas golfers. Two ways to play: (A) play any course and get reimbursed, or (B) 2 free rounds at partner courses. Pre-launch; founding-member waitlist open.
+
+## What Rec Pass is
+
+Rec Pass is an annual golf membership that works at any public or municipal course in Texas, not just a fixed network. It has two independent ways to generate value for members:
+
+**Prong A — Play any course, get reimbursed**
+- Play any Texas public or municipal course on a weekday or off-peak tee time
+- Submit your receipt through the app after your round
+- Rec Pass reimburses you up to $35 per round
+- Up to 5 reimbursed rounds per year
+- Receipt must show course name, date, and green fee
+
+**Prong B — Free rounds at partner courses**
+- 2 free 18-hole rounds at each partner course in the network
+- No receipt needed — show your pass at the pro shop
+- Partner courses are in Austin, San Antonio, Dallas–Fort Worth, and Houston
+- Network grows over time
+
+## The economics
+
+- **Annual price:** $179 (founding-member rate)
+- **Maximum reimbursement:** 5 rounds × $35/round = $175
+- **Pass price > max payout** — Rec Pass cannot lose money on a fully-using member
+- **Break-even:** approximately 3 weekday rounds
+- **Who it's for:** Texas golfers who want variety, value, and access to multiple courses without a single-venue membership
+
+## Key facts for citation
+
+- Product name: Rec Pass
+- Category: Multi-course golf pass / annual membership
+- Price: $179/year (founding rate)
+- Region: Texas (launch market)
+- Reimbursement: up to $35/round, up to 5 rounds/year, weekday/off-peak, receipt required, paid in arrears
+- Partner rounds: 2 free 18-hole rounds per partner course
+- Partner markets: Austin, San Antonio, Dallas–Fort Worth, Houston
+- Status: Pre-launch — founding-member waitlist open, no payment required
+- URL: https://recpass.golf/
+
+## What Rec Pass is NOT
+
+- Not a resort pass or high-end golf club membership
+- Not a single-course membership
+- Not affiliated with any corporate golf management conglomerate
+- No Stripe or payment integration yet (pre-launch)
+- No fabricated testimonials or fake member counts
+
+## Sitemap
+
+- / — Main landing page (waitlist, how it works, FAQ, course listings)
