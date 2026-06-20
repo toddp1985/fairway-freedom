@@ -272,7 +272,7 @@
       <button class="tn-link" data-tab="partners">For Courses</button>
       <button class="tn-link" data-tab="pass">My Card</button>
     </nav>
-    <button class="btn tn-join" id="tn-join">Join · $399</button>
+    <button class="btn tn-join" id="tn-join">Join · ${money(PRICE)}</button>
   </div>
 </header>
 <div id="app">
@@ -368,7 +368,7 @@
    Front-end prototype. State persists in localStorage (no backend yet).
    Model: $399/yr, 2 rounds at every course, 15% operator / 85% escrow, QR check-in.
 ------------------------------------------------------------------------------------ */
-const PRICE = 399, ESCROW_PER_PASS = 339.15, ROUNDS_PER_COURSE = 2, AVG_GREEN_FEE = 55;
+const PRICE = 179, ROUNDS_PER_COURSE = 2, AVG_GREEN_FEE = 35, REIMB_ROUNDS = 5, REIMB_CAP = 35;
 
 // Real, currently-operating Texas public / municipal courses (the affordable,
 // independent everyday tracks this co-op model is built for). Coordinates are
@@ -452,7 +452,7 @@ function go(tab){
   $('#screen-'+tab).classList.add('active');
   document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===tab));
   document.querySelectorAll('.tn-link').forEach(b=>b.classList.toggle('on', b.dataset.tab===tab));
-  const tj=document.getElementById('tn-join'); if(tj) tj.textContent = S.member ? 'My Card →' : 'Join · $399';
+  const tj=document.getElementById('tn-join'); if(tj) tj.textContent = S.member ? 'My Card →' : ('Join · '+money(PRICE));
   window.scrollTo(0,0);
   if(tab==='courses') renderCourses();
   if(tab==='pass') renderPass();
@@ -484,19 +484,19 @@ function renderHome(){
       <div class="hero">
         <div class="inner">
           <h1>Play like a pro</h1>
-          <p class="lead">Two free rounds. Every course.</p>
-          <p>One flat annual pass. Two complimentary 18-hole rounds at all ${COURSES.length} courses across Texas — Austin, San Antonio, Dallas–Fort Worth &amp; Houston. Pay once, play the whole state.</p>
+          <p class="lead">Two ways to play. One ${money(PRICE)} pass.</p>
+          <p>Play <b>any course in Texas</b> and we reimburse your green fee — up to 5 rounds a year. Or play a <b>partner course free</b>, two rounds each. One flat annual pass, ${money(PRICE)} for the founding season.</p>
           <div class="hero-cta">
-            <button class="btn" id="join-btn">Get your card</button>
-            <button class="btn outline" id="browse-btn">Explore the courses</button>
+            <button class="btn" id="join-btn">Get founding access →</button>
+            <button class="btn outline" id="browse-btn">See the courses</button>
           </div>
-          <div class="price"><b>${money(PRICE)}</b> / year · 2 rounds, every course</div>
+          <div class="price"><b>${money(PRICE)}</b> / year · founding-member rate · cancel anytime</div>
         </div>
       </div>
       <div class="statband">
-        <div class="s"><b>${COURSES.length} courses</b><span>across Texas</span></div>
-        <div class="s"><b>2 rounds</b><span>free at every course</span></div>
-        <div class="s"><b>${money(PRICE)}/yr</b><span>flat — no per-round fees</span></div>
+        <div class="s"><b>Any course</b><span>reimbursed, up to 5 rounds/yr</span></div>
+        <div class="s"><b>2 free rounds</b><span>at every partner course</span></div>
+        <div class="s"><b>${money(PRICE)}/yr</b><span>founding rate · no per-round fees</span></div>
       </div>
       <div class="section" style="text-align:center">
         <div class="eyebrow">The card</div>
@@ -505,11 +505,11 @@ function renderHome(){
       </div>
       <div class="section">
         <div class="eyebrow">How it works</div>
-        <h2>Three steps to free rounds</h2>
+        <h2>Two ways to play</h2>
         <div class="steps">
-          <div class="step"><div class="num">1</div><div><b>Buy the pass</b><p>One flat annual fee. Lock in founding-member pricing.</p></div></div>
-          <div class="step"><div class="num">2</div><div><b>Explore the tracks</b><p>Independent &amp; municipal gems across Austin, San Antonio, DFW & Houston.</p></div></div>
-          <div class="step"><div class="num">3</div><div><b>Show up &amp; play</b><p>Scan the pro-shop QR. Two free 18-hole rounds, every destination.</p></div></div>
+          <div class="step"><div class="num">1</div><div><b>Get your pass</b><p>One flat ${money(PRICE)}/year — founding-member rate, cancel anytime.</p></div></div>
+          <div class="step"><div class="num">2</div><div><b>Play any course → get reimbursed</b><p>Tee it up anywhere in Texas, snap your receipt, and we reimburse the green fee up to ${money(REIMB_CAP)} a round — up to ${REIMB_ROUNDS} rounds a year (weekday/off-peak).</p></div></div>
+          <div class="step"><div class="num">3</div><div><b>Or play a partner course free</b><p>${ROUNDS_PER_COURSE} free 18-hole rounds at every partner course — no receipt, just show your pass. More partners added all the time.</p></div></div>
         </div>
       </div>
       <div class="section">
@@ -518,12 +518,12 @@ function renderHome(){
       </div>
       <div class="rail">${feat}</div>
       <div class="section">
-        <div class="eyebrow">The model</div>
-        <h2>Where your ${money(PRICE)} goes</h2>
-        <p class="sub">No course is paid upfront — zero risk. The pool distributes what's collected.</p>
+        <div class="eyebrow">The math</div>
+        <h2>${money(PRICE)} for ${money(REIMB_ROUNDS*REIMB_CAP+ROUNDS_PER_COURSE*AVG_GREEN_FEE)}+ of golf</h2>
+        <p class="sub" style="max-width:560px">Your pass pays for itself in about three rounds. Everything after is upside.</p>
         <div class="split">
-          <div class="seg take"><div class="pct">15%</div><div class="amt">${money2(PRICE-ESCROW_PER_PASS)}</div><div class="lbl">Operations</div></div>
-          <div class="seg escrow"><div class="pct">85%</div><div class="amt">${money2(ESCROW_PER_PASS)} / pass</div><div class="lbl">Locked in escrow — paid to courses at season's end, by rounds played</div></div>
+          <div class="seg escrow"><div class="pct">${money(REIMB_ROUNDS*REIMB_CAP)}</div><div class="lbl">Up to ${REIMB_ROUNDS} reimbursed rounds anywhere (${money(REIMB_CAP)} each)</div></div>
+          <div class="seg take"><div class="pct">${money(ROUNDS_PER_COURSE*AVG_GREEN_FEE)}+</div><div class="lbl">${ROUNDS_PER_COURSE} free rounds at every partner course</div></div>
         </div>
       </div>
       <div class="section" style="text-align:center;background:var(--bg2);margin-top:26px;padding:34px 20px 36px">
@@ -586,25 +586,41 @@ function ccard(c){
 }
 function bindRail(){ document.querySelectorAll('.rail .ccard, .courses .ccard').forEach(el=>el.onclick=()=>openCourse(el.dataset.id)); }
 
-/* ---- JOIN ---- */
+/* ---- FOUNDING-MEMBER WAITLIST ----
+   Captures demand pre-launch (no payment yet). Set these two to the Rec Pass
+   Supabase project once provisioned (apply supabase/migrations/0001_init.sql in
+   ~/Projects/recpass first); the anon key is insert-only on `waitlist` via RLS,
+   so it's safe in the client. Until set, signups confirm locally. */
+const RECPASS_SB_URL = '';
+const RECPASS_SB_ANON = '';
+async function submitWaitlist(email, city){
+  if(!RECPASS_SB_URL || !RECPASS_SB_ANON) return true; // not wired yet — confirm anyway
+  try{
+    const r = await fetch(RECPASS_SB_URL+'/rest/v1/waitlist', {
+      method:'POST',
+      headers:{ apikey:RECPASS_SB_ANON, Authorization:'Bearer '+RECPASS_SB_ANON, 'Content-Type':'application/json', Prefer:'resolution=ignore-duplicates,return=minimal' },
+      body: JSON.stringify({ email, city: city||null, source:'landing' })
+    });
+    return r.ok || r.status===409;
+  }catch(e){ return true; } // network hiccup — don't block the confirmation
+}
 function openJoin(){
   openSheet(`
     <div class="shphoto" style="${photoStyle(COURSES[6])}"><div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
     <div class="shbody">
-      <div class="ttl">Become a Founding Cardholder</div>
-      <div class="loc2">You don&apos;t have to go pro to play like one. Lock in founding pricing — ${money(PRICE)} for the 2026 season.</div>
-      <div class="formfield"><label>Your name</label><input id="j-name" placeholder="Jordan Fairway" /></div>
+      <div class="ttl">Get founding-member access</div>
+      <div class="loc2">Lock in the ${money(PRICE)}/year founding rate and get first access when Rec Pass opens in your area. No payment now — just your email.</div>
       <div class="formfield"><label>Email</label><input id="j-email" type="email" placeholder="you@email.com" /></div>
-      <div class="ribbon"><div><div class="big">Annual Pass</div><div class="note">2 rounds at all ${COURSES.length}+ courses</div></div><div class="big">${money(PRICE)}</div></div>
-      <button class="btn mt20" id="j-go">Activate my card</button>
-      <p class="note center mt14">Demo checkout — no real payment is taken.</p>
+      <div class="formfield"><label>Your city <span class="note">(optional)</span></label><input id="j-city" placeholder="Austin" /></div>
+      <button class="btn mt20" id="j-go">Join the founding list →</button>
+      <p class="note center mt14">No spam, no card required. We'll email you the moment it opens near you.</p>
     </div>`);
-  $('#j-go').onclick=()=>{
-    const name=($('#j-name').value||'').trim(), email=($('#j-email').value||'').trim();
-    if(name.length<2){ toast('Enter your name'); return; }
+  $('#j-go').onclick=async ()=>{
+    const email=($('#j-email').value||'').trim(), city=($('#j-city')?.value||'').trim();
     if(!/.+@.+\..+/.test(email)){ toast('Enter a valid email'); return; }
-    S.member={ name, email, id:'FFP-'+Math.random().toString(36).slice(2,7).toUpperCase()+'-26', joined:new Date().toISOString() };
-    save(); closeSheet(); toast('🎉 Welcome to the tracks!'); renderHome();
+    const btn=$('#j-go'); btn.disabled=true; btn.textContent='Joining…';
+    await submitWaitlist(email, city);
+    openSheet(`<div class="shbody" style="text-align:center;padding:30px 20px"><div class="ring">✓</div><div class="ttl mt8" style="font-size:24px">You're on the founding list.</div><p class="note mt8" style="max-width:380px;margin:8px auto 0">We'll email <b>${email}</b> the moment Rec Pass opens${city?` in ${city}`:''}. Founding rate locked: ${money(PRICE)}/yr.</p><button class="btn mt20" onclick="closeSheet()">Done</button><button class="btn outline mt8" onclick="closeSheet();go('courses')">See the courses</button></div>`);
   };
 }
 
