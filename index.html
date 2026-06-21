@@ -185,18 +185,42 @@
   .btn.ghost{background:var(--bg2);color:var(--ink)}
   .btn[disabled]{opacity:.4;pointer-events:none}
 
-  /* Hero (non-member) — clean white hero, giant uppercase type */
-  .hero{position:relative;background:var(--bg);color:var(--ink);padding:60px 22px 44px;text-align:center;border-bottom:1px solid var(--line)}
-  .hero .photo,.hero .scrim{display:none}
-  .hero .inner{position:relative;max-width:920px;margin:0 auto}
-  .hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
-  .hero h1{font-size:clamp(52px,13vw,80px);font-weight:800;letter-spacing:-.02em;line-height:.92}
-  .hero .lead{font-size:clamp(22px,4.6vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:14px auto 0}
-  .hero p{font-size:16.5px;color:var(--muted);margin:14px auto 0;max-width:460px;text-transform:none;letter-spacing:-.005em}
+  /* Hero — full-bleed photo, ResortPass-style */
+  .hero{position:relative;background:var(--ink);color:#fff;padding:0;text-align:center;border-bottom:none;
+    min-height:78vh;display:flex;align-items:flex-end}
+  .hero .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,40,28,.45) 0%,rgba(20,40,28,.72) 100%);z-index:1}
+  .hero .inner{position:relative;z-index:2;max-width:920px;margin:0 auto;padding:0 22px 48px;width:100%}
+  .hero .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#a8d8b8;margin-bottom:16px}
+  .hero h1{font-size:clamp(52px,13vw,80px);font-weight:800;letter-spacing:-.02em;line-height:.92;color:#fff}
+  .hero .lead{font-size:clamp(22px,4.6vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:#e8f5ee;margin:14px auto 0}
+  .hero p{font-size:16.5px;color:rgba(255,255,255,.88);margin:14px auto 0;max-width:460px;text-transform:none;letter-spacing:-.005em}
   .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
   .hero-cta .btn{width:auto;padding:15px 28px}
-  .hero .price{display:block;margin-top:20px;font-weight:700;font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-  .hero .price b{font-size:18px;color:var(--ink)}
+  .hero-cta .btn.outline{border-color:rgba(255,255,255,.7);color:#fff}
+  .hero-cta .btn.outline:hover{background:rgba(255,255,255,.12)}
+  .hero .price{display:block;margin-top:20px;font-weight:700;font-size:14px;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.04em}
+  .hero .price b{font-size:18px;color:#fff}
+
+  /* Hero mobile height — full hero at 78vh on small screens */
+  @media (max-width:859px){
+    .hero{ min-height:78vh; }
+    .hero .inner{ padding:0 20px 44px; }
+  }
+
+  /* Trust band — 3-col honest stats, placed under hero */
+  .trustband{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-bottom:1px solid var(--line)}
+  .trustband .tb{padding:20px 12px;text-align:center;border-right:1px solid var(--line)}
+  .trustband .tb:last-child{border-right:none}
+  .trustband .tb .tb-icon{font-size:22px;line-height:1;margin-bottom:8px}
+  .trustband .tb b{display:block;font-size:14px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:3px}
+  .trustband .tb span{font-size:11px;color:var(--muted);line-height:1.4}
+
+  /* Course card photo image */
+  .ccard .photo img.cphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;z-index:0}
+  .ccard .photo{position:relative}
+  .ccard .photo .sun,.ccard .photo .hill{z-index:1}
+  .ccard .photo .badge,.ccard .photo .heart{z-index:2}
 
   /* Sections */
   .section{padding:26px 20px 6px}
@@ -385,11 +409,13 @@
     .tn-link.on{ color:var(--red); }
     .tn-join{ margin-left:auto; width:auto; padding:11px 22px; font-size:15px; }
     /* full-bleed hero, headline aligned to the page container */
-    .hero{ height:78vh; min-height:560px; max-height:800px; }
-    .hero .inner{ max-width:1160px; margin:0 auto; width:100%; padding:0 28px 58px; }
-    .hero h1{ font-size:72px; }
+    .hero{ min-height:88vh; max-height:900px; }
+    .hero .inner{ max-width:1160px; margin:0 auto; width:100%; padding:0 28px 72px; }
+    .hero h1{ font-size:88px; }
     .hero p{ font-size:18px; max-width:540px; }
     .hero .eyebrow{ font-size:12px; }
+    .trustband .tb b{ font-size:15px; }
+    .trustband .tb span{ font-size:12px; }
     /* center content blocks in a page container */
     .section, .searchwrap, .chips, .courses, .rail{ max-width:1160px; margin-left:auto; margin-right:auto; }
     .section{ padding:46px 28px 6px; }
@@ -555,7 +581,16 @@ const COURSES = [
   { id:'c19', name:'Sharpstown Golf Course',  city:'Houston',     region:'Houston', state:'TX', fee:24, lat:29.7000, lng:-95.5100, blurb:'Well-kept, lower-priced Houston muni — a reliable everyday track.' },
 ];
 
-/* Premium golf-landscape gradient "photos" (deterministic, always render) */
+/* Verified golf course photo URLs (Unsplash, manually confirmed) */
+const COURSE_IMGS = [
+  'https://images.unsplash.com/photo-1538648759472-7251f7cb2c2f?w=640&q=72&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1632946269126-0f8edbe8b068?w=640&q=72&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=640&q=72&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=640&q=72&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1592919505780-303950717480?w=640&q=72&auto=format&fit=crop',
+];
+
+/* Premium golf-landscape gradient "photos" — used as onerror fallback */
 const PALETTES = [
   ['#bfe3f5','#dff3e3','#57b974','#1c7a48'],
   ['#cfe9f7','#e7f3df','#7cc585','#2c8a55'],
@@ -570,8 +605,17 @@ function photoStyle(c){
   return `background:radial-gradient(circle at 78% 24%, rgba(255,250,222,.0) 12%, rgba(255,250,222,0) 12%),`
        + `linear-gradient(180deg, ${p[0]} 0%, ${p[1]} 49%, ${p[2]} 50%, ${p[3]} 100%);`;
 }
+function courseImgUrl(c){ return COURSE_IMGS[idx(c) % COURSE_IMGS.length]; }
 function ratingOf(c){ return (4.3 + (idx(c)*3 % 7)/10).toFixed(1); }
-function photoEl(c, h){ return `<div class="photo" style="${photoStyle(c)}height:${h||''}"><div class="sun"></div><div class="hill"></div></div>`; }
+/* photoEl: now renders a real <img> with gradient fallback on onerror */
+function photoEl(c, h){
+  const style = photoStyle(c) + (h ? 'height:'+h+';' : '');
+  const src = courseImgUrl(c);
+  const fallbackStyle = style.replace(/"/g,"'");
+  return `<div class="photo" style="${style}${h?'':'aspect-ratio:16/10'}">` +
+    `<img class="cphoto" src="${src}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'" />` +
+    `<div class="sun"></div><div class="hill"></div></div>`;
+}
 /* ---- State ---- */
 const KEY='ffp_v1';
 let S = load();
@@ -627,6 +671,8 @@ function renderHome(){
     const feat = COURSES.slice(0,6).map(c=>railCard(c)).join('');
     el.innerHTML = `
       <div class="hero">
+        <img class="photo" src="https://images.unsplash.com/photo-1592937238247-cd0090e02f65?w=1600&q=75&auto=format&fit=crop" alt="Golf course fairway at sunrise" />
+        <div class="scrim"></div>
         <div class="inner">
           <div class="eyebrow">Founding member · Texas launch</div>
           <h1>Play like a pro</h1>
@@ -638,6 +684,11 @@ function renderHome(){
           </div>
           <div class="price"><b>${money(PRICE)}</b> / year · founding rate · no payment now</div>
         </div>
+      </div>
+      <div class="trustband">
+        <div class="tb"><div class="tb-icon">⛳</div><b>${COURSES.length} Texas courses</b><span>& growing</span></div>
+        <div class="tb"><div class="tb-icon">🔄</div><b>Cancel anytime</b><span>no per-round fees</span></div>
+        <div class="tb"><div class="tb-icon">🔒</div><b>$199/year locked</b><span>founding rate · no payment now</span></div>
       </div>
       <div class="statband">
         <div class="s"><b>Any course</b><span>in Texas, in or out of network</span></div>
@@ -761,7 +812,9 @@ function railCard(c){
   const rounds = usedAt(c.id);
   const badge = rounds>0 ? `<div class="badge">${rounds} played</div>` : `<div class="badge">Free</div>`;
   return `<div class="ccard" data-id="${c.id}">
-    <div class="photo" style="${photoStyle(c)}aspect-ratio:16/10"><div class="sun"></div><div class="hill"></div>${badge}</div>
+    <div class="photo" style="${photoStyle(c)}aspect-ratio:16/10">
+      <img class="cphoto" src="${courseImgUrl(c)}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'" />
+      <div class="sun"></div><div class="hill"></div>${badge}</div>
     <div class="body">
       <div class="nm">${c.name}</div>
       <div class="loc">${c.city}, ${c.state}</div>
@@ -772,7 +825,9 @@ function ccard(c){
   const u=usedAt(c.id);
   const badge = u>0 ? `<div class="badge">${u} played</div>` : `<div class="badge">Free</div>`;
   return `<div class="ccard" data-id="${c.id}">
-    <div class="photo" style="${photoStyle(c)}"><div class="sun"></div><div class="hill"></div>
+    <div class="photo" style="${photoStyle(c)}">
+      <img class="cphoto" src="${courseImgUrl(c)}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'" />
+      <div class="sun"></div><div class="hill"></div>
       <div class="heart">${S.saved[c.id]?'♥':'♡'}</div>${badge}</div>
     <div class="body">
       <div class="nm">${c.name}</div>
@@ -803,7 +858,9 @@ async function submitWaitlist(email, city){
 }
 function openJoin(){
   openSheet(`
-    <div class="shphoto" style="${photoStyle(COURSES[6])}"><div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
+    <div class="shphoto" style="${photoStyle(COURSES[6])}">
+      <img class="cphoto" src="${courseImgUrl(COURSES[6])}" alt="Golf course" loading="lazy" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      <div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
     <div class="shbody">
       <div class="ttl">Get founding-member access</div>
       <div class="loc2">Lock in the ${money(PRICE)}/year founding rate and get first access when Rec Pass opens in your area. No payment now — just your email.</div>
@@ -938,7 +995,9 @@ function openCourse(id){
   const c=COURSES.find(x=>x.id===id); if(!c) return;
   const played=usedAt(id), member=!!S.member;
   openSheet(`
-    <div class="shphoto" style="${photoStyle(c)}"><div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
+    <div class="shphoto" style="${photoStyle(c)}">
+      <img class="cphoto" src="${courseImgUrl(c)}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      <div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
     <div class="shbody">
       <div class="ttl">${c.name}</div>
       <div class="loc2">📍 ${c.city}, ${c.state} · ★ ${ratingOf(c)}</div>
@@ -957,7 +1016,9 @@ function openCourse(id){
 }
 function confirmRedeem(c){
   openSheet(`
-    <div class="shphoto" style="${photoStyle(c)}height:140px"><div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
+    <div class="shphoto" style="${photoStyle(c)}height:140px">
+      <img class="cphoto" src="${courseImgUrl(c)}" alt="${c.name}" loading="lazy" onerror="this.style.display='none'" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      <div class="grab"></div><button class="close" onclick="closeSheet()">✕</button></div>
     <div class="shbody">
       <div class="ttl">Check in at ${c.name}?</div>
       <div class="loc2">This logs your round here.</div>
