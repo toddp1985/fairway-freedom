@@ -10,10 +10,11 @@
 
   posthog.init(PH_KEY, {
     api_host: 'https://us.i.posthog.com',
-    person_profiles: 'identified_only',
+    person_profiles: 'always',
     capture_pageview: true,
     capture_pageleave: true,
     autocapture: true,
+    capture_heatmaps: true,
     session_recording: {
       sampleRate: 1.0,
       maskAllInputs: true,
