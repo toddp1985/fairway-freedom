@@ -299,6 +299,7 @@
         const JOIN_URL = 'plans.html';
 
         function esc(s){ return (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+        function courseSlug(c){ return (c.name+'-'+c.city).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
 
         function imageBlock(c, i){
           if (c.photo){
@@ -337,6 +338,7 @@
               <div class="flex flex-col gap-3 mt-auto">
                 <p class="font-body-md text-[13px] text-on-surface-variant leading-tight">${access}</p>
                 <a href="${JOIN_URL}" class="w-full bg-deep-forest text-white py-3 rounded-full font-label-lg text-label-lg hover:bg-primary transition-all active:scale-95 text-center block">Join the founding list — $199/year</a>
+                <a href="courses/${courseSlug(c)}.html" class="w-full text-center text-primary font-medium text-sm hover:underline py-1">Learn more about this course →</a>
               </div>
             </div>
           </div>`;
