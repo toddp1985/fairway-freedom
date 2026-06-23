@@ -23,4 +23,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://toddp1985.github.io/fairway-freedom/sitemap.xml
+Sitemap: https://toddp1985.github.io/trackpass/sitemap.xml
