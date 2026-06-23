@@ -27,7 +27,7 @@ TrackPass is an annual golf membership that works at any public or municipal cou
 - Offer: play any Texas course, no limit — partner courses free; at any other course TrackPass covers your green fee up to $50/round (weekday/off-peak, receipt required, paid in arrears)
 - Partner markets: Austin, San Antonio, Dallas–Fort Worth, Houston
 - Status: Pre-launch — founding-member waitlist open, no payment required
-- URL: https://www.trackpassgolf.com/
+- URL: https://trackpassgolf.com/
 
 ## What TrackPass is NOT
 

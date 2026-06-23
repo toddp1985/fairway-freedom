@@ -23,4 +23,4 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-Sitemap: https://www.trackpassgolf.com/sitemap.xml
+Sitemap: https://trackpassgolf.com/sitemap.xml
