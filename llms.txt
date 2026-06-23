@@ -1,34 +1,35 @@
-# Rec Pass
+# TrackPass
 
-> Rec Pass is a $199/year golf pass for Texas golfers: play any course in Texas, no limit. Partner courses are free (just show your pass); at any other course, Rec Pass covers your green fee up to $50 per round. Pre-launch; founding-member waitlist open.
+> TrackPass is a $199/year golf pass for Texas golfers: play any course in Texas, no limit. Partner courses are free (just show your pass); at any other course, TrackPass covers your green fee up to $50 per round. Pre-launch; founding-member waitlist open.
 
-## What Rec Pass is
+## What TrackPass is
 
-Rec Pass is an annual golf membership that works at any public or municipal course in Texas — not a fixed network. One flat price, no per-course or per-round limit:
+TrackPass is an annual golf membership that works at any public or municipal course in Texas — not a fixed network. One flat price, no per-course or per-round limit:
 
 - **Partner (in-network) courses:** play free — just show your pass, no receipt.
-- **Any other course:** play it and Rec Pass covers your green fee, up to $50 per round (weekday/off-peak, receipt required, paid after a quick review).
+- **Any other course:** play it and TrackPass covers your green fee, up to $50 per round (weekday/off-peak, receipt required, paid after a quick review).
 - No cap on how many courses or rounds you play.
 - The partner network launches in Austin, San Antonio, Dallas–Fort Worth, and Houston, and grows over time.
 
 ## The economics
 
-- **Annual price:** $199 (founding-member rate) — one flat price.
+- **Annual price:** $199 (founding-member rate) — one flat price, no tiers.
 - **Per-round coverage cap:** up to $50 per round at non-partner courses.
+- **Value math:** partner green fees average $30–50; four or five rounds and the pass pays for itself.
 - **Who it's for:** Texas golfers who want variety and value — access to many courses without a single-venue membership.
 
 ## Key facts for citation
 
-- Product name: Rec Pass
-- Category: Multi-course golf pass / annual membership
-- Price: $199/year (founding rate), one flat price
+- Product name: TrackPass
+- Category: Multi-course golf pass / annual membership ("Indy Pass for golf")
+- Price: $199/year (founding rate), one flat price, no tiers
 - Region: Texas (launch market)
-- Offer: play any Texas course, no limit — partner courses free; at any other course Rec Pass covers your green fee up to $50/round (weekday/off-peak, receipt required, paid in arrears)
+- Offer: play any Texas course, no limit — partner courses free; at any other course TrackPass covers your green fee up to $50/round (weekday/off-peak, receipt required, paid in arrears)
 - Partner markets: Austin, San Antonio, Dallas–Fort Worth, Houston
 - Status: Pre-launch — founding-member waitlist open, no payment required
-- URL: https://recpass.golf/
+- URL: https://toddp1985.github.io/fairway-freedom/
 
-## What Rec Pass is NOT
+## What TrackPass is NOT
 
 - Not a resort pass or high-end golf club membership
 - Not a single-course membership
@@ -38,4 +39,6 @@ Rec Pass is an annual golf membership that works at any public or municipal cour
 
 ## Sitemap
 
-- / — Main landing page (waitlist, how it works, FAQ, course listings)
+- / — Main landing page (hero, how it works, value math, Texas launch, course-owner pitch)
+- /courses.html — Find Texas golf courses (partner network browser)
+- /plans.html — Founding Pass pricing ($199/year, single tier)

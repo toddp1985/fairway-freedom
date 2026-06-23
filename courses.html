@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#16412b" />
+<title>Find Texas Golf Courses — TrackPass | Any Course, No Limit</title>
+<meta name="description" content="Browse TrackPass partner courses across Texas — Austin, San Antonio, Dallas–Fort Worth, and Houston. Partner courses are free with your pass; every other Texas public course is covered up to $50/round. One flat $199/year." />
+<link rel="canonical" href="https://toddp1985.github.io/fairway-freedom/courses.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Find Texas Golf Courses — TrackPass" />
+<meta property="og:description" content="Partner courses across Austin, San Antonio, DFW & Houston — free with your pass. Every other Texas course covered up to $50/round. One flat $199/year." />
+<meta property="og:site_name" content="TrackPass" />
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Sora & Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Design System Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#d4fae2",
+                        "on-primary-container": "#80ad90",
+                        "on-primary-fixed": "#002111",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#5fb482",
+                        "tertiary-fixed": "#9ef5be",
+                        "secondary-fixed": "#ffdea8",
+                        "surface-off-white": "#FAF9F4",
+                        "sky-blue": "#C2E1F2",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#002110",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#414943",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#cbf1da",
+                        "secondary-container": "#fdc65e",
+                        "on-background": "#002113",
+                        "primary-fixed-dim": "#a3d1b3",
+                        "surface-container": "#d1f7e0",
+                        "on-secondary-container": "#745200",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#82d8a3",
+                        "on-tertiary": "#ffffff",
+                        "deep-forest": "#103223",
+                        "primary": "#002a17",
+                        "surface-container-low": "#d6fde5",
+                        "on-tertiary-fixed-variant": "#00522f",
+                        "surface": "#e8ffef",
+                        "on-error-container": "#93000a",
+                        "secondary": "#7c5800",
+                        "primary-fixed": "#bfedce",
+                        "inverse-primary": "#a3d1b3",
+                        "tertiary-container": "#004326",
+                        "on-surface": "#002113",
+                        "surface-dim": "#bde3cc",
+                        "surface-variant": "#c6ebd5",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "on-secondary-fixed": "#271900",
+                        "inverse-surface": "#153627",
+                        "primary-container": "#16412b",
+                        "surface-bright": "#e8ffef",
+                        "tertiary": "#002b16",
+                        "outline-variant": "#c1c8c1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "20px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Manrope"],
+                        "display-lg-mobile": ["Sora"],
+                        "label-sm": ["Manrope"],
+                        "label-lg": ["Manrope"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .course-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #103223;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface-off-white font-body-md text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-off-white/80 dark:bg-deep-forest/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<span class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tight text-primary dark:text-primary-fixed">TrackPass</span>
+<div class="hidden md:flex items-center space-gap-8 gap-x-8">
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed font-bold border-b-2 border-secondary transition-all duration-200 active:scale-95" href="courses.html">Find Courses</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 transition-all duration-200 active:scale-95" href="dashboard.html">My Pass</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 transition-all duration-200 active:scale-95" href="plans.html">Membership</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300 transition-all duration-200 active:scale-95" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block font-label-lg text-label-lg text-primary px-4 py-2 hover:text-secondary transition-all">Sign In</button>
+<button class="bg-deep-forest text-white font-label-lg text-label-lg px-6 py-3 rounded-full hover:bg-primary transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 min-h-screen">
+<!-- Header & Search Controls -->
+<header class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Any course in Texas. No limit.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Partner courses are free; every other Texas public or municipal course is covered up to $50/round.</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container rounded-full p-1 self-start">
+<button class="flex items-center gap-2 px-6 py-2 rounded-full bg-deep-forest text-white transition-all shadow-md" id="listViewBtn">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+<span class="font-label-lg text-label-lg">Grid</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-all" id="mapViewBtn">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<span class="font-label-lg text-label-lg">Map</span>
+</button>
+</div>
+</div>
+<!-- Filters Section -->
+<div class="mt-10 grid grid-cols-1 md:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-[0px_4px_20px_rgba(16,50,35,0.08)]">
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-[10px]">Region</label>
+<select class="w-full px-4 py-3 bg-surface-off-white border-transparent focus:border-secondary focus:ring-0 rounded-xl font-body-md transition-all appearance-none">
+<option>All Regions</option>
+<option>Austin</option>
+<option>San Antonio</option>
+<option>Dallas-Fort Worth</option>
+<option>Houston</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-[10px]">Access</label>
+<select class="w-full px-4 py-3 bg-surface-off-white border-transparent focus:border-secondary focus:ring-0 rounded-xl font-body-md transition-all appearance-none">
+<option>All Access Types</option>
+<option>Partner</option>
+<option>Covered</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-[10px]">Course Type</label>
+<select class="w-full px-4 py-3 bg-surface-off-white border-transparent focus:border-secondary focus:ring-0 rounded-xl font-body-md transition-all appearance-none">
+<option>All Course Types</option>
+<option>Municipal</option>
+<option>Public</option>
+<option>Resort</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-deep-forest text-white py-3 rounded-xl font-label-lg text-label-lg hover:bg-primary transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+                        Search Courses
+                    </button>
+</div>
+</div>
+</header>
+<!-- Course Results Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="resultsGrid">
+<!-- Course Card 1 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="A lush, sun-drenched golf course fairway winding through ancient oak trees at sunset. The lighting is golden and warm, casting long shadows across the perfectly manicured green grass. The atmosphere is serene, high-end, and evokes a sense of quiet luxury. Sophisticated emerald greens and earthy tones dominate the palette." style="background-image: url('assets/img/img_39f13b576312.jpg')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">PARTNER · FREE</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Lions Municipal</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Austin, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Municipal</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Historic</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Free — just show your pass.</p>
+<button class="w-full bg-deep-forest text-white py-3 rounded-full font-label-lg text-label-lg hover:bg-primary transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="A dramatic coastal golf course cliffside hole overlooking a turquoise ocean with crashing white waves. The sky is a clear, bright blue, creating a high-key, modern aesthetic. The grass is a vibrant, saturated green, contrasting sharply with the deep blue water. The style is minimalist and premium, capturing a breathtaking outdoor sporting experience." style="background-image: url('assets/img/img_fa96e661a39b.jpg')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">PARTNER · FREE</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Memorial Park</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">5.0</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Houston, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Municipal</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Championship</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Free — just show your pass.</p>
+<button class="w-full bg-deep-forest text-white py-3 rounded-full font-label-lg text-label-lg hover:bg-primary transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="A wide-angle shot of a minimalist golf clubhouse with clean architectural lines, made of stone and dark wood, reflecting in a still water feature. The surrounding landscape is a desert oasis style with native grasses and sand bunkers. The lighting is soft morning light, highlighting the textures of the materials. Modern, corporate, and extremely sophisticated." style="background-image: url('assets/img/img_faba87f765de.jpg')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">PARTNER · FREE</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Brackenridge Park</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">4.7</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">San Antonio, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Municipal</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Historic</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Free — just show your pass.</p>
+<button class="w-full bg-deep-forest text-white py-3 rounded-full font-label-lg text-label-lg hover:bg-primary transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+<!-- Course Card 4 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="A misty morning on a forest golf course, with tall pine trees bordering a narrow fairway. Dew is visible on the grass, and rays of sunlight pierce through the fog. The scene is quiet and atmospheric, focusing on the heritage of the sport. The colors are deep forest greens, soft grays, and muted browns, creating a grounded, traditional feel." style="background-image: url('assets/img/img_caae156101c8.jpg')"></div>
+<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">PARTNER · FREE</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Tenison Highlands</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">4.8</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Dallas, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Public</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Pro Shop</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Free — just show your pass.</p>
+<button class="w-full bg-deep-forest text-white py-3 rounded-full font-label-lg text-label-lg hover:bg-primary transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+<!-- Course Card 5 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="Modern minimalist architecture of a golf resort in the rolling hills of Ireland. The building features large glass windows and natural stone. The sky is dramatic with fast-moving clouds. The scene is clean, expansive, and high-end, representing a global golf destination. The color palette is composed of emerald greens, stone grays, and deep navy." style="background-image: url('assets/img/img_a1ce98a02444.jpg')"></div>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">COVERED UP TO $50</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Roy Kizer Golf Course</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">4.6</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Austin, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Links Style</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Public</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Pay, snap your receipt, get reimbursed up to $50/round (weekday/off-peak).</p>
+<button class="w-full bg-outline-variant/30 text-primary py-3 rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+<!-- Course Card 6 -->
+<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
+<div class="relative h-64 overflow-hidden shrink-0">
+<div class="card-img w-full h-full bg-cover bg-center transition-transform duration-700" data-alt="A luxury golf resort infinity pool overlooking the 18th green at dusk. The water is glowing with soft blue light, and the sky is a deep purple and orange gradient. The resort is built with white stucco and tiled roofs, giving a Mediterranean feel. The vibe is exclusive and relaxing. The colors are sunset oranges, deep purples, and crisp whites." style="background-image: url('assets/img/img_3d108a712e91.jpg')"></div>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">COVERED UP TO $50</div>
+<button class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-error transition-all">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-primary">Cedar Crest</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined fill-icon text-[18px]">star</span>
+<span class="font-label-lg text-label-lg">4.9</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-6">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-body-md">Dallas, TX</span>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Municipal</span>
+<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">Rolling Hills</span>
+</div>
+<div class="flex flex-col gap-3 mt-auto">
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight">Pay, snap your receipt, get reimbursed up to $50/round (weekday/off-peak).</p>
+<button class="w-full bg-outline-variant/30 text-primary py-3 rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-all active:scale-95">Join the founding list — $199/year</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Map View (Hidden by default) -->
+<section class="hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-[716px] rounded-3xl overflow-hidden shadow-lg border border-outline-variant/30" id="mapContainer">
+<div class="w-full h-full bg-surface-container relative">
+<div class="w-full h-full bg-cover bg-center opacity-50 grayscale contrast-125" data-location="California" style="background-image: url('assets/img/img_ed36b9a88199.jpg')"></div>
+<!-- Custom Map Markers Overlay (Simulated) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative group pointer-events-auto cursor-pointer" style="top: -20%; left: -10%;">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-bold shadow-lg animate-bounce text-[12px]">FREE</div>
+<div class="w-4 h-4 bg-secondary-container rounded-full mx-auto -mt-1 border-2 border-white"></div>
+</div>
+<div class="relative group pointer-events-auto cursor-pointer" style="top: 10%; left: 15%;">
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-bold shadow-lg animate-pulse text-[12px]">FREE</div>
+<div class="w-4 h-4 bg-secondary-container rounded-full mx-auto -mt-1 border-2 border-white"></div>
+</div>
+<div class="relative group pointer-events-auto cursor-pointer" style="top: 30%; left: -25%;">
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-bold shadow-lg text-[12px]">UP TO $50</div>
+<div class="w-4 h-4 bg-primary-container rounded-full mx-auto -mt-1 border-2 border-white"></div>
+</div>
+</div>
+<!-- Float card for map -->
+<div class="absolute bottom-8 left-8 right-8 md:right-auto md:w-96 glass-panel p-6 rounded-2xl shadow-xl flex flex-col">
+<h4 class="font-headline-md text-primary mb-2">Lions Municipal</h4>
+<p class="text-on-surface-variant text-body-md mb-4">4.9 (124 reviews) • Austin, TX</p>
+<button class="w-full bg-deep-forest text-white py-3 rounded-xl font-label-lg transition-all hover:bg-primary">View Details</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-forest dark:bg-black w-full py-16 border-t border-primary-container">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="font-display-lg text-display-lg text-secondary dark:text-secondary-fixed">TrackPass</span>
+<p class="text-outline-variant font-body-md text-center md:text-left max-w-sm">Elevating the game of golf for Texas public and municipal course players.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-outline-variant hover:text-white transition-colors font-body-md" href="#">About Us</a>
+<a class="text-outline-variant hover:text-white transition-colors font-body-md" href="courses.html">Partner Courses</a>
+<a class="text-outline-variant hover:text-white transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-outline-variant hover:text-white transition-colors font-body-md" href="#">Terms of Service</a>
+</div>
+<p class="text-outline-variant font-label-sm text-center md:text-right">© 2024 TrackPass Golf. All rights reserved.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl shadow-[0px_4px_20px_rgba(16,50,35,0.08)] rounded-full z-50 flex justify-around items-center py-2 px-6">
+<button class="flex flex-col items-center justify-center bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-full w-12 h-12 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-sm text-[8px] mt-0.5">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-sm text-[8px] mt-0.5">My Pass</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-sm text-[8px] mt-0.5">Favorites</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-[8px] mt-0.5">Profile</span>
+</button>
+</div>
+<!-- Toggle Scripts -->
+<script>
+        const gridViewBtn = document.getElementById('listViewBtn');
+        const mapViewBtn = document.getElementById('mapViewBtn');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const mapContainer = document.getElementById('mapContainer');
+
+        mapViewBtn.addEventListener('click', () => {
+            resultsGrid.classList.add('hidden');
+            mapContainer.classList.remove('hidden');
+            
+            // Switch active button styles
+            mapViewBtn.classList.add('bg-deep-forest', 'text-white', 'shadow-md');
+            mapViewBtn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+            
+            gridViewBtn.classList.remove('bg-deep-forest', 'text-white', 'shadow-md');
+            gridViewBtn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+        });
+
+        gridViewBtn.addEventListener('click', () => {
+            mapContainer.classList.add('hidden');
+            resultsGrid.classList.remove('hidden');
+            
+            // Switch active button styles
+            gridViewBtn.classList.add('bg-deep-forest', 'text-white', 'shadow-md');
+            gridViewBtn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+            
+            mapViewBtn.classList.remove('bg-deep-forest', 'text-white', 'shadow-md');
+            mapViewBtn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+        });
+    </script>
+</body></html>
