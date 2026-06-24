@@ -123,6 +123,25 @@ tailwind.config = {
   <a href="index.html" class="bg-primary text-white px-8 py-3 rounded-full font-label-lg text-label-lg hover:bg-deep-forest transition-colors">Back to TrackPass</a>
 </div>
 
+<!-- Post-payment state (payment successful, webhook creating member) -->
+<div id="state-joined" class="hidden pt-20 pb-32 flex flex-col items-center justify-center min-h-screen px-5 text-center">
+  <div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mx-auto mb-6">
+    <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings:'FILL' 1;">mark_email_read</span>
+  </div>
+  <h2 class="font-headline-md text-primary mb-2" style="font-family: Sora, sans-serif;">Your pass is on its way!</h2>
+  <p class="text-on-surface-variant font-body-md mb-2 max-w-xs">Check your email — your member card link will arrive within a minute.</p>
+  <p class="text-on-surface-variant text-sm mb-8 max-w-xs">Can't find it? Try your email below.</p>
+  <div class="w-full max-w-sm bg-white rounded-3xl p-5 shadow-sm border border-outline-variant/30">
+    <input id="joined-email" type="email" placeholder="Your email address" autocomplete="email"
+      class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary mb-3" />
+    <div id="joined-msg" class="text-sm font-medium mb-2" role="status" aria-live="polite"></div>
+    <button onclick="findByEmail(document.getElementById('joined-email').value, 'joined-msg')"
+      class="w-full py-3 bg-primary text-white rounded-full font-label-lg text-label-lg hover:bg-deep-forest transition-colors">
+      Find my card
+    </button>
+  </div>
+</div>
+
 <!-- Find card (no ?member param) -->
 <div id="state-find" class="hidden pt-20 pb-32 flex flex-col items-center justify-center min-h-screen px-5">
   <div class="w-full max-w-sm">
@@ -259,7 +278,7 @@ tailwind.config = {
           <span class="material-symbols-outlined text-base">receipt_long</span>
           After your round
         </p>
-        <p id="receipt-instructions">Email your receipt to <strong>receipts@trackpassgolf.com</strong> with subject: <strong><span class="receipt-subject font-mono">MEMBER_ID — Course Name</span></strong></p>
+        <p id="receipt-instructions">Email your receipt to <strong>reimbursements@trackpassgolf.com</strong> with subject: <strong><span class="receipt-subject font-mono">MEMBER_ID — Course Name</span></strong></p>
       </div>
 
       <div id="log-msg" class="text-sm font-medium" role="status" aria-live="polite"></div>
@@ -315,7 +334,7 @@ function getMemberId() {
 }
 
 function showState(name) {
-  ['loading', 'error', 'find', 'card'].forEach(s => {
+  ['loading', 'error', 'find', 'joined', 'card'].forEach(s => {
     const el = document.getElementById('state-' + s);
     if (el) el.classList.toggle('hidden', s !== name);
   });
@@ -324,27 +343,33 @@ function showState(name) {
 async function init() {
   const params = new URLSearchParams(window.location.search);
   let memberId = params.get('member') || localStorage.getItem('tp_member_id');
+  const sessionId = params.get('session_id');
   const joined = params.get('joined') === 'true' || params.get('joined') === '1';
 
-  // Auto-register after Stripe payment
-  if (!memberId && joined) {
-    const email = localStorage.getItem('tp_member_email');
-    const name = localStorage.getItem('tp_member_name') || '';
-    if (email) {
-      showState('loading');
+  // Post-payment: Stripe redirected with session_id — poll for the member the webhook just created
+  if (!memberId && sessionId) {
+    showState('loading');
+    let found = false;
+    for (let i = 0; i < 14; i++) {
+      await new Promise(r => setTimeout(r, 1500));
       try {
-        const reg = await fetch(`${window.TRACKPASS_WORKER}/member/register`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, name }),
-        });
-        const rj = await reg.json();
-        if (rj.ok && rj.member?.id) {
-          memberId = rj.member.id;
-          localStorage.setItem('tp_member_id', memberId);
+        const res = await fetch(`${window.TRACKPASS_WORKER}/member/by-session?session_id=${encodeURIComponent(sessionId)}`);
+        if (res.ok) {
+          const d = await res.json();
+          if (d.ok && d.memberId) { memberId = d.memberId; found = true; break; }
         }
       } catch (_) {}
     }
+    if (!found) {
+      showState('joined');
+      return;
+    }
+  }
+
+  // Legacy ?joined=true without session ID
+  if (!memberId && joined) {
+    showState('joined');
+    return;
   }
 
   if (!memberId) {
@@ -358,12 +383,42 @@ async function init() {
     const res = await fetch(`${window.TRACKPASS_WORKER}/member/${memberId}`);
     if (!res.ok) throw new Error('not found');
     const data = await res.json();
+    // Normalize API field names for local use
+    data.reimbursements_this_month = data.reimbursementsUsed || 0;
     memberData = data;
     localStorage.setItem('tp_member_id', memberId);
     renderCard(data);
     showState('card');
   } catch (err) {
     showState('error');
+  }
+}
+
+async function findByEmail(email, msgId) {
+  const msg = document.getElementById(msgId);
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email.';
+    msg.style.color = '#ba1a1a';
+    return;
+  }
+  msg.textContent = 'Looking up your card...';
+  msg.style.color = '';
+  try {
+    const res = await fetch(`${window.TRACKPASS_WORKER}/member/by-email?email=${encodeURIComponent(email)}`);
+    if (res.ok) {
+      const d = await res.json();
+      if (d.ok && d.memberId) {
+        localStorage.setItem('tp_member_id', d.memberId);
+        window.location.href = `dashboard.html?member=${d.memberId}`;
+        return;
+      }
+    }
+    // Not found — don't reveal; show generic "check email" message
+    msg.textContent = 'No card found for that email. Check your inbox for the welcome email.';
+    msg.style.color = '#ba1a1a';
+  } catch (_) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.color = '#ba1a1a';
   }
 }
 
@@ -375,13 +430,11 @@ function renderCard(m) {
   const idDisplay = (m.id || '').toString().replace(/(.{4})(.{4})/, '$1-$2') || m.id;
   document.getElementById('card-member-id').textContent = idDisplay;
 
-  // Valid through
+  // Valid through (worker returns camelCase validThrough)
   let validThru = '—';
-  if (m.valid_through) {
-    const d = new Date(m.valid_through);
-    validThru = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-  } else if (m.expires_at) {
-    const d = new Date(m.expires_at);
+  const vt = m.validThrough || m.valid_through;
+  if (vt) {
+    const d = new Date(vt);
     validThru = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   }
   document.getElementById('card-valid-through').textContent = validThru;
@@ -496,11 +549,13 @@ async function submitRound() {
       })
     });
 
-    if (!res.ok) throw new Error('server error');
+    const resData = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(resData.error || 'server error');
+    }
 
     // Update UI
     if (!selectedInNetwork) {
-      // Increment local reimbursement count
       memberData.reimbursements_this_month = (memberData.reimbursements_this_month || 0) + 1;
       memberData.last_reimbursement_course = courseName;
       renderReimbursement(memberData);
@@ -509,9 +564,10 @@ async function submitRound() {
     // Show confirmation
     const confirm = document.getElementById('log-confirmation');
     const confirmText = document.getElementById('log-confirm-text');
+    const reimbEmail = resData.reimbursementEmail || 'reimbursements@trackpassgolf.com';
     confirmText.textContent = selectedInNetwork
       ? `Checked in at ${courseName}. Enjoy your round!`
-      : `Round at ${courseName} logged. Email your receipt to get reimbursed.`;
+      : `Round logged! Email your receipt to ${reimbEmail} with subject "${memberData.id} — ${courseName}" for up to $50 back.`;
     confirm.classList.remove('hidden');
 
     // Reset form
@@ -523,7 +579,7 @@ async function submitRound() {
     toggleLogRound(); // close the panel
 
   } catch (err) {
-    msg.textContent = 'Something went wrong. Please try again.';
+    msg.textContent = err.message && err.message !== 'server error' ? err.message : 'Something went wrong. Please try again.';
     msg.style.color = '#ba1a1a';
   } finally {
     btn.disabled = false;
@@ -533,38 +589,7 @@ async function submitRound() {
 
 async function sendCardLink() {
   const email = document.getElementById('find-email').value.trim();
-  const msg = document.getElementById('find-msg');
-  const btn = document.getElementById('find-btn');
-
-  if (!email || !email.includes('@')) {
-    msg.textContent = 'Please enter a valid email address.';
-    msg.style.color = '#ba1a1a';
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-  msg.textContent = '';
-
-  try {
-    await fetch(`${window.TRACKPASS_WORKER}/`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, type: 'find' })
-    });
-    // Always show success (don't reveal whether email exists)
-    document.getElementById('find-form-content').innerHTML = `
-      <div class="text-center py-6 space-y-3">
-        <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings:'FILL' 1;">mark_email_read</span>
-        <p class="font-semibold text-primary">Check your email</p>
-        <p class="text-on-surface-variant text-sm">If you have a TrackPass membership, we sent your card link to <strong>${email}</strong>.</p>
-      </div>`;
-  } catch (err) {
-    msg.textContent = 'Something went wrong. Please try again.';
-    msg.style.color = '#ba1a1a';
-    btn.disabled = false;
-    btn.textContent = 'Send my card link';
-  }
+  await findByEmail(email, 'find-msg');
 }
 
 function shareCard() {
