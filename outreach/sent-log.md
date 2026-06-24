@@ -30,3 +30,11 @@ Sent to 6 courses via Resend (from: notifications@peoplesvp.com, reply-to: todd@
 
 Template: 4-paragraph intro, partner.html self-service CTA, reply-to todd@trackpassgolf.com.
 Subject pattern: "TrackPass -- driving more rounds to [Course]" / "TrackPass partner inquiry -- [Course]"
+
+## Batch 2b — 2026-06-24 (Austin direct contact found by browser agent)
+
+| Course | Email | Resend ID |
+|--------|-------|-----------|
+| GolfATX — all 5 Austin city munis (Lions, Morris Williams, Roy Kizer, Jimmy Clay, Hancock) | Stephanie.arena@austintexas.gov | d371f3ad-0efb-4c76-a25c-a7257fe23a3d |
+
+Note: No public contact form on austintexas.gov/golfatx. Direct staff contact found: Stephanie Arena, GolfATX Event Coordinator.
