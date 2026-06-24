@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TrackPass Partner Courses — Texas Public Golf Network</title>
+<meta name="description" content="Browse every course in the TrackPass partner network. Show your pass, play free. New courses joining every week." />
+<link rel="canonical" href="https://trackpassgolf.com/network.html" />
+<meta property="og:title" content="TrackPass Partner Network — Texas Public Golf" />
+<meta property="og:description" content="Every course in the TrackPass network. $199/year plays them all." />
+<meta property="og:url" content="https://trackpassgolf.com/network.html" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛳</text></svg>" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#002a17", "secondary": "#fdc65e", "deep-forest": "#001a0e",
+        "surface-off-white": "#f6f9f5", "on-surface": "#1a2e1f", "on-surface-variant": "#4a6255",
+        "outline-variant": "#b3c9bc", "surface-container-low": "#eaf2ec"
+      },
+      fontFamily: { body: ["Manrope", "sans-serif"], display: ["Sora", "sans-serif"] }
+    }
+  }
+}
+</script>
+<style>
+body { font-family: Manrope, sans-serif; background: #f6f9f5; color: #1a2e1f; }
+.course-card { transition: transform .15s ease, box-shadow .15s ease; }
+.course-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,42,23,.08); }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- Nav -->
+<nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-outline-variant/20 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="font-display text-primary font-bold text-xl" style="font-family:Sora,sans-serif;">TrackPass</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="courses.html" class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm">Find Courses</a>
+      <a href="network.html" class="text-primary font-bold border-b-2 border-secondary text-sm">Partner Network</a>
+      <a href="plans.html" class="text-on-surface-variant hover:text-primary transition-colors font-medium text-sm">Membership</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="partner.html" class="hidden sm:block text-primary font-bold text-sm hover:text-secondary transition-colors">Partner with us</a>
+      <a href="plans.html" class="bg-primary text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-deep-forest transition-all shadow-sm">Join $199</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="bg-primary text-white py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-secondary font-semibold text-sm uppercase tracking-widest mb-4">Partner Network</p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="font-family:Sora,sans-serif;">Courses in the Network</h1>
+    <p class="text-white/70 text-lg mb-8">These courses accept your TrackPass. Show your digital pass at the pro shop and play. No green fee, no hassle.</p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="plans.html" class="bg-secondary text-primary px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 transition-all">Get your pass — $199/year</a>
+      <a href="partner.html" class="bg-white/10 border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/20 transition-all">Add your course</a>
+    </div>
+  </div>
+</header>
+
+<!-- Partner count banner -->
+<div class="bg-secondary/20 border-b border-secondary/30 px-6 py-4 text-center">
+  <p class="text-primary font-semibold text-sm" id="count-banner">Loading partner courses...</p>
+</div>
+
+<!-- Course grid -->
+<main class="max-w-6xl mx-auto px-6 py-12">
+
+  <!-- Filter bar -->
+  <div class="flex flex-col sm:flex-row gap-4 mb-8">
+    <div class="relative flex-1">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+      <input id="search-input" type="text" placeholder="Search by course name or city..."
+        class="w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm" />
+    </div>
+    <select id="city-filter" class="px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 text-sm">
+      <option value="">All cities</option>
+    </select>
+  </div>
+
+  <!-- Grid -->
+  <div id="courses-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- loaded by JS -->
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="hidden text-center py-16">
+    <span class="material-symbols-outlined text-5xl text-outline-variant mb-4 block" style="font-variation-settings:'FILL' 1;">golf_course</span>
+    <p class="text-on-surface-variant font-medium">No courses match your filter.</p>
+  </div>
+
+  <!-- Loading state -->
+  <div id="loading-state" class="text-center py-16">
+    <div class="w-8 h-8 rounded-full border-2 border-primary/30 border-t-primary animate-spin mx-auto mb-4"></div>
+    <p class="text-on-surface-variant text-sm">Loading partner courses...</p>
+  </div>
+
+  <!-- No partners yet state -->
+  <div id="no-partners-state" class="hidden text-center py-16 max-w-lg mx-auto">
+    <span class="material-symbols-outlined text-5xl text-secondary mb-4 block" style="font-variation-settings:'FILL' 1;">add_location</span>
+    <h2 class="text-2xl font-bold text-primary mb-3" style="font-family:Sora,sans-serif;">Be the first partner course</h2>
+    <p class="text-on-surface-variant mb-6">We're building the network. Sign your course up now and start seeing TrackPass members on your course.</p>
+    <a href="partner.html" class="bg-primary text-white px-8 py-3.5 rounded-full font-bold hover:bg-deep-forest transition-all inline-block">Join the network</a>
+  </div>
+</main>
+
+<!-- CTA for non-members -->
+<section class="bg-primary text-white py-16 px-6 mt-12">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4" style="font-family:Sora,sans-serif;">$199 plays them all</h2>
+    <p class="text-white/70 mb-8">One flat annual membership. Play partner courses free. One out-of-network reimbursement per month, up to $50.</p>
+    <a href="plans.html" class="bg-secondary text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all inline-block">Get your TrackPass</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-deep-forest text-white/60 py-12 px-6 text-sm text-center">
+  <p class="mb-2"><a href="index.html" class="text-secondary font-bold" style="font-family:Sora,sans-serif;">TrackPass</a> — Accessible Texas Golf. One Flat Price.</p>
+  <div class="flex justify-center gap-6 mt-4">
+    <a href="courses.html" class="hover:text-white transition-colors">Find Courses</a>
+    <a href="partner.html" class="hover:text-white transition-colors">Partner with us</a>
+    <a href="plans.html" class="hover:text-white transition-colors">Membership</a>
+  </div>
+  <p class="mt-6 text-white/30">© 2026 TrackPass Golf. All rights reserved.</p>
+</footer>
+
+<!-- Mobile nav -->
+<div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full z-50 shadow-lg flex justify-around items-center py-2 px-6">
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 rounded-full" href="courses.html">
+    <span class="material-symbols-outlined text-lg">explore</span>
+    <span class="text-xs mt-0.5">Explore</span>
+  </a>
+  <a class="flex flex-col items-center justify-center bg-primary text-white rounded-full w-12 h-12" href="plans.html">
+    <span class="material-symbols-outlined">confirmation_number</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 rounded-full" href="dashboard.html">
+    <span class="material-symbols-outlined text-lg">person</span>
+    <span class="text-xs mt-0.5">My Pass</span>
+  </a>
+</div>
+
+<script>
+const WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';
+let allCourses = [];
+
+async function loadCourses() {
+  try {
+    const res = await fetch(`${WORKER}/courses`);
+    const data = await res.json();
+
+    document.getElementById('loading-state').classList.add('hidden');
+
+    if (!data.ok || !data.courses || data.courses.length === 0) {
+      document.getElementById('no-partners-state').classList.remove('hidden');
+      document.getElementById('count-banner').textContent = 'Be the first course to join the TrackPass network.';
+      return;
+    }
+
+    allCourses = data.courses;
+    document.getElementById('count-banner').textContent =
+      `${allCourses.length} course${allCourses.length !== 1 ? 's' : ''} in the TrackPass network`;
+
+    // Populate city filter
+    const cities = [...new Set(allCourses.map(c => c.city).filter(Boolean))].sort();
+    const citySelect = document.getElementById('city-filter');
+    cities.forEach(city => {
+      const opt = document.createElement('option');
+      opt.value = city;
+      opt.textContent = city;
+      citySelect.appendChild(opt);
+    });
+
+    renderGrid(allCourses);
+  } catch (e) {
+    document.getElementById('loading-state').classList.add('hidden');
+    document.getElementById('count-banner').textContent = 'TrackPass partner courses';
+    document.getElementById('no-partners-state').classList.remove('hidden');
+  }
+}
+
+function renderGrid(courses) {
+  const grid = document.getElementById('courses-grid');
+  const empty = document.getElementById('empty-state');
+
+  if (courses.length === 0) {
+    grid.innerHTML = '';
+    empty.classList.remove('hidden');
+    return;
+  }
+
+  empty.classList.add('hidden');
+  grid.innerHTML = courses.map(c => `
+    <div class="course-card bg-white rounded-2xl p-5 border border-outline-variant/20 shadow-sm">
+      <div class="flex items-start justify-between mb-3">
+        <span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings:'FILL' 1;">golf_course</span>
+        <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+          <span class="material-symbols-outlined text-xs" style="font-variation-settings:'FILL' 1;">check_circle</span> Partner
+        </span>
+      </div>
+      <h3 class="font-semibold text-primary text-base mb-1 leading-snug" style="font-family:Sora,sans-serif;">${escHtml(c.name || '')}</h3>
+      <p class="text-on-surface-variant text-sm mb-4 flex items-center gap-1">
+        <span class="material-symbols-outlined text-sm">location_on</span>
+        ${escHtml(c.city || '')}${c.city ? ', TX' : ''}
+      </p>
+      <a href="${escHtml(c.checkInUrl || '#')}"
+        class="inline-block w-full text-center bg-surface-container-low text-primary rounded-xl py-2.5 text-sm font-semibold hover:bg-primary hover:text-white transition-all">
+        Check in here
+      </a>
+    </div>
+  `).join('');
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// Filter logic
+function applyFilters() {
+  const q = document.getElementById('search-input').value.toLowerCase().trim();
+  const city = document.getElementById('city-filter').value;
+  const filtered = allCourses.filter(c => {
+    const matchQ = !q || String(c.name || '').toLowerCase().includes(q) || String(c.city || '').toLowerCase().includes(q);
+    const matchCity = !city || c.city === city;
+    return matchQ && matchCity;
+  });
+  renderGrid(filtered);
+}
+
+document.getElementById('search-input').addEventListener('input', applyFilters);
+document.getElementById('city-filter').addEventListener('change', applyFilters);
+
+loadCourses();
+</script>
+</body>
+</html>

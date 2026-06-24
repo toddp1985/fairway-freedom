@@ -110,4 +110,9 @@
   <url><loc>https://trackpassgolf.com/blog/cheapest-golf-in-texas-2026.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-23</lastmod></url>
   <url><loc>https://trackpassgolf.com/blog/austin-municipal-golf-guide.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-23</lastmod></url>
   <url><loc>https://trackpassgolf.com/blog/how-to-play-more-golf-for-less-texas.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-23</lastmod></url>
+  <url>
+    <loc>https://trackpassgolf.com/network.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
