@@ -178,7 +178,7 @@ window.TRACKPASS_COURSES = [
     "fee": 40,
     "lat": 32.752,
     "lng": -96.852,
-    "photo": null,
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Stevens_Park_Golf_Course_In_2023.jpg",
     "tags": [
       "Historic"
     ],
