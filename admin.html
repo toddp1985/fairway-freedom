@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="theme-color" content="#16412b"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Admin Dashboard — TrackPass</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "inverse-on-surface": "#d4fae2","on-primary-container": "#80ad90","on-primary-fixed": "#002111","surface-container-lowest": "#ffffff","on-tertiary-container": "#5fb482","tertiary-fixed": "#9ef5be","secondary-fixed": "#ffdea8","surface-off-white": "#FAF9F4","sky-blue": "#C2E1F2","on-secondary": "#ffffff","on-error": "#ffffff","on-tertiary-fixed": "#002110","error-container": "#ffdad6","on-surface-variant": "#414943","error": "#ba1a1a","surface-container-high": "#cbf1da","secondary-container": "#fdc65e","on-background": "#002113","primary-fixed-dim": "#a3d1b3","surface-container": "#d1f7e0","on-secondary-container": "#745200","on-primary": "#ffffff","tertiary-fixed-dim": "#82d8a3","on-tertiary": "#ffffff","deep-forest": "#103223","primary": "#002a17","surface-container-low": "#d6fde5","on-tertiary-fixed-variant": "#00522f","surface": "#e8ffef","on-error-container": "#93000a","secondary": "#7c5800","primary-fixed": "#bfedce","inverse-primary": "#a3d1b3","tertiary-container": "#004326","on-surface": "#002113","surface-dim": "#bde3cc","surface-variant": "#c6ebd5","on-secondary-fixed-variant": "#5e4200","on-secondary-fixed": "#271900","inverse-surface": "#153627","primary-container": "#16412b","surface-bright": "#e8ffef","tertiary": "#002b16","outline-variant": "#c1c8c1"
+      },
+      borderRadius: {"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},
+      spacing: {"gutter":"24px","unit":"8px","margin-desktop":"40px","margin-mobile":"20px","container-max":"1200px"},
+      fontFamily: {"body-md":["Manrope"],"headline-lg-mobile":["Sora"],"headline-md":["Sora"],"display-lg":["Sora"],"body-lg":["Manrope"],"display-lg-mobile":["Sora"],"label-sm":["Manrope"],"label-lg":["Manrope"],"headline-lg":["Sora"]},
+      fontSize: {
+        "body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-lg-mobile":["36px",{"lineHeight":"42px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}]
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: Manrope, sans-serif; }
+  .skeleton { background: linear-gradient(90deg, #1e4a35 25%, #26573f 50%, #1e4a35 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 6px; }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+  table { border-collapse: collapse; width: 100%; }
+  thead th { background: #0d2a1c; color: #a3d1b3; font-family: Manrope, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px 16px; text-align: left; }
+  tbody tr { border-bottom: 1px solid #1e3d2a; transition: background 0.15s; }
+  tbody tr:hover { background: #1a3828; }
+  tbody td { padding: 12px 16px; color: #d4fae2; font-size: 14px; }
+</style>
+</head>
+<body class="bg-deep-forest text-white min-h-screen" style="display:none;">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-primary shadow-lg h-16 px-5 md:px-margin-desktop">
+  <div class="max-w-container-max mx-auto flex justify-between items-center h-full">
+    <a href="index.html" class="font-headline-md text-white tracking-tight" style="font-family: Sora, sans-serif; font-weight: 700; font-size: 20px;">TrackPass</a>
+    <span class="text-sm font-semibold text-primary-fixed-dim tracking-widest uppercase" style="font-family: Manrope, sans-serif;">Admin</span>
+  </div>
+</nav>
+
+<!-- Main content -->
+<main class="pt-24 pb-16 px-5 md:px-margin-desktop max-w-container-max mx-auto">
+
+  <!-- Page title -->
+  <h1 class="text-white mb-8" style="font-family: Sora, sans-serif; font-size: 32px; font-weight: 700; line-height: 40px;">Admin Dashboard</h1>
+
+  <!-- Summary stats row -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+    <div class="rounded-xl p-6" style="background:#0d2a1c;">
+      <div id="stat-members" class="text-4xl font-bold text-white mb-1" style="font-family: Sora, sans-serif;">
+        <span class="skeleton inline-block w-12 h-9">&nbsp;</span>
+      </div>
+      <div class="text-sm text-primary-fixed-dim font-semibold tracking-wide" style="font-family: Manrope, sans-serif;">Members</div>
+    </div>
+    <div class="rounded-xl p-6" style="background:#0d2a1c;">
+      <div id="stat-courses" class="text-4xl font-bold text-white mb-1" style="font-family: Sora, sans-serif;">
+        <span class="skeleton inline-block w-12 h-9">&nbsp;</span>
+      </div>
+      <div class="text-sm text-primary-fixed-dim font-semibold tracking-wide" style="font-family: Manrope, sans-serif;">Partner Courses</div>
+    </div>
+    <div class="rounded-xl p-6" style="background:#0d2a1c;">
+      <div id="stat-reimbursements" class="text-4xl font-bold text-white mb-1" style="font-family: Sora, sans-serif;">
+        <span class="skeleton inline-block w-12 h-9">&nbsp;</span>
+      </div>
+      <div class="text-sm text-primary-fixed-dim font-semibold tracking-wide" style="font-family: Manrope, sans-serif;">Reimbursements This Month</div>
+    </div>
+    <div class="rounded-xl p-6" style="background:#0d2a1c;">
+      <div id="stat-waitlist" class="text-4xl font-bold text-white mb-1" style="font-family: Sora, sans-serif;">
+        <span class="skeleton inline-block w-12 h-9">&nbsp;</span>
+      </div>
+      <div class="text-sm text-primary-fixed-dim font-semibold tracking-wide" style="font-family: Manrope, sans-serif;">Waitlist Signups</div>
+    </div>
+  </div>
+
+  <!-- Member list table -->
+  <section class="mb-10">
+    <h2 class="text-white mb-4" style="font-family: Sora, sans-serif; font-size: 22px; font-weight: 600;">Members</h2>
+    <div class="rounded-xl overflow-hidden" style="background:#0d2a1c;">
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Member ID</th>
+              <th>Joined</th>
+              <th>Valid Through</th>
+              <th>Reimbursements Used</th>
+            </tr>
+          </thead>
+          <tbody id="members-tbody">
+            <tr><td colspan="6" class="text-center text-primary-fixed-dim py-6">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner courses table -->
+  <section class="mb-10">
+    <h2 class="text-white mb-4" style="font-family: Sora, sans-serif; font-size: 22px; font-weight: 600;">Partner Courses</h2>
+    <div class="rounded-xl overflow-hidden" style="background:#0d2a1c;">
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>City</th>
+              <th>Email</th>
+              <th>Joined Date</th>
+            </tr>
+          </thead>
+          <tbody id="courses-tbody">
+            <tr><td colspan="4" class="text-center text-primary-fixed-dim py-6">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reimbursements table -->
+  <section class="mb-10">
+    <h2 class="text-white mb-4" style="font-family: Sora, sans-serif; font-size: 22px; font-weight: 600;">Reimbursements</h2>
+    <div class="rounded-xl overflow-hidden" style="background:#0d2a1c;">
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Member ID</th>
+              <th>Member Email</th>
+              <th>Course</th>
+              <th>Month</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="reimbursements-tbody">
+            <tr><td colspan="5" class="text-center text-primary-fixed-dim py-6">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist count line -->
+  <p id="waitlist-line" class="text-primary-fixed-dim text-base" style="font-family: Manrope, sans-serif;"></p>
+
+</main>
+
+<script>
+const WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';
+const TOKEN  = 'trackpass-admin-2026';
+
+// Auth gate — runs before body is shown
+(function authGate() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('token') !== TOKEN) {
+    window.location.replace('index.html');
+    return;
+  }
+  document.body.style.display = '';
+})();
+
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function fmt(dateStr) {
+  if (!dateStr) return '—';
+  return String(dateStr).slice(0, 10);
+}
+
+async function adminFetch(path) {
+  const res = await fetch(WORKER + path, { headers: { 'X-Admin-Token': TOKEN } });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+async function loadMembers() {
+  try {
+    const data = await adminFetch('/admin/members');
+    const members = Array.isArray(data) ? data : (data.members || []);
+    document.getElementById('stat-members').textContent = members.length;
+    const tbody = document.getElementById('members-tbody');
+    if (members.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="text-center text-primary-fixed-dim py-6">No members yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = members.map(m => `
+      <tr>
+        <td>${esc(m.name || (m.first_name ? m.first_name + ' ' + (m.last_name || '') : ''))}</td>
+        <td>${esc(m.email)}</td>
+        <td><span class="font-mono text-xs">${esc(m.id || m.member_id)}</span></td>
+        <td>${fmt(m.since || m.created_at || m.joined)}</td>
+        <td>${fmt(m.valid_through || m.expires_at || m.expiry)}</td>
+        <td class="text-center">${esc(m.reimbursements_used ?? m.reimb_used ?? '0')}</td>
+      </tr>`).join('');
+  } catch (e) {
+    document.getElementById('stat-members').textContent = 'Err';
+    document.getElementById('members-tbody').innerHTML =
+      '<tr><td colspan="6" class="text-center text-error py-6">Failed to load members.</td></tr>';
+  }
+}
+
+async function loadCourses() {
+  try {
+    const data = await adminFetch('/admin/courses');
+    const courses = Array.isArray(data) ? data : (data.courses || []);
+    document.getElementById('stat-courses').textContent = courses.length;
+    const tbody = document.getElementById('courses-tbody');
+    if (courses.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="4" class="text-center text-primary-fixed-dim py-6">No courses yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = courses.map(c => `
+      <tr>
+        <td>${esc(c.name || c.course_name)}</td>
+        <td>${esc(c.city)}</td>
+        <td>${esc(c.email)}</td>
+        <td>${fmt(c.joined || c.created_at || c.since)}</td>
+      </tr>`).join('');
+  } catch (e) {
+    document.getElementById('stat-courses').textContent = 'Err';
+    document.getElementById('courses-tbody').innerHTML =
+      '<tr><td colspan="4" class="text-center text-error py-6">Failed to load courses.</td></tr>';
+  }
+}
+
+async function loadReimbursements() {
+  try {
+    const data = await adminFetch('/admin/reimbursements');
+    const items = Array.isArray(data) ? data : (data.reimbursements || []);
+    document.getElementById('stat-reimbursements').textContent = items.length;
+    const tbody = document.getElementById('reimbursements-tbody');
+    if (items.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="text-center text-primary-fixed-dim py-6">No reimbursements yet.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = items.map(r => `
+      <tr>
+        <td><span class="font-mono text-xs">${esc(r.member_id || r.memberId)}</span></td>
+        <td>${esc(r.member_email || r.email)}</td>
+        <td>${esc(r.course || r.course_name)}</td>
+        <td>${esc(r.month)}</td>
+        <td><span class="px-2 py-0.5 rounded-full text-xs font-semibold" style="background:#1e3d2a;color:#a3d1b3;">${esc(r.status)}</span></td>
+      </tr>`).join('');
+  } catch (e) {
+    document.getElementById('stat-reimbursements').textContent = 'Err';
+    document.getElementById('reimbursements-tbody').innerHTML =
+      '<tr><td colspan="5" class="text-center text-error py-6">Failed to load reimbursements.</td></tr>';
+  }
+}
+
+async function loadWaitlist() {
+  try {
+    const data = await fetch(WORKER + '/waitlist/count').then(r => r.json());
+    const count = typeof data === 'number' ? data : (data.count ?? data.total ?? '?');
+    document.getElementById('stat-waitlist').textContent = count;
+    document.getElementById('waitlist-line').textContent = count + ' signups on the waitlist';
+  } catch (e) {
+    document.getElementById('stat-waitlist').textContent = 'Err';
+    document.getElementById('waitlist-line').textContent = 'Could not load waitlist count.';
+  }
+}
+
+// Run all fetches in parallel
+Promise.all([loadMembers(), loadCourses(), loadReimbursements(), loadWaitlist()]);
+</script>
+</body>
+</html>

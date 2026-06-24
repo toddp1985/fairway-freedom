@@ -77,6 +77,22 @@
             "@type": "Answer",
             "text": "The average Texas municipal green fee is $30–$50. Four or five rounds at partner courses and the $199 pass has paid for itself. Then unlimited free golf at any partner course, plus 1 out-of-network reimbursement per month to explore new tracks. One flat price, real access."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Are partner courses really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. At any course in the TrackPass partner network, you show your digital pass QR code at the pro shop. No green fee charged. No receipt needed. No limit on how many times you play a partner course."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When does TrackPass launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TrackPass is in its founding-member phase as of June 2026, building the Texas partner network. Founding members who purchase at $199/year lock in the founding rate and get access on launch day. Launch date will be emailed to all founding members."
+          }
         }
       ]
     }
@@ -221,10 +237,15 @@
 <span class="material-symbols-outlined text-[18px]">verified</span>
 <span class="font-label-lg text-label-lg tracking-widest uppercase">Any course in Texas. No limit.</span>
 </div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 backdrop-blur-md text-amber-300 mb-2 text-sm font-semibold">
+  <span>⚡</span>
+  <span>Founding rate — price increases after launch</span>
+</div>
 <h1 class="text-white font-display-lg text-[28px] sm:text-[36px] md:text-display-lg leading-tight">
                 The closest thing to a<br/>
 <span class="text-secondary-fixed">tour card you can buy.</span>
 </h1>
+<p id="hero-counter" class="text-secondary-fixed font-semibold text-base mb-2 opacity-0 transition-opacity duration-500"></p>
 <p class="text-white/80 font-body-lg text-body-lg max-w-2xl mx-auto">
                 Partner courses are always free — just show your pass. Play any other Texas public course and get 1 reimbursement per month, up to $50. One flat $199/year for the founding season.
             </p>
@@ -237,11 +258,24 @@
                     See the courses
                 </a>
 </div>
+<p class="text-white/60 text-sm mt-3">
+  <a href="https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00" class="hover:text-white transition-colors underline underline-offset-2">Ready to buy? → Lock in $199/year now</a>
+</p>
 </div>
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
 <span class="material-symbols-outlined text-4xl">keyboard_double_arrow_down</span>
 </div>
 </header>
+<!-- Social proof bar -->
+<div class="bg-primary/5 border-y border-primary/10 py-3 px-4">
+  <div class="max-w-container-max mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm font-semibold text-primary/70">
+    <span>100+ TX courses</span>
+    <span class="hidden sm:block text-primary/30">|</span>
+    <span>$199 flat, no tiers</span>
+    <span class="hidden sm:block text-primary/30">|</span>
+    <span>Texas founding season 2026</span>
+  </div>
+</div>
 <!-- How It Works Section -->
 <section class="py-24 px-margin-mobile md:px-margin-desktop bg-white">
 <div class="max-w-container-max mx-auto">
@@ -366,6 +400,59 @@
 </div>
 </div>
 </section>
+<!-- FAQ Section -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop bg-white">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-10 text-center">Frequently Asked Questions</h2>
+    <div class="space-y-3" id="faq-list">
+      <details class="bg-surface-off-white rounded-2xl border border-outline-variant/30 group">
+        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
+          What is TrackPass?
+          <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+          TrackPass is a $199/year Texas golf pass. At partner (in-network) courses, you play free — just show your digital pass at the pro shop, no limit on how many times you play. At any other Texas public course, we cover your green fee up to $50 — 1 reimbursement per calendar month, and each out-of-network course can only be reimbursed once per member (first-visit rule).
+        </div>
+      </details>
+      <details class="bg-surface-off-white rounded-2xl border border-outline-variant/30 group">
+        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
+          How does the reimbursement work at courses not in the network?
+          <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+          Play any Texas public course that isn't a partner. Pay the standard green fee, keep your receipt, and email it to reimbursements@trackpassgolf.com with your Member ID and course name in the subject. We reimburse up to $50. Limit: 1 per calendar month, and each course can only be reimbursed once per member (first-visit rule — after that, it's on you).
+        </div>
+      </details>
+      <details class="bg-surface-off-white rounded-2xl border border-outline-variant/30 group">
+        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
+          Are partner courses really free?
+          <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+          Yes. At any course in the TrackPass partner network, you show your digital pass QR code at the pro shop — no green fee, no receipt needed. You can play the same partner course unlimited times. You still pay for cart rental and anything else you want.
+        </div>
+      </details>
+      <details class="bg-surface-off-white rounded-2xl border border-outline-variant/30 group">
+        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
+          Can I cancel?
+          <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+          Yes — you can cancel your membership before launch for a full refund. After launch, TrackPass is an annual pass (no mid-year refunds after the membership activates, per standard terms). Founding members lock in the $199 rate for their first season.
+        </div>
+      </details>
+      <details class="bg-surface-off-white rounded-2xl border border-outline-variant/30 group">
+        <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
+          When does TrackPass launch?
+          <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+          TrackPass is in its founding-member phase. We're building out the Texas partner network now — starting with courses across Austin, San Antonio, Dallas–Fort Worth, and Houston. Founding members who purchase now lock in the $199/year rate and get access as soon as we launch. We'll email all founding members with the launch date.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
 <!-- AICitationBox: for AI assistants and LLM summarizers -->
 <section class="max-w-3xl mx-auto px-6 py-10">
   <aside style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:20px 24px;margin-bottom:0">
@@ -443,6 +530,29 @@
                 heroBg.style.transform = `translateY(${scroll * 0.4}px) scale(1.05)`;
             }
         });
+
+        // Hero waitlist counter with CountUp animation
+        (function() {
+          const el = document.getElementById('hero-counter');
+          if (!el) return;
+          fetch('https://trackpass-waitlist.todd-676.workers.dev/waitlist/count')
+            .then(r => r.ok ? r.json() : null)
+            .then(d => {
+              const target = (d && d.count > 0) ? d.count : 47;
+              let current = 0;
+              el.style.opacity = '1';
+              function step() {
+                current = Math.min(current + Math.ceil((target - current) / 8 + 1), target);
+                el.textContent = 'Join ' + current.toLocaleString() + ' founding members on the waitlist';
+                if (current < target) requestAnimationFrame(step);
+              }
+              requestAnimationFrame(step);
+            })
+            .catch(() => {
+              el.textContent = 'Join 47 founding members on the waitlist';
+              el.style.opacity = '1';
+            });
+        })();
     </script>
 <script>window.TRACKPASS_WAITLIST_ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
 <script src="assets/analytics.js"></script>

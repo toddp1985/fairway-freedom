@@ -8,6 +8,14 @@
 (function () {
   const ENDPOINT = window.TRACKPASS_WAITLIST_ENDPOINT || null;
 
+  // Capture ?ref= from URL and store in localStorage
+  (function() {
+    try {
+      const ref = new URLSearchParams(window.location.search).get('ref');
+      if (ref) localStorage.setItem('tp_ref', ref);
+    } catch(_) {}
+  })();
+
   const css = `
   .tp-wl-overlay{position:fixed;inset:0;background:rgba(8,24,16,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:9999;padding:1rem}
   .tp-wl-overlay.open{display:flex}
@@ -123,6 +131,7 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
+    try { const ref = localStorage.getItem('tp_ref'); if (ref) data.ref = ref; } catch(_) {}
     const email = (data.email || "").trim();
     msg.className = "tp-wl-msg";
     msg.textContent = "";

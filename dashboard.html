@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#16412b" />
 <title>My Pass — TrackPass Member Card</title>
 <meta name="description" content="Your TrackPass virtual member card. Show this at the pro shop to play free at partner courses." />
-<meta name="robots" content="noindex" />
+<meta name="robots" content="noindex, nofollow" />
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
@@ -301,6 +301,32 @@ tailwind.config = {
     </div>
   </div>
 
+  <!-- Reimbursement History -->
+  <section id="reimb-history" class="bg-white rounded-3xl border border-outline-variant/20 shadow-sm mb-4 overflow-hidden">
+    <div class="px-5 py-4 border-b border-outline-variant/20">
+      <h3 class="font-semibold text-primary" style="font-family: Sora, sans-serif;">Reimbursement History</h3>
+    </div>
+    <div id="reimb-history-content" class="px-5 py-4">
+      <p class="text-sm text-on-surface-variant">Loading...</p>
+    </div>
+  </section>
+
+  <!-- Referral / Invite -->
+  <section class="bg-white rounded-3xl border border-outline-variant/20 shadow-sm mb-4 overflow-hidden">
+    <div class="px-5 py-4 border-b border-outline-variant/20">
+      <h3 class="font-semibold text-primary" style="font-family: Sora, sans-serif;">Invite a Friend</h3>
+    </div>
+    <div class="px-5 py-4">
+      <p class="text-sm text-on-surface-variant mb-3">Share your link — each friend who joins helps build the TrackPass community.</p>
+      <div id="referral-link-wrap" class="flex items-center gap-2 mb-3">
+        <input id="referral-link" type="text" readonly class="flex-1 px-3 py-2 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface text-sm font-mono" value="https://trackpassgolf.com/?ref=..." />
+        <button onclick="copyReferralLink()" class="px-4 py-2 bg-primary text-white rounded-xl text-sm font-semibold hover:bg-deep-forest transition-colors active:scale-95">Copy</button>
+      </div>
+      <p id="referral-copy-msg" class="text-xs text-on-surface-variant h-4 mb-2"></p>
+      <p id="referral-count" class="text-sm text-on-surface-variant"></p>
+    </div>
+  </section>
+
 </div>
 
 <!-- Mobile bottom nav -->
@@ -389,9 +415,28 @@ async function init() {
     localStorage.setItem('tp_member_id', memberId);
     renderCard(data);
     showState('card');
+    // Welcome banner for ?session_id= (post-Stripe redirect)
+    const hasSession = sessionId || params.get('welcome');
+    if (hasSession) {
+      showWelcomeBanner();
+    }
   } catch (err) {
     showState('error');
   }
+}
+
+function showWelcomeBanner() {
+  const existing = document.getElementById('welcome-banner');
+  if (existing) return;
+  const banner = document.createElement('div');
+  banner.id = 'welcome-banner';
+  banner.className = 'fixed top-0 left-0 right-0 z-50 bg-[#16412b] text-white text-center py-3 px-4 text-sm font-semibold shadow-lg';
+  banner.innerHTML = "You're in — welcome to TrackPass! Your founding-member card is below. <button onclick=\"document.getElementById('welcome-banner').remove()\" class=\"ml-3 text-white/70 hover:text-white text-xs underline\">Dismiss</button>";
+  document.body.prepend(banner);
+  setTimeout(() => {
+    const card = document.getElementById('state-card');
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 300);
 }
 
 async function findByEmail(email, msgId) {
@@ -452,6 +497,8 @@ function renderCard(m) {
 
   // Reimbursements
   renderReimbursement(m);
+  loadReimbursementHistory(m.id);
+  setupReferral(m.id);
 }
 
 function renderReimbursement(m) {
@@ -613,6 +660,48 @@ function shareCard() {
     document.body.removeChild(ta);
     msg.textContent = 'Link copied';
     setTimeout(() => msg.textContent = '', 2500);
+  }
+}
+
+async function loadReimbursementHistory(memberId) {
+  const el = document.getElementById('reimb-history-content');
+  if (!el) return;
+  try {
+    const res = await fetch(`${window.TRACKPASS_WORKER}/member/${memberId}/reimbursements`);
+    if (!res.ok) throw new Error('failed');
+    const d = await res.json();
+    const used = d.usedThisMonth || 0;
+    const courses = d.coursesVisited || [];
+    el.innerHTML = `<p class="text-sm font-semibold text-primary mb-2">${used} of 1 reimbursement used this month</p>` +
+      (courses.length ? `<ul class="text-sm text-on-surface-variant space-y-1">${courses.map(c => `<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-secondary">golf_course</span>${c}</li>`).join('')}</ul>` : `<p class="text-sm text-on-surface-variant">No courses reimbursed this month.</p>`);
+  } catch {
+    el.innerHTML = '<p class="text-sm text-on-surface-variant">Could not load history.</p>';
+  }
+}
+
+function setupReferral(memberId) {
+  const link = `https://trackpassgolf.com/?ref=${memberId}`;
+  const input = document.getElementById('referral-link');
+  if (input) input.value = link;
+  const countEl = document.getElementById('referral-count');
+  if (countEl && memberData && memberData.referrals) {
+    countEl.textContent = `${memberData.referrals} friend${memberData.referrals !== 1 ? 's' : ''} referred`;
+  }
+}
+
+function copyReferralLink() {
+  const input = document.getElementById('referral-link');
+  const msg = document.getElementById('referral-copy-msg');
+  if (!input) return;
+  const text = input.value;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      if (msg) { msg.textContent = 'Link copied!'; setTimeout(() => msg.textContent = '', 2500); }
+    });
+  } else {
+    input.select();
+    document.execCommand('copy');
+    if (msg) { msg.textContent = 'Link copied!'; setTimeout(() => msg.textContent = '', 2500); }
   }
 }
 

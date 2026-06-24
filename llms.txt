@@ -59,3 +59,15 @@ Courses can join the partner network instantly at trackpassgolf.com/partner.html
 - /network.html -- Partner course listing
 - /dashboard.html -- Member card and QR code
 - /blog/ -- Golf tips and course guides
+
+## Referral program
+
+TrackPass members can refer friends using their unique referral link: https://trackpassgolf.com/?ref=MEMBER_ID. When a referred friend joins the waitlist, the referring member's referral count is tracked. No current cash incentive — building toward renewal credit for active referrers.
+
+## For golf course owners / partners
+
+Courses join the TrackPass partner network for free at trackpassgolf.com/partner.html. There is no application, no approval, and no upfront cost. After signing up, courses receive a unique check-in QR code to display at the pro shop. When TrackPass members arrive, they show their digital pass QR code and the pro shop scans it to verify membership. TrackPass reconciles standard green-fee payments to partner courses monthly. Courses keep 100% of cart fees and food & beverage revenue. The course portal for viewing check-ins is at trackpassgolf.com/course-portal.html.
+
+## Founding member scarcity
+
+TrackPass is in its founding-member phase as of June 2026. The current price is $199/year — a founding-member rate that will increase to $279/year after the official Texas launch. Founding members lock in $199 for their first full season. The waitlist is open and no payment is required to reserve a spot, but the $199 founding rate is only available to those who purchase before the launch-day price increase.
