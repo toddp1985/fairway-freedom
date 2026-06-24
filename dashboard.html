@@ -1,367 +1,613 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en"><head>
+<html class="scroll-smooth" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="theme-color" content="#16412b" />
-<title>My Pass — TrackPass | Texas Founding Member</title>
-<meta name="description" content="Your TrackPass member dashboard — show your pass at partner courses, track rounds, and submit green-fee receipts for reimbursement up to $50/round at any Texas public course." />
-<link rel="canonical" href="https://trackpassgolf.com/dashboard.html" />
+<title>My Pass — TrackPass Member Card</title>
+<meta name="description" content="Your TrackPass virtual member card. Show this at the pro shop to play free at partner courses." />
 <meta name="robots" content="noindex" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="My Pass — TrackPass" />
-<meta property="og:site_name" content="TrackPass" />
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Manrope:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "inverse-on-surface": "#d4fae2",
-                        "on-primary-container": "#80ad90",
-                        "on-primary-fixed": "#002111",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary-container": "#5fb482",
-                        "tertiary-fixed": "#9ef5be",
-                        "secondary-fixed": "#ffdea8",
-                        "surface-off-white": "#FAF9F4",
-                        "sky-blue": "#C2E1F2",
-                        "on-secondary": "#ffffff",
-                        "on-error": "#ffffff",
-                        "on-tertiary-fixed": "#002110",
-                        "error-container": "#ffdad6",
-                        "on-surface-variant": "#414943",
-                        "error": "#ba1a1a",
-                        "surface-container-high": "#cbf1da",
-                        "secondary-container": "#fdc65e",
-                        "on-background": "#002113",
-                        "primary-fixed-dim": "#a3d1b3",
-                        "surface-container": "#d1f7e0",
-                        "on-secondary-container": "#745200",
-                        "on-primary": "#ffffff",
-                        "tertiary-fixed-dim": "#82d8a3",
-                        "on-tertiary": "#ffffff",
-                        "deep-forest": "#103223",
-                        "primary": "#002a17",
-                        "surface-container-low": "#d6fde5",
-                        "on-tertiary-fixed-variant": "#00522f",
-                        "surface": "#e8ffef",
-                        "on-error-container": "#93000a",
-                        "secondary": "#7c5800",
-                        "primary-fixed": "#bfedce",
-                        "inverse-primary": "#a3d1b3",
-                        "tertiary-container": "#004326",
-                        "on-surface": "#002113",
-                        "surface-dim": "#bde3cc",
-                        "surface-variant": "#c6ebd5",
-                        "on-secondary-fixed-variant": "#5e4200",
-                        "on-secondary-fixed": "#271900",
-                        "inverse-surface": "#153627",
-                        "primary-container": "#16412b",
-                        "surface-bright": "#e8ffef",
-                        "tertiary": "#002b16",
-                        "outline-variant": "#c1c8c1"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "gutter": "24px",
-                        "unit": "8px",
-                        "margin-desktop": "40px",
-                        "margin-mobile": "20px",
-                        "container-max": "1200px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Manrope"],
-                        "headline-lg-mobile": ["Sora"],
-                        "headline-md": ["Sora"],
-                        "display-lg": ["Sora"],
-                        "body-lg": ["Manrope"],
-                        "display-lg-mobile": ["Sora"],
-                        "label-sm": ["Manrope"],
-                        "label-lg": ["Manrope"],
-                        "headline-lg": ["Sora"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
-                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
-                    }
-                },
-            },
-        }
-    </script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "inverse-on-surface": "#d4fae2",
+        "on-primary-container": "#80ad90",
+        "on-primary-fixed": "#002111",
+        "surface-container-lowest": "#ffffff",
+        "on-tertiary-container": "#5fb482",
+        "tertiary-fixed": "#9ef5be",
+        "secondary-fixed": "#ffdea8",
+        "surface-off-white": "#FAF9F4",
+        "sky-blue": "#C2E1F2",
+        "on-secondary": "#ffffff",
+        "on-error": "#ffffff",
+        "on-tertiary-fixed": "#002110",
+        "error-container": "#ffdad6",
+        "on-surface-variant": "#414943",
+        "error": "#ba1a1a",
+        "surface-container-high": "#cbf1da",
+        "secondary-container": "#fdc65e",
+        "on-background": "#002113",
+        "primary-fixed-dim": "#a3d1b3",
+        "surface-container": "#d1f7e0",
+        "on-secondary-container": "#745200",
+        "on-primary": "#ffffff",
+        "tertiary-fixed-dim": "#82d8a3",
+        "on-tertiary": "#ffffff",
+        "deep-forest": "#103223",
+        "primary": "#002a17",
+        "surface-container-low": "#d6fde5",
+        "on-tertiary-fixed-variant": "#00522f",
+        "surface": "#e8ffef",
+        "on-error-container": "#93000a",
+        "secondary": "#7c5800",
+        "primary-fixed": "#bfedce",
+        "inverse-primary": "#a3d1b3",
+        "tertiary-container": "#004326",
+        "on-surface": "#002113",
+        "surface-dim": "#bde3cc",
+        "surface-variant": "#c6ebd5",
+        "on-secondary-fixed-variant": "#5e4200",
+        "on-secondary-fixed": "#271900",
+        "inverse-surface": "#153627",
+        "primary-container": "#16412b",
+        "surface-bright": "#e8ffef",
+        "tertiary": "#002b16",
+        "outline-variant": "#c1c8c1"
+      },
+      "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+      "spacing": { "gutter": "24px", "unit": "8px", "margin-desktop": "40px", "margin-mobile": "20px", "container-max": "1200px" },
+      "fontFamily": { "body-md": ["Manrope"], "headline-lg-mobile": ["Sora"], "headline-md": ["Sora"], "display-lg": ["Sora"], "body-lg": ["Manrope"], "display-lg-mobile": ["Sora"], "label-sm": ["Manrope"], "label-lg": ["Manrope"], "headline-lg": ["Sora"] },
+      "fontSize": {
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+      }
+    }
+  }
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .pass-gradient {
-            background: linear-gradient(135deg, #103223 0%, #002a17 100%);
-        }
-        .qr-glow {
-            box-shadow: 0 0 20px rgba(253, 198, 94, 0.3);
-        }
-    </style>
-
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+.pass-card {
+  background: linear-gradient(135deg, #002a17 0%, #16412b 60%, #103223 100%);
+}
+.card-shine {
+  background: linear-gradient(135deg, rgba(253,198,94,0.08) 0%, transparent 50%, rgba(255,255,255,0.04) 100%);
+}
+.qr-glow {
+  box-shadow: 0 0 24px rgba(253,198,94,0.25), 0 2px 8px rgba(0,0,0,0.12);
+}
+#qr-code canvas, #qr-code img { display: block; }
+</style>
 </head>
-<body class="bg-surface-off-white font-body-md text-on-surface">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface-off-white/80 backdrop-blur-xl shadow-sm">
-<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<span class="font-display-lg text-display-lg-mobile md:text-display-lg tracking-tight text-primary">TrackPass</span>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="courses.html">Find Courses</a>
-<a class="text-primary font-bold border-b-2 border-secondary font-body-md transition-all duration-200 active:scale-95" href="dashboard.html">My Pass</a>
-<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="plans.html">Membership</a>
-<a class="text-on-surface-variant font-body-md hover:text-secondary transition-colors duration-300" href="#">Support</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-primary p-2 transition-all duration-200 active:scale-95">notifications</button>
-<div class="h-10 w-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed font-bold">JD</div>
-</div>
-</div>
-</nav>
-<main class="pt-28 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto min-h-screen">
-<!-- Preview banner: this is a product UI preview with sample data, not a live account -->
-<div class="mb-8 flex items-center gap-3 bg-secondary-container/60 text-on-secondary-container px-5 py-3 rounded-2xl font-label-lg text-label-lg">
-<span class="material-symbols-outlined">visibility</span>
-<span>Member dashboard preview — sample data shown. Your real pass activates when TrackPass launches. <a href="plans.html" class="underline font-bold">Join the founding list →</a></span>
-</div>
-<!-- Hero Identity Section -->
-<header class="mb-12">
-<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Your TrackPass, ready when you are</h1>
-<p class="text-on-surface-variant font-body-lg">A preview of your founding-member dashboard • $199/yr benefits</p>
-</header>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-<!-- Digital Pass Card (Main Anchor) -->
-<div class="md:col-span-5 lg:col-span-4">
-<div class="pass-gradient rounded-[2rem] p-8 text-white relative overflow-hidden shadow-2xl transition-transform hover:scale-[1.02] duration-500">
-<!-- Decorative Element -->
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-<div class="flex justify-between items-start mb-8">
-<div>
-<p class="font-label-lg uppercase tracking-widest text-secondary-fixed mb-1">TrackPass Founding Member</p>
-<h2 class="font-headline-md text-headline-md">Julian D. Silva</h2>
-</div>
-<span class="material-symbols-outlined text-secondary-fixed text-4xl">verified</span>
-</div>
-<div class="flex justify-center mb-6">
-<div class="bg-white p-4 rounded-2xl qr-glow transition-transform hover:rotate-1">
-<img class="w-32 h-32 md:w-40 md:h-40" data-alt="A high-contrast minimalist QR code graphic centered on a clean white background, framed by a subtle gold border. The design reflects a premium digital identity card for an exclusive golf club, using a palette of deep forest green and antique gold accents. The lighting is soft and uniform, creating a sophisticated and professional tech-forward aesthetic." src="assets/img/img_d1f30619184d.jpg"/>
-</div>
-</div>
-<p class="text-center text-secondary-fixed font-label-lg mb-8">Show this at any partner pro shop to play free.</p>
-<div class="flex justify-between items-end">
-<div>
-<p class="text-on-primary-container text-label-sm uppercase mb-1">Pass ID</p>
-<p class="font-mono text-body-md">TP-8829-001X</p>
-</div>
-<div class="text-right">
-<p class="text-on-primary-container text-label-sm uppercase mb-1">Valid Thru</p>
-<p class="font-body-md">2027 Season</p>
-</div>
-</div>
-</div>
-<!-- Quick Actions -->
-<div class="mt-8 grid grid-cols-2 gap-4">
-<button class="flex flex-col items-center justify-center bg-deep-forest text-white p-6 rounded-3xl transition-all duration-300 hover:shadow-lg active:scale-95 group">
-<span class="material-symbols-outlined mb-2 text-3xl text-secondary-fixed group-hover:scale-110 transition-transform">add_circle</span>
-<span class="font-label-lg">Book Round</span>
-</button>
-<button class="flex flex-col items-center justify-center bg-white border-2 border-primary/10 text-primary p-6 rounded-3xl transition-all duration-300 hover:border-secondary hover:shadow-lg active:scale-95 group">
-<span class="material-symbols-outlined mb-2 text-3xl text-secondary group-hover:scale-110 transition-transform">receipt_long</span>
-<span class="font-label-lg">Submit Receipt</span>
-</button>
-</div>
-</div>
-<!-- Dashboard Content -->
-<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-8">
-<!-- Upcoming Tee Times -->
-<section>
-<div class="flex justify-between items-end mb-6">
-<h3 class="font-headline-md text-headline-md text-primary">Upcoming Rounds</h3>
-<a class="text-secondary font-label-lg hover:underline decoration-2 underline-offset-4" href="courses.html">Find Texas Courses</a>
-</div>
-<div class="grid grid-cols-1 gap-4">
-<!-- Tee Time Card -->
-<div class="glass-card border border-primary/5 rounded-3xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between group hover:shadow-md transition-all duration-300">
-<div class="flex items-center gap-6 mb-4 sm:mb-0">
-<div class="w-16 h-16 rounded-2xl overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A serene wide-angle photograph of a lush, perfectly manicured golf green at dawn, featuring rolling hills and ancient oak trees in the background. The lighting is golden and ethereal, highlighting the morning dew on the grass. The overall atmosphere is quiet, luxurious, and rooted in the heritage of premium golf course design." src="assets/img/img_0199784b2d36.jpg"/>
-</div>
-<div>
-<h4 class="font-headline-md text-body-lg text-primary mb-1">Avery Ranch Golf Club (Austin)</h4>
-<p class="flex items-center gap-2 text-on-surface-variant font-label-lg">
-<span class="material-symbols-outlined text-sm">calendar_today</span> Jul 12, 2026 • 08:30 AM
-                                    </p>
-</div>
-</div>
-<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-<span class="bg-surface-container-high text-primary px-4 py-1 rounded-full font-label-sm">Partner: Free</span>
-<button class="bg-primary text-white px-6 py-3 rounded-full font-label-lg transition-transform active:scale-95">Check-In</button>
-</div>
-</div>
-<!-- Tee Time Card 2 -->
-<div class="glass-card border border-primary/5 rounded-3xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between group hover:shadow-md transition-all duration-300">
-<div class="flex items-center gap-6 mb-4 sm:mb-0">
-<div class="w-16 h-16 rounded-2xl overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A coastal golf course fairway overlooking the ocean, with dramatic cliffs and crashing waves under a vibrant sunset sky. The scene is shot with high-end photographic detail, emphasizing the deep forest greens of the grass against the azure blues and golden pinks of the horizon. Elegant, exclusive, and breathtakingly beautiful." src="assets/img/img_183f59bb98ba.jpg"/>
-</div>
-<div>
-<h4 class="font-headline-md text-body-lg text-primary mb-1">Memorial Park Golf Course (Houston)</h4>
-<p class="flex items-center gap-2 text-on-surface-variant font-label-lg">
-<span class="material-symbols-outlined text-sm">calendar_today</span> Jul 18, 2026 • 02:15 PM
-                                    </p>
-</div>
-</div>
-<div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-<span class="bg-surface-container-high text-primary px-4 py-1 rounded-full font-label-sm">Covered: Reimbursable</span>
-<button class="border-2 border-primary text-primary px-6 py-2.5 rounded-full font-label-lg transition-transform active:scale-95">Manage</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Recent Activity & Stats -->
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<!-- Stats Card -->
-<div class="bg-white rounded-3xl p-8 border border-primary/5 shadow-sm">
-<h3 class="font-headline-md text-body-lg text-primary mb-6">Rounds Played</h3>
-<div class="space-y-6">
-<div class="flex justify-between items-center">
-<span class="text-on-surface-variant">Partner Free Rounds</span>
-<span class="font-headline-md text-primary">5</span>
-</div>
-<div class="flex justify-between items-center">
-<span class="text-on-surface-variant">Covered Reimbursed Rounds</span>
-<span class="font-headline-md text-primary">3</span>
-</div>
-<div class="w-full bg-surface-container rounded-full h-2">
-<div class="bg-secondary h-2 rounded-full" style="width: 100%"></div>
-</div>
-<div class="flex justify-between items-center pt-4 border-t border-primary/10">
-<div>
-<p class="text-on-surface-variant">Savings vs $199 Pass</p>
-</div>
-<span class="font-headline-md text-secondary">+$240.00</span>
-</div>
-</div>
-</div>
-<!-- Activity Feed -->
-<div class="bg-white rounded-3xl p-8 border border-primary/5 shadow-sm flex flex-col h-full">
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-headline-md text-body-lg text-primary">Reimbursement Tracker</h3>
-<button class="text-secondary font-label-sm hover:underline">Submit Receipt</button>
-</div>
-<div class="space-y-4 flex-grow">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
-</div>
-<div class="flex-1">
-<p class="text-body-md text-on-surface">Cedar Crest (Dallas)</p>
-<p class="text-label-sm text-on-surface-variant">Oct 5 • Paid $65</p>
-</div>
-<div class="text-right">
-<span class="text-label-lg text-primary block">+$50.00</span>
-<span class="text-[10px] text-on-surface-variant uppercase tracking-wider">Approved</span>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-secondary text-xl">pending_actions</span>
-</div>
-<div class="flex-1">
-<p class="text-body-md text-on-surface">Brackenridge Park (San Antonio)</p>
-<p class="text-label-sm text-on-surface-variant">Oct 10 • Paid $55</p>
-</div>
-<div class="text-right">
-<span class="text-label-lg text-secondary block">+$50.00</span>
-<span class="text-[10px] text-secondary uppercase tracking-wider">Pending</span>
-</div>
-</div>
-</div>
-<button class="mt-6 w-full py-3 border border-primary text-primary rounded-full font-label-lg hover:bg-primary hover:text-white transition-colors duration-300">Submit a receipt</button>
-</div>
-</section>
-</div>
-</div>
-</main>
-<!-- BottomNavBar (Mobile only) -->
-<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full shadow-[0px_4px_20px_rgba(16,50,35,0.08)] z-50 flex justify-around items-center py-2 px-6">
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined">explore</span>
-<span class="font-label-sm text-label-sm">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform" href="#">
-<span class="material-symbols-outlined">confirmation_number</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined">favorite</span>
-<span class="font-label-sm text-label-sm">Favorites</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-label-sm">Profile</span>
-</a>
-</nav>
-<!-- Footer (Web) -->
-<footer class="bg-deep-forest text-surface-off-white py-16 mt-20 border-t border-primary-container hidden md:block">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-8">
-<div>
-<span class="font-display-lg text-display-lg text-secondary">TrackPass</span>
-<p class="mt-2 text-outline-variant">Elevating the game, one round at a time.</p>
-</div>
-<div class="flex gap-10">
-<a class="text-outline-variant hover:text-white transition-colors" href="#">About Us</a>
-<a class="text-outline-variant hover:text-white transition-colors" href="courses.html">Partner Courses</a>
-<a class="text-outline-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="text-outline-variant hover:text-white transition-colors" href="#">Terms of Service</a>
-</div>
-<p class="text-outline-variant">© 2026 TrackPass Golf. All rights reserved.</p>
-</div>
-</footer>
-<script>
-        // Simple micro-interaction for the pass card tilt
-        const passCard = document.querySelector('.pass-gradient');
-        if (passCard) {
-            passCard.addEventListener('mousemove', (e) => {
-                const rect = passCard.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
-                passCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            });
+<body class="bg-[#f0fdf4] font-body-md text-on-surface min-h-screen">
 
-            passCard.addEventListener('mouseleave', () => {
-                passCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
-            });
+<!-- Top nav (minimal — this is a member card, not a marketing page) -->
+<nav class="fixed top-0 w-full z-50 bg-[#f0fdf4]/90 backdrop-blur-xl border-b border-primary/10">
+  <div class="flex justify-between items-center h-14 px-5 max-w-lg mx-auto">
+    <a href="index.html" class="font-headline-md text-primary tracking-tight" style="font-family: Sora, sans-serif; font-weight: 700;">TrackPass</a>
+    <a href="plans.html" class="text-sm font-semibold text-on-surface-variant hover:text-primary transition-colors">Plans</a>
+  </div>
+</nav>
+
+<!-- Loading state -->
+<div id="state-loading" class="pt-20 pb-32 flex flex-col items-center justify-center min-h-screen">
+  <div class="w-10 h-10 rounded-full border-4 border-primary/20 border-t-primary animate-spin mb-4"></div>
+  <p class="text-on-surface-variant font-body-md">Loading your card...</p>
+</div>
+
+<!-- Error state -->
+<div id="state-error" class="hidden pt-20 pb-32 flex flex-col items-center justify-center min-h-screen px-5 text-center">
+  <span class="material-symbols-outlined text-5xl text-on-surface-variant mb-4">error_outline</span>
+  <h2 class="font-headline-md text-primary mb-2">Card not found</h2>
+  <p class="text-on-surface-variant font-body-md mb-6 max-w-xs">Check your email for the link we sent when you signed up.</p>
+  <a href="index.html" class="bg-primary text-white px-8 py-3 rounded-full font-label-lg text-label-lg hover:bg-deep-forest transition-colors">Back to TrackPass</a>
+</div>
+
+<!-- Find card (no ?member param) -->
+<div id="state-find" class="hidden pt-20 pb-32 flex flex-col items-center justify-center min-h-screen px-5">
+  <div class="w-full max-w-sm">
+    <div class="text-center mb-8">
+      <div class="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-3xl text-secondary-fixed">golf_course</span>
+      </div>
+      <h1 class="font-headline-lg text-primary mb-2" style="font-family: Sora, sans-serif;">Find Your Member Card</h1>
+      <p class="text-on-surface-variant font-body-md">Enter your email and we'll send your card link.</p>
+    </div>
+    <div class="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/30">
+      <div id="find-form-content">
+        <div class="space-y-4">
+          <div>
+            <label class="block font-label-lg text-label-lg text-primary mb-2" for="find-email">Email address</label>
+            <input id="find-email" type="email" placeholder="you@example.com" autocomplete="email"
+              class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+          </div>
+          <div id="find-msg" class="text-sm font-medium" role="status" aria-live="polite"></div>
+          <button id="find-btn" onclick="sendCardLink()"
+            class="w-full py-3.5 bg-primary text-white rounded-full font-label-lg text-label-lg hover:bg-deep-forest transition-colors active:scale-95">
+            Send my card link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Member card state -->
+<div id="state-card" class="hidden pt-16 pb-36 px-4 max-w-lg mx-auto">
+
+  <!-- The virtual member card -->
+  <section class="mt-6 mb-6">
+    <div class="pass-card rounded-[2rem] p-6 text-white relative overflow-hidden shadow-2xl">
+      <!-- Shine overlay -->
+      <div class="absolute inset-0 card-shine pointer-events-none rounded-[2rem]"></div>
+      <!-- Decorative circle -->
+      <div class="absolute -top-16 -right-16 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+
+      <!-- Header row -->
+      <div class="flex justify-between items-start mb-5 relative z-10">
+        <div>
+          <p class="font-label-lg uppercase tracking-widest text-[#fdc65e] mb-0.5" style="font-size:11px;">TrackPass</p>
+          <p class="text-white/60 text-xs font-medium">Founding Member</p>
+        </div>
+        <span class="material-symbols-outlined text-[#fdc65e]" style="font-variation-settings:'FILL' 1; font-size:28px;">verified</span>
+      </div>
+
+      <!-- Member name -->
+      <div class="mb-5 relative z-10">
+        <h2 id="card-name" class="text-2xl font-bold text-white" style="font-family: Sora, sans-serif;">—</h2>
+      </div>
+
+      <!-- QR code -->
+      <div class="flex flex-col items-center mb-5 relative z-10">
+        <div class="bg-white rounded-2xl p-3 qr-glow">
+          <div id="qr-code" class="w-40 h-40 flex items-center justify-center">
+            <div class="w-6 h-6 rounded-full border-2 border-primary/30 border-t-primary animate-spin"></div>
+          </div>
+        </div>
+        <p class="text-white/50 text-xs mt-2 tracking-wide">Scan to verify membership</p>
+      </div>
+
+      <!-- Footer row -->
+      <div class="flex justify-between items-end relative z-10">
+        <div>
+          <p class="text-white/40 uppercase tracking-widest mb-0.5" style="font-size:9px;">Member ID</p>
+          <p id="card-member-id" class="font-mono text-white/80 text-sm">—</p>
+        </div>
+        <div class="text-right">
+          <p class="text-white/40 uppercase tracking-widest mb-0.5" style="font-size:9px;">Valid Through</p>
+          <p id="card-valid-through" class="text-white/80 text-sm font-medium">—</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share button -->
+    <button onclick="shareCard()" class="mt-3 w-full flex items-center justify-center gap-2 py-2.5 rounded-full border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/5 transition-colors active:scale-95">
+      <span class="material-symbols-outlined text-base">share</span>
+      Share card link
+    </button>
+    <div id="share-msg" class="text-center text-xs text-on-surface-variant mt-1 h-4"></div>
+  </section>
+
+  <!-- Reimbursement status -->
+  <section class="bg-white rounded-3xl p-5 border border-outline-variant/20 shadow-sm mb-4">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-semibold text-primary" style="font-family: Sora, sans-serif;">This Month</h3>
+      <span id="reimb-badge" class="text-xs font-bold px-3 py-1 rounded-full"></span>
+    </div>
+    <div class="w-full bg-surface-container rounded-full h-2 mb-2">
+      <div id="reimb-bar" class="h-2 rounded-full transition-all duration-500" style="width:0%"></div>
+    </div>
+    <p id="reimb-status" class="text-sm text-on-surface-variant mt-1"></p>
+  </section>
+
+  <!-- Log a Round -->
+  <section class="bg-white rounded-3xl border border-outline-variant/20 shadow-sm mb-4 overflow-hidden">
+    <button id="log-toggle" onclick="toggleLogRound()"
+      class="w-full flex items-center justify-between px-5 py-4 font-semibold text-primary hover:bg-surface-container-low transition-colors active:scale-[0.99]">
+      <span class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-secondary">add_circle</span>
+        Log a Round
+      </span>
+      <span id="log-chevron" class="material-symbols-outlined text-on-surface-variant transition-transform duration-200">expand_more</span>
+    </button>
+
+    <div id="log-panel" class="hidden px-5 pb-5 border-t border-outline-variant/20 pt-4 space-y-4">
+      <div>
+        <label class="block font-label-lg text-label-lg text-primary mb-2" for="log-course">Course name</label>
+        <input id="log-course" type="text" placeholder="e.g. Memorial Park Golf Course"
+          class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+      </div>
+
+      <div>
+        <p class="font-label-lg text-label-lg text-primary mb-2">Is this course in the TrackPass network?</p>
+        <div class="grid grid-cols-2 gap-3">
+          <button id="btn-in-network" onclick="selectNetwork(true)"
+            class="py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95">
+            Yes, partner course
+          </button>
+          <button id="btn-out-network" onclick="selectNetwork(false)"
+            class="py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95">
+            No, I'll get reimbursed
+          </button>
+        </div>
+      </div>
+
+      <!-- Out-of-network receipt info (shown after selecting no) -->
+      <div id="receipt-info" class="hidden bg-secondary-container/20 border border-secondary-container rounded-xl p-4 text-sm text-on-secondary-container">
+        <p class="font-semibold mb-1 flex items-center gap-1">
+          <span class="material-symbols-outlined text-base">receipt_long</span>
+          After your round
+        </p>
+        <p id="receipt-instructions">Email your receipt to <strong>receipts@trackpassgolf.com</strong> with subject: <strong><span class="receipt-subject font-mono">MEMBER_ID — Course Name</span></strong></p>
+      </div>
+
+      <div id="log-msg" class="text-sm font-medium" role="status" aria-live="polite"></div>
+
+      <button id="log-submit" onclick="submitRound()"
+        class="w-full py-3.5 bg-primary text-white rounded-full font-label-lg text-label-lg hover:bg-deep-forest transition-colors active:scale-95 disabled:opacity-50">
+        Log round
+      </button>
+    </div>
+  </section>
+
+  <!-- Confirmation (shown after log) -->
+  <div id="log-confirmation" class="hidden bg-surface-container-high rounded-3xl p-5 border border-primary/10 shadow-sm mb-4">
+    <div class="flex items-start gap-3">
+      <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">check_circle</span>
+      <div>
+        <p id="log-confirm-text" class="font-semibold text-primary text-sm"></p>
+        <p class="text-on-surface-variant text-xs mt-0.5">Round logged successfully.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Mobile bottom nav -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full shadow-[0px_4px_20px_rgba(16,50,35,0.08)] z-50 flex justify-around items-center py-2 px-6">
+  <a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-sm text-label-sm mt-0.5">Home</span>
+  </a>
+  <a href="courses.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full">
+    <span class="material-symbols-outlined">explore</span>
+    <span class="font-label-sm text-label-sm mt-0.5">Courses</span>
+  </a>
+  <a href="plans.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full">
+    <span class="material-symbols-outlined">confirmation_number</span>
+    <span class="font-label-sm text-label-sm mt-0.5">Plans</span>
+  </a>
+  <a href="dashboard.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform">
+    <span class="material-symbols-outlined">person</span>
+  </a>
+</nav>
+
+<script>
+window.TRACKPASS_WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';
+
+let memberData = null;
+let selectedInNetwork = null;
+
+// Parse ?member= from URL
+function getMemberId() {
+  return new URLSearchParams(window.location.search).get('member');
+}
+
+function showState(name) {
+  ['loading', 'error', 'find', 'card'].forEach(s => {
+    const el = document.getElementById('state-' + s);
+    if (el) el.classList.toggle('hidden', s !== name);
+  });
+}
+
+async function init() {
+  const params = new URLSearchParams(window.location.search);
+  let memberId = params.get('member') || localStorage.getItem('tp_member_id');
+  const joined = params.get('joined') === 'true' || params.get('joined') === '1';
+
+  // Auto-register after Stripe payment
+  if (!memberId && joined) {
+    const email = localStorage.getItem('tp_member_email');
+    const name = localStorage.getItem('tp_member_name') || '';
+    if (email) {
+      showState('loading');
+      try {
+        const reg = await fetch(`${window.TRACKPASS_WORKER}/member/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name }),
+        });
+        const rj = await reg.json();
+        if (rj.ok && rj.member?.id) {
+          memberId = rj.member.id;
+          localStorage.setItem('tp_member_id', memberId);
         }
-    </script>
-<script>window.TRACKPASS_WAITLIST_ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
+      } catch (_) {}
+    }
+  }
+
+  if (!memberId) {
+    showState('find');
+    return;
+  }
+
+  showState('loading');
+
+  try {
+    const res = await fetch(`${window.TRACKPASS_WORKER}/member/${memberId}`);
+    if (!res.ok) throw new Error('not found');
+    const data = await res.json();
+    memberData = data;
+    localStorage.setItem('tp_member_id', memberId);
+    renderCard(data);
+    showState('card');
+  } catch (err) {
+    showState('error');
+  }
+}
+
+function renderCard(m) {
+  // Name
+  document.getElementById('card-name').textContent = m.name || 'TrackPass Member';
+
+  // Member ID (short display)
+  const idDisplay = (m.id || '').toString().replace(/(.{4})(.{4})/, '$1-$2') || m.id;
+  document.getElementById('card-member-id').textContent = idDisplay;
+
+  // Valid through
+  let validThru = '—';
+  if (m.valid_through) {
+    const d = new Date(m.valid_through);
+    validThru = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  } else if (m.expires_at) {
+    const d = new Date(m.expires_at);
+    validThru = d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+  document.getElementById('card-valid-through').textContent = validThru;
+
+  // QR code
+  const verifyUrl = `${window.TRACKPASS_WORKER}/verify/${m.id}`;
+  const qrEl = document.getElementById('qr-code');
+  qrEl.innerHTML = '';
+  new QRCode(qrEl, {
+    text: verifyUrl,
+    width: 160,
+    height: 160,
+    correctLevel: QRCode.CorrectLevel.M
+  });
+
+  // Reimbursements
+  renderReimbursement(m);
+}
+
+function renderReimbursement(m) {
+  const used = m.reimbursements_this_month || 0;
+  const limit = 1;
+  const pct = Math.min(used / limit, 1) * 100;
+  const bar = document.getElementById('reimb-bar');
+  const badge = document.getElementById('reimb-badge');
+  const status = document.getElementById('reimb-status');
+
+  bar.style.width = pct + '%';
+
+  const nextMonth = new Date();
+  nextMonth.setMonth(nextMonth.getMonth() + 1, 1);
+  const resetDate = nextMonth.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+
+  if (used === 0) {
+    bar.className = 'h-2 rounded-full transition-all duration-500 bg-[#16412b]';
+    badge.textContent = 'Available';
+    badge.className = 'text-xs font-bold px-3 py-1 rounded-full bg-surface-container-high text-primary';
+    status.textContent = '1 reimbursement available this month';
+    status.className = 'text-sm mt-1 text-[#16412b] font-medium';
+  } else {
+    bar.className = 'h-2 rounded-full transition-all duration-500 bg-amber-500';
+    badge.textContent = 'Used';
+    badge.className = 'text-xs font-bold px-3 py-1 rounded-full bg-amber-100 text-amber-700';
+    const usedCourse = m.last_reimbursement_course || 'a course';
+    status.textContent = `Reimbursement used for ${usedCourse} — resets ${resetDate}`;
+    status.className = 'text-sm mt-1 text-amber-700 font-medium';
+  }
+}
+
+function toggleLogRound() {
+  const panel = document.getElementById('log-panel');
+  const chevron = document.getElementById('log-chevron');
+  const isOpen = !panel.classList.contains('hidden');
+  panel.classList.toggle('hidden', isOpen);
+  chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
+function selectNetwork(inNetwork) {
+  selectedInNetwork = inNetwork;
+  const btnIn = document.getElementById('btn-in-network');
+  const btnOut = document.getElementById('btn-out-network');
+  const receiptInfo = document.getElementById('receipt-info');
+
+  if (inNetwork) {
+    btnIn.className = 'py-2.5 rounded-xl border-2 border-primary bg-primary text-white font-semibold text-sm transition-all active:scale-95';
+    btnOut.className = 'py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95';
+    receiptInfo.classList.add('hidden');
+  } else {
+    btnOut.className = 'py-2.5 rounded-xl border-2 border-secondary bg-secondary/10 text-secondary font-semibold text-sm transition-all active:scale-95';
+    btnIn.className = 'py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95';
+    receiptInfo.classList.remove('hidden');
+    // Update receipt subject with actual member ID and course name
+    const courseName = document.getElementById('log-course').value.trim() || 'Course Name';
+    const memberId = memberData ? memberData.id : 'MEMBER_ID';
+    document.querySelector('.receipt-subject').textContent = `${memberId} — ${courseName}`;
+  }
+}
+
+async function submitRound() {
+  if (!memberData) return;
+  const courseName = document.getElementById('log-course').value.trim();
+  if (!courseName) {
+    const msg = document.getElementById('log-msg');
+    msg.textContent = 'Please enter a course name.';
+    msg.style.color = '#ba1a1a';
+    return;
+  }
+  if (selectedInNetwork === null) {
+    const msg = document.getElementById('log-msg');
+    msg.textContent = 'Please select whether this is a partner course.';
+    msg.style.color = '#ba1a1a';
+    return;
+  }
+
+  const btn = document.getElementById('log-submit');
+  const msg = document.getElementById('log-msg');
+  btn.disabled = true;
+  btn.textContent = 'Logging...';
+  msg.textContent = '';
+
+  const courseSlug = courseName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+
+  try {
+    const res = await fetch(`${window.TRACKPASS_WORKER}/visit/log`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        member_id: memberData.id,
+        course_slug: courseSlug,
+        course_name: courseName,
+        in_network: selectedInNetwork
+      })
+    });
+
+    if (!res.ok) throw new Error('server error');
+
+    // Update UI
+    if (!selectedInNetwork) {
+      // Increment local reimbursement count
+      memberData.reimbursements_this_month = (memberData.reimbursements_this_month || 0) + 1;
+      memberData.last_reimbursement_course = courseName;
+      renderReimbursement(memberData);
+    }
+
+    // Show confirmation
+    const confirm = document.getElementById('log-confirmation');
+    const confirmText = document.getElementById('log-confirm-text');
+    confirmText.textContent = selectedInNetwork
+      ? `Checked in at ${courseName}. Enjoy your round!`
+      : `Round at ${courseName} logged. Email your receipt to get reimbursed.`;
+    confirm.classList.remove('hidden');
+
+    // Reset form
+    document.getElementById('log-course').value = '';
+    selectedInNetwork = null;
+    document.getElementById('btn-in-network').className = 'py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95';
+    document.getElementById('btn-out-network').className = 'py-2.5 rounded-xl border-2 border-outline-variant text-on-surface-variant font-semibold text-sm transition-all active:scale-95';
+    document.getElementById('receipt-info').classList.add('hidden');
+    toggleLogRound(); // close the panel
+
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.color = '#ba1a1a';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Log round';
+  }
+}
+
+async function sendCardLink() {
+  const email = document.getElementById('find-email').value.trim();
+  const msg = document.getElementById('find-msg');
+  const btn = document.getElementById('find-btn');
+
+  if (!email || !email.includes('@')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.color = '#ba1a1a';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  msg.textContent = '';
+
+  try {
+    await fetch(`${window.TRACKPASS_WORKER}/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, type: 'find' })
+    });
+    // Always show success (don't reveal whether email exists)
+    document.getElementById('find-form-content').innerHTML = `
+      <div class="text-center py-6 space-y-3">
+        <span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings:'FILL' 1;">mark_email_read</span>
+        <p class="font-semibold text-primary">Check your email</p>
+        <p class="text-on-surface-variant text-sm">If you have a TrackPass membership, we sent your card link to <strong>${email}</strong>.</p>
+      </div>`;
+  } catch (err) {
+    msg.textContent = 'Something went wrong. Please try again.';
+    msg.style.color = '#ba1a1a';
+    btn.disabled = false;
+    btn.textContent = 'Send my card link';
+  }
+}
+
+function shareCard() {
+  const url = window.location.href;
+  const msg = document.getElementById('share-msg');
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(() => {
+      msg.textContent = 'Link copied to clipboard';
+      setTimeout(() => msg.textContent = '', 2500);
+    });
+  } else {
+    // Fallback: select text
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    msg.textContent = 'Link copied';
+    setTimeout(() => msg.textContent = '', 2500);
+  }
+}
+
+// Update receipt subject dynamically as course name is typed
+document.addEventListener('DOMContentLoaded', function() {
+  const logCourse = document.getElementById('log-course');
+  if (logCourse) {
+    logCourse.addEventListener('input', function() {
+      if (selectedInNetwork === false) {
+        const memberId = memberData ? memberData.id : 'MEMBER_ID';
+        const courseName = logCourse.value.trim() || 'Course Name';
+        document.querySelector('.receipt-subject').textContent = `${memberId} — ${courseName}`;
+      }
+    });
+  }
+  init();
+});
+</script>
+
+<script>window.TRACKPASS_WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
 <script src="assets/analytics.js"></script>
-<script src="assets/waitlist.js"></script>
-</body></html>
+</body>
+</html>

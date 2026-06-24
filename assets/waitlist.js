@@ -158,6 +158,10 @@
           posthog.capture("waitlist_form_completed", { region: data.region || null, has_name: !!(data.name || "").trim() });
           posthog.identify(email);
         }
+        try {
+          localStorage.setItem("tp_member_email", email);
+          localStorage.setItem("tp_member_name", (data.name || "").trim());
+        } catch (_) {}
         showDone(j.emailed);
         return;
       }

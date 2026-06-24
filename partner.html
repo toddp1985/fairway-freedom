@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en"><head>
+<html class="scroll-smooth" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta name="theme-color" content="#16412b" />
-<title>Partner with TrackPass — Bring More Golfers to Your Course</title>
-<meta name="description" content="Join the TrackPass partner network. Bring paying golfers to your Texas public golf course at no upfront cost. Apply in 2 minutes." />
+<title>Join the TrackPass Network — Partner With Us</title>
+<meta name="description" content="Any Texas public golf course can join the TrackPass partner network instantly. Bring in more paying golfers at no upfront cost. Takes 30 seconds." />
 <link rel="canonical" href="https://trackpassgolf.com/partner.html" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Partner with TrackPass — Bring More Golfers to Your Course" />
-<meta property="og:description" content="TrackPass members are paying golfers looking for their next round. Join the partner network at no upfront cost." />
+<meta property="og:title" content="Join the TrackPass Network — Partner With Us" />
+<meta property="og:description" content="TrackPass members are paying golfers looking for their next round. Join the partner network instantly — no approval needed, no upfront cost." />
 <meta property="og:site_name" content="TrackPass" />
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script id="tailwind-config">
 tailwind.config = {
   darkMode: "class",
@@ -89,315 +91,369 @@ tailwind.config = {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
 }
+.tp-hp { display: none !important; }
+#qr-result canvas, #qr-result img { display: block; }
 </style>
 </head>
 <body class="bg-surface-off-white text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
 
 <!-- Nav -->
 <nav class="fixed top-0 w-full z-50 bg-surface-off-white/80 backdrop-blur-xl shadow-sm h-20 px-margin-mobile md:px-margin-desktop">
-<div class="max-w-container-max mx-auto flex justify-between items-center h-full">
-<a href="index.html" class="font-display-lg text-display-lg-mobile tracking-tight text-primary">TrackPass</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="courses.html">Find Courses</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="dashboard.html">My Pass</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="plans.html">Membership</a>
-<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary" href="partner.html">Partner With Us</a>
-</div>
-<div class="flex items-center gap-4">
-<a href="plans.html" class="bg-deep-forest text-white font-label-lg text-label-lg px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 hover:bg-primary">Get a Pass</a>
-</div>
-</div>
+  <div class="max-w-container-max mx-auto flex justify-between items-center h-full">
+    <a href="index.html" class="font-display-lg text-display-lg-mobile tracking-tight text-primary" style="font-family: Sora, sans-serif;">TrackPass</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="courses.html">Find Courses</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="dashboard.html">My Pass</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="plans.html">Membership</a>
+      <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary" href="partner.html">Partner With Us</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="plans.html" class="bg-deep-forest text-white font-label-lg text-label-lg px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 hover:bg-primary">Get a Pass</a>
+    </div>
+  </div>
 </nav>
 
 <!-- Hero -->
 <header class="pt-32 pb-16 px-margin-mobile md:px-margin-desktop bg-gradient-to-b from-surface-container-low to-surface-off-white">
-<div class="max-w-container-max mx-auto text-center space-y-6">
-<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-lg text-label-lg tracking-wider uppercase">Course Partners</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-3xl mx-auto">Bring TrackPass members to your course</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">TrackPass members are paying golfers actively looking for their next round. Joining the partner network puts your course in front of them — at no upfront cost to you.</p>
-<a href="#apply" class="inline-block bg-deep-forest text-white font-label-lg text-label-lg px-8 py-4 rounded-xl hover:bg-primary transition-all active:scale-95 shadow-lg">Apply to become a partner →</a>
-</div>
+  <div class="max-w-container-max mx-auto">
+    <div class="max-w-3xl">
+      <span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-lg text-label-lg tracking-wider uppercase mb-6">For Course Owners</span>
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6" style="font-family: Sora, sans-serif;">Join the TrackPass Network</h1>
+
+      <!-- 3 benefit bullets -->
+      <ul class="space-y-4 mb-8">
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <div>
+            <span class="font-semibold text-primary">Bring in more golfers.</span>
+            <span class="text-on-surface-variant"> TrackPass members are active golfers looking for their next round — your course shows up in front of them.</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <div>
+            <span class="font-semibold text-primary">TrackPass members are paying players.</span>
+            <span class="text-on-surface-variant"> They've already paid $199/year for access. They want to play, spend on cart fees, and come back.</span>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary mt-0.5 shrink-0" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <div>
+            <span class="font-semibold text-primary">No upfront cost, no contracts.</span>
+            <span class="text-on-surface-variant"> Join instantly. Exit anytime. We only make money when members play your course.</span>
+          </div>
+        </li>
+      </ul>
+
+      <a href="#join" class="inline-block bg-primary text-white font-label-lg text-label-lg px-8 py-4 rounded-full hover:bg-deep-forest transition-all active:scale-95 shadow-lg">
+        Join the network now →
+      </a>
+    </div>
+  </div>
 </header>
 
-<!-- How It Works for Courses -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-white">
-<div class="max-w-container-max mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">How it works</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Three steps from application to live on the platform.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="p-8 rounded-3xl bg-surface-off-white border border-outline-variant/30">
-<div class="w-12 h-12 rounded-2xl bg-primary text-secondary-fixed flex items-center justify-center mb-6">
-<span class="font-headline-md text-headline-md">1</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Apply</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Fill out the form below. We review within 48 hours and reach out to confirm details.</p>
-</div>
-<div class="p-8 rounded-3xl bg-surface-off-white border border-outline-variant/30">
-<div class="w-12 h-12 rounded-2xl bg-primary text-secondary-fixed flex items-center justify-center mb-6">
-<span class="font-headline-md text-headline-md">2</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">We verify</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">The TrackPass team confirms your course details, green fees, and availability windows. We agree on a partner rate together.</p>
-</div>
-<div class="p-8 rounded-3xl bg-surface-off-white border border-outline-variant/30">
-<div class="w-12 h-12 rounded-2xl bg-primary text-secondary-fixed flex items-center justify-center mb-6">
-<span class="font-headline-md text-headline-md">3</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-primary mb-3">Go live</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Your course appears on TrackPass with a "Partner" badge. Members show their pass at your pro shop and play. You get paid per round.</p>
-</div>
-</div>
-</div>
+<!-- How it works (simple 3 steps) -->
+<section class="py-16 px-margin-mobile md:px-margin-desktop bg-white">
+  <div class="max-w-container-max mx-auto">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-10" style="font-family: Sora, sans-serif;">How it works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="flex gap-4 items-start p-6 bg-surface-off-white rounded-2xl border border-outline-variant/30">
+        <div class="w-10 h-10 rounded-xl bg-primary text-secondary-fixed flex items-center justify-center shrink-0 font-bold text-lg" style="font-family: Sora, sans-serif;">1</div>
+        <div>
+          <h3 class="font-semibold text-primary mb-1" style="font-family: Sora, sans-serif;">Fill out the form</h3>
+          <p class="text-on-surface-variant text-sm">Takes about 30 seconds. Course name, city, and your pro shop email.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start p-6 bg-surface-off-white rounded-2xl border border-outline-variant/30">
+        <div class="w-10 h-10 rounded-xl bg-primary text-secondary-fixed flex items-center justify-center shrink-0 font-bold text-lg" style="font-family: Sora, sans-serif;">2</div>
+        <div>
+          <h3 class="font-semibold text-primary mb-1" style="font-family: Sora, sans-serif;">Get your QR code</h3>
+          <p class="text-on-surface-variant text-sm">We instantly generate a check-in URL and QR code. Print it and put it at your counter.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start p-6 bg-surface-off-white rounded-2xl border border-outline-variant/30">
+        <div class="w-10 h-10 rounded-xl bg-primary text-secondary-fixed flex items-center justify-center shrink-0 font-bold text-lg" style="font-family: Sora, sans-serif;">3</div>
+        <div>
+          <h3 class="font-semibold text-primary mb-1" style="font-family: Sora, sans-serif;">Golfers start playing</h3>
+          <p class="text-on-surface-variant text-sm">Members scan the QR to check in. You confirm their pass and they play. Simple as that.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Benefits -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-off-white">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-<div>
-<span class="text-secondary font-label-lg tracking-widest uppercase">What you get</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2 mb-8">More rounds, zero marketing spend</h2>
-<ul class="space-y-6">
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<div>
-<p class="font-headline-md text-headline-md text-primary mb-1">Zero marketing cost</p>
-<p class="font-body-md text-body-md text-on-surface-variant">We drive golfers to you. No ad spend, no agency, no contracts required from your side.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<div>
-<p class="font-headline-md text-headline-md text-primary mb-1">No upfront fees</p>
-<p class="font-body-md text-body-md text-on-surface-variant">Partner courses pay nothing to join. We only make money when members play.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<div>
-<p class="font-headline-md text-headline-md text-primary mb-1">Incremental revenue</p>
-<p class="font-body-md text-body-md text-on-surface-variant">TrackPass members are new rounds, not displaced tee times. They're golfers who wouldn't have found you otherwise.</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<span class="material-symbols-outlined text-secondary mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<div>
-<p class="font-headline-md text-headline-md text-primary mb-1">Preferred placement</p>
-<p class="font-body-md text-body-md text-on-surface-variant">Partner courses appear first in TrackPass search results and are highlighted with a "Partner" badge across all 100+ course pages.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="bg-deep-forest text-white rounded-3xl p-10 space-y-6">
-<h3 class="font-headline-lg text-headline-lg text-secondary-fixed">How TrackPass pays you</h3>
-<p class="font-body-lg text-body-lg text-surface-bright/80">We negotiate a fixed green-fee rate with your course for TrackPass members. You get paid per round — we handle all the billing and member verification. Rates are set together based on your standard weekday/off-peak pricing.</p>
-<div class="border-t border-primary-container pt-6 space-y-3">
-<div class="flex items-center gap-3 text-surface-bright">
-<span class="material-symbols-outlined text-secondary-fixed">payments</span>
-<span class="font-body-md text-body-md">Paid per round, monthly</span>
-</div>
-<div class="flex items-center gap-3 text-surface-bright">
-<span class="material-symbols-outlined text-secondary-fixed">handshake</span>
-<span class="font-body-md text-body-md">Rate negotiated together — you're never surprised</span>
-</div>
-<div class="flex items-center gap-3 text-surface-bright">
-<span class="material-symbols-outlined text-secondary-fixed">cancel</span>
-<span class="font-body-md text-body-md">Exit anytime — no long-term commitment</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+<!-- Sign-up form -->
+<section id="join" class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-off-white">
+  <div class="max-w-xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="font-display-lg text-display-lg-mobile text-primary mb-2" style="font-family: Sora, sans-serif;">Join the Network</h2>
+      <p class="text-on-surface-variant font-body-md">Any public Texas golf course can join instantly.</p>
+    </div>
 
-<!-- Application Form -->
-<section id="apply" class="py-24 px-margin-mobile md:px-margin-desktop bg-white">
-<div class="max-w-2xl mx-auto">
-<div class="text-center mb-12">
-<span class="inline-block px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full font-label-lg text-label-lg tracking-wider uppercase mb-4">Apply Now</span>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Let's get your course on TrackPass</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Takes 2 minutes. We'll follow up within 48 hours.</p>
-</div>
+    <div id="form-wrap" class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-outline-variant/20">
+      <form id="partner-form" class="space-y-5" novalidate>
 
-<div id="partner-form-wrap" class="bg-surface-off-white rounded-3xl p-8 border border-outline-variant/30">
-<form id="partner-form" class="space-y-6" novalidate>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-course">Course Name *</label>
-<input id="p-course" name="course" type="text" required placeholder="e.g. Lions Municipal Golf Course" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-city">City, TX *</label>
-<input id="p-city" name="city" type="text" required placeholder="e.g. Austin" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-name">Your Name *</label>
-<input id="p-name" name="name" type="text" required placeholder="Full name" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-role">Your Role *</label>
-<input id="p-role" name="role" type="text" required placeholder="e.g. Golf Director, Pro Shop Manager" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-email">Email *</label>
-<input id="p-email" name="email" type="email" required placeholder="you@course.com" autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-phone">Phone <span class="text-on-surface-variant font-normal">(optional)</span></label>
-<input id="p-phone" name="phone" type="tel" placeholder="214-555-0100" autocomplete="tel" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-</div>
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-fee">Standard Weekday Green Fee <span class="text-on-surface-variant font-normal">(optional)</span></label>
-<div class="relative">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-body-md">$</span>
-<input id="p-fee" name="fee" type="number" min="0" max="500" placeholder="35" class="w-full pl-8 pr-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
-</div>
-</div>
-<div>
-<label class="block font-label-lg text-label-lg text-primary mb-2" for="p-message">Anything else we should know? <span class="text-on-surface-variant font-normal">(optional)</span></label>
-<textarea id="p-message" name="message" rows="3" placeholder="Seasonal hours, cart requirements, special considerations…" class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-white text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary resize-none"></textarea>
-</div>
-<div class="tp-hp" style="display:none"><label>Leave blank<input name="company" tabindex="-1" autocomplete="off" /></label></div>
-<div id="p-msg" role="status" aria-live="polite"></div>
-<button type="submit" id="p-submit" class="w-full py-4 px-6 bg-deep-forest text-white font-label-lg text-label-lg rounded-xl hover:bg-primary transition-colors active:scale-95 shadow-lg">
-Apply to become a partner →
-</button>
-<p class="text-center font-label-sm text-label-sm text-on-surface-variant">We review every application and follow up within 48 hours.</p>
-</form>
-</div>
-</div>
+        <!-- Honeypot -->
+        <div class="tp-hp" aria-hidden="true"><input name="company" tabindex="-1" autocomplete="off" /></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block font-label-lg text-label-lg text-primary mb-2" for="p-course">Course name <span class="text-error">*</span></label>
+            <input id="p-course" name="course_name" type="text" required placeholder="e.g. Lions Municipal Golf Course"
+              class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+          </div>
+          <div>
+            <label class="block font-label-lg text-label-lg text-primary mb-2" for="p-city">City, TX <span class="text-error">*</span></label>
+            <input id="p-city" name="city" type="text" required placeholder="e.g. Austin"
+              class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label class="block font-label-lg text-label-lg text-primary mb-2" for="p-email">Pro shop email <span class="text-error">*</span></label>
+            <input id="p-email" name="email" type="email" required placeholder="proshop@yourcourse.com" autocomplete="email"
+              class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+          </div>
+          <div>
+            <label class="block font-label-lg text-label-lg text-primary mb-2" for="p-phone">Pro shop phone <span class="text-on-surface-variant font-normal">(optional)</span></label>
+            <input id="p-phone" name="phone" type="tel" placeholder="214-555-0100" autocomplete="tel"
+              class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-[#f0fdf4] text-on-surface font-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary" />
+          </div>
+        </div>
+
+        <div id="p-msg" class="text-sm font-medium" role="status" aria-live="polite"></div>
+
+        <button type="submit" id="p-submit"
+          class="w-full py-4 bg-primary text-white rounded-full font-label-lg text-label-lg text-base hover:bg-deep-forest transition-colors active:scale-95 shadow-sm disabled:opacity-50">
+          Join the Network →
+        </button>
+
+        <p class="text-center text-xs text-on-surface-variant">No approval needed. No upfront cost. Exit anytime.</p>
+      </form>
+    </div>
+
+    <!-- Success state -->
+    <div id="success-wrap" class="hidden">
+      <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-outline-variant/20 text-center mb-6">
+        <span class="material-symbols-outlined text-5xl text-primary mb-3" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        <h3 class="font-bold text-primary mb-1 text-xl" style="font-family: Sora, sans-serif;">You're in!</h3>
+        <p id="success-course-display" class="text-on-surface-variant font-body-md mb-4"></p>
+        <p class="text-sm text-on-surface-variant">Check your email for confirmation details.</p>
+      </div>
+
+      <!-- Check-in URL -->
+      <div class="bg-surface-container-low rounded-2xl p-5 mb-6 border border-primary/10">
+        <p class="font-semibold text-primary mb-1 text-sm">Your check-in URL</p>
+        <p class="font-mono text-on-surface-variant text-sm break-all" id="checkin-url-display"></p>
+        <button onclick="copyUrl()" class="mt-2 text-xs font-semibold text-primary underline underline-offset-2 hover:text-secondary transition-colors flex items-center gap-1">
+          <span class="material-symbols-outlined" style="font-size:14px;">content_copy</span>
+          <span id="copy-label">Copy URL</span>
+        </button>
+      </div>
+
+      <!-- QR code -->
+      <div class="bg-white rounded-3xl p-6 shadow-sm border border-outline-variant/20 text-center">
+        <h4 class="font-semibold text-primary mb-1" style="font-family: Sora, sans-serif;">Your check-in QR code</h4>
+        <p class="text-on-surface-variant text-sm mb-5">Print this and put it at your counter. When golfers scan it, they'll check in and log their round.</p>
+        <div class="flex justify-center mb-4">
+          <div class="bg-white border-4 border-primary/10 rounded-2xl p-4 inline-block shadow-sm">
+            <div id="qr-result" class="w-48 h-48 flex items-center justify-center">
+              <div class="w-6 h-6 rounded-full border-2 border-primary/30 border-t-primary animate-spin"></div>
+            </div>
+          </div>
+        </div>
+        <p class="text-xs text-on-surface-variant bg-surface-container-low rounded-xl px-4 py-2.5 inline-block">
+          <span class="material-symbols-outlined text-sm">info</span>
+          To save: right-click the QR code and choose "Save image as..." or take a screenshot.
+        </p>
+        <div class="mt-6 pt-6 border-t border-outline-variant/20">
+          <a href="index.html" class="text-primary font-semibold text-sm hover:text-secondary transition-colors underline underline-offset-2">Back to TrackPass</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- Footer -->
 <footer class="bg-deep-forest text-surface-off-white py-16 px-margin-mobile md:px-margin-desktop">
-<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-<div class="space-y-6 max-w-sm">
-<div class="font-display-lg text-display-lg text-secondary">TrackPass</div>
-<p class="font-body-md text-body-md text-outline-variant">Accessible Texas Golf. One Flat Price.</p>
-</div>
-<div class="grid grid-cols-2 gap-x-12 gap-y-8">
-<div class="space-y-4">
-<p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-wider">Company</p>
-<nav class="flex flex-col gap-2">
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="index.html">Home</a>
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="courses.html">Find Courses</a>
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="partner.html">Partner with us</a>
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Contact</a>
-</nav>
-</div>
-<div class="space-y-4">
-<p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-wider">Legal</p>
-<nav class="flex flex-col gap-2">
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Terms of Service</a>
-</nav>
-</div>
-</div>
-</div>
-<div class="max-w-container-max mx-auto mt-16 pt-8 border-t border-primary-container text-outline-variant font-label-sm text-label-sm flex justify-between items-center">
-<p>© 2026 TrackPass Golf. All rights reserved.</p>
-</div>
+  <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+    <div class="space-y-4 max-w-sm">
+      <div class="font-display-lg text-display-lg text-secondary" style="font-family: Sora, sans-serif;">TrackPass</div>
+      <p class="font-body-md text-body-md text-outline-variant">Accessible Texas Golf. One Flat Price.</p>
+    </div>
+    <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+      <div class="space-y-3">
+        <p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-wider">Company</p>
+        <nav class="flex flex-col gap-2">
+          <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="index.html">Home</a>
+          <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="courses.html">Find Courses</a>
+          <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="partner.html">Partner with us</a>
+        </nav>
+      </div>
+      <div class="space-y-3">
+        <p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-wider">Legal</p>
+        <nav class="flex flex-col gap-2">
+          <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+          <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-container-max mx-auto mt-12 pt-8 border-t border-primary-container text-outline-variant font-label-sm text-label-sm">
+    <p>© 2026 TrackPass Golf. All rights reserved.</p>
+  </div>
 </footer>
 
-<!-- Mobile Bottom Nav -->
+<!-- Mobile bottom nav -->
 <div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full z-50 shadow-[0px_4px_20px_rgba(16,50,35,0.08)] flex justify-around items-center py-2 px-6">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
-<span class="material-symbols-outlined">explore</span>
-<span class="font-label-sm text-label-sm mt-1">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform" href="plans.html">
-<span class="material-symbols-outlined">confirmation_number</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
-<span class="material-symbols-outlined">favorite</span>
-<span class="font-label-sm text-label-sm mt-1">Courses</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full w-10 h-10 active:scale-90 transition-transform" href="partner.html">
-<span class="material-symbols-outlined" style="font-size:18px">handshake</span>
-</a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
+    <span class="material-symbols-outlined">explore</span>
+    <span class="font-label-sm text-label-sm mt-1">Explore</span>
+  </a>
+  <a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform" href="plans.html">
+    <span class="material-symbols-outlined">confirmation_number</span>
+  </a>
+  <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
+    <span class="material-symbols-outlined">favorite</span>
+    <span class="font-label-sm text-label-sm mt-1">Courses</span>
+  </a>
+  <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full w-10 h-10 active:scale-90 transition-transform" href="partner.html">
+    <span class="material-symbols-outlined" style="font-size:18px;">handshake</span>
+  </a>
 </div>
 
 <script>
+window.TRACKPASS_WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';
+let checkInUrl = '';
+
 (function() {
   const form = document.getElementById('partner-form');
   const msg = document.getElementById('p-msg');
   const btn = document.getElementById('p-submit');
-  const ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';
 
   if (!form) return;
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (form.querySelector('[name=company]').value) return;
 
-    const required = ['p-course', 'p-city', 'p-name', 'p-role', 'p-email'];
+    // Honeypot check
+    const honeypot = form.querySelector('[name=company]');
+    if (honeypot && honeypot.value) return;
+
+    // Validate required fields
+    const course = document.getElementById('p-course').value.trim();
+    const city = document.getElementById('p-city').value.trim();
+    const email = document.getElementById('p-email').value.trim();
     let valid = true;
-    required.forEach(id => {
+
+    [['p-course', course], ['p-city', city], ['p-email', email]].forEach(([id, val]) => {
       const el = document.getElementById(id);
-      if (!el || !el.value.trim()) {
-        el && (el.style.borderColor = '#ba1a1a');
+      if (!val) {
+        el.style.borderColor = '#ba1a1a';
         valid = false;
       } else {
         el.style.borderColor = '';
       }
     });
+
     if (!valid) {
       msg.textContent = 'Please fill in all required fields.';
       msg.style.color = '#ba1a1a';
       return;
     }
 
+    if (!email.includes('@') || !email.includes('.')) {
+      document.getElementById('p-email').style.borderColor = '#ba1a1a';
+      msg.textContent = 'Please enter a valid email address.';
+      msg.style.color = '#ba1a1a';
+      return;
+    }
+
     btn.disabled = true;
-    btn.textContent = 'Submitting…';
+    btn.textContent = 'Joining...';
     msg.textContent = '';
 
     try {
       const payload = {
-        type: 'partner',
-        course: document.getElementById('p-course').value.trim(),
-        city: document.getElementById('p-city').value.trim(),
-        name: document.getElementById('p-name').value.trim(),
-        role: document.getElementById('p-role').value.trim(),
-        email: document.getElementById('p-email').value.trim(),
+        course_name: course,
+        city: city,
+        email: email,
         phone: document.getElementById('p-phone').value.trim(),
-        fee: document.getElementById('p-fee').value.trim(),
-        message: document.getElementById('p-message').value.trim()
+        company: honeypot ? honeypot.value : ''
       };
 
-      const res = await fetch(ENDPOINT, {
+      const res = await fetch(`${window.TRACKPASS_WORKER}/course/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
-      if (res.ok) {
-        document.getElementById('partner-form-wrap').innerHTML = `
-          <div class="text-center py-12 space-y-4">
-            <span class="material-symbols-outlined text-6xl text-secondary" style="font-variation-settings:'FILL' 1;">check_circle</span>
-            <h3 class="font-headline-lg text-headline-lg text-primary">Application received</h3>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">We'll review your application and reach out within 48 hours to discuss next steps.</p>
-            <a href="index.html" class="inline-block mt-4 text-primary font-label-lg text-label-lg underline underline-offset-2">Back to TrackPass →</a>
-          </div>`;
-        if (window.posthog) posthog.capture('partner_application_submitted', { course: payload.course, city: payload.city });
+      let data = {};
+      try { data = await res.json(); } catch(e) {}
+
+      if (res.ok && data.ok !== false) {
+        // Build check-in URL from response or construct a fallback
+        const courseId = data.courseId || data.course_id || course.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        checkInUrl = data.checkInUrl || data.check_in_url || `https://trackpassgolf.com/check-in.html?course=${courseId}&name=${encodeURIComponent(course)}`;
+
+        // Show success UI
+        document.getElementById('form-wrap').classList.add('hidden');
+        document.getElementById('success-wrap').classList.remove('hidden');
+        document.getElementById('success-course-display').textContent = `${course} — ${city}, TX`;
+        document.getElementById('checkin-url-display').textContent = checkInUrl;
+
+        // Generate QR code
+        const qrEl = document.getElementById('qr-result');
+        qrEl.innerHTML = '';
+        new QRCode(qrEl, {
+          text: checkInUrl,
+          width: 192,
+          height: 192,
+          correctLevel: QRCode.CorrectLevel.M
+        });
+
+        // Scroll to success
+        document.getElementById('success-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (window.posthog) posthog.capture('course_registered', { course, city });
       } else {
-        throw new Error('server error');
+        throw new Error('server returned error');
       }
     } catch(err) {
       btn.disabled = false;
-      btn.textContent = 'Apply to become a partner →';
+      btn.textContent = 'Join the Network →';
       msg.textContent = 'Something went wrong — please email us at partners@trackpassgolf.com';
       msg.style.color = '#ba1a1a';
     }
   });
 })();
+
+function copyUrl() {
+  if (!checkInUrl) return;
+  const label = document.getElementById('copy-label');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(checkInUrl).then(() => {
+      label.textContent = 'Copied!';
+      setTimeout(() => label.textContent = 'Copy URL', 2000);
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = checkInUrl;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    label.textContent = 'Copied!';
+    setTimeout(() => label.textContent = 'Copy URL', 2000);
+  }
+}
 </script>
-<script>window.TRACKPASS_WAITLIST_ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
+
+<script>window.TRACKPASS_WORKER = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
 <script src="assets/analytics.js"></script>
-</body></html>
+</body>
+</html>
