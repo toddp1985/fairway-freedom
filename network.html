@@ -32,6 +32,7 @@ body { font-family: Manrope, sans-serif; background: #f6f9f5; color: #1a2e1f; }
 .course-card { transition: transform .15s ease, box-shadow .15s ease; }
 .course-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,42,23,.08); }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TrackPass Partner Courses — Texas Golf Network","description":"TrackPass partner courses across Texas. Members play free -- just show the digital pass at the pro shop. No receipt needed, no limit on rounds. Courses join free via self-service signup.","url":"https://trackpassgolf.com/network.html","publisher":{"@type":"Organization","name":"TrackPass","url":"https://trackpassgolf.com/"}}</script>
 </head>
 <body class="min-h-screen">
 
@@ -247,5 +248,7 @@ document.getElementById('city-filter').addEventListener('change', applyFilters);
 
 loadCourses();
 </script>
+<script>window.TRACKPASS_WAITLIST_ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
+<script src="assets/analytics.js"></script>
 </body>
 </html>

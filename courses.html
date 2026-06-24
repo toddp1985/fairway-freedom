@@ -280,22 +280,18 @@
 </footer>
 <!-- BottomNavBar (Mobile only) -->
 <div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl shadow-[0px_4px_20px_rgba(16,50,35,0.08)] rounded-full z-50 flex justify-around items-center py-2 px-6" style="margin-bottom: env(safe-area-inset-bottom, 0px)">
-<button class="flex flex-col items-center justify-center bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container rounded-full w-12 h-12 active:scale-90 transition-transform">
+<a href="courses.html" class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform">
 <span class="material-symbols-outlined">explore</span>
-<span class="font-label-sm text-[8px] mt-0.5">Explore</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+</a>
+<a href="plans.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full active:scale-90">
 <span class="material-symbols-outlined">confirmation_number</span>
-<span class="font-label-sm text-[8px] mt-0.5">My Pass</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+</a>
+<a href="courses.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full active:scale-90">
 <span class="material-symbols-outlined">favorite</span>
-<span class="font-label-sm text-[8px] mt-0.5">Favorites</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high transition-all active:scale-90 transition-transform">
+</a>
+<a href="dashboard.html" class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full active:scale-90">
 <span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-[8px] mt-0.5">Profile</span>
-</button>
+</a>
 </div>
 <!-- Toggle Scripts -->
 <script>
@@ -446,7 +442,7 @@
               radius: 9, color:'#fff', weight:2, fillColor:color, fillOpacity:1
             }).bindPopup(
               `<strong>${esc(c.name)}</strong><br>${esc(c.city)}, TX<br>` +
-              (c.partner ? 'Partner · free with your pass' : 'Up to $50/month reimbursement') +
+              (c.partner ? 'Partner · free with your pass' : '1 reimbursement/month, up to $50, each course once') +
               `<br><a href="${JOIN_URL}">Join the founding list →</a>`
             );
             m.addTo(markerLayer);
