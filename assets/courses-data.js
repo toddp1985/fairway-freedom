@@ -346,7 +346,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.4536,
     "region": "San Antonio",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/7d/9f/b1711aca210bdbbba41b70813f40/58261.jpg",
     "citySlug": "san-antonio-tx"
   },
   {
@@ -362,7 +362,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.5236,
     "region": "San Antonio",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/37/c0/735a16296aa592613defe1ca9a61/83484.jpg",
     "citySlug": "san-antonio-tx"
   },
   {
@@ -464,23 +464,6 @@ window.TRACKPASS_COURSES = [
     "citySlug": "houston-tx"
   },
   {
-    "id": "hou-melrose-park",
-    "name": "Melrose Park Golf Course",
-    "city": "Houston",
-    "fee": 18,
-    "tags": [
-      "9-hole",
-      "Par-3"
-    ],
-    "blurb": "18-hole par-3 layout in north Houston — ideal for short-game practice and quick affordable rounds.",
-    "lat": 29.9204,
-    "lng": -95.3698,
-    "region": "Houston",
-    "partner": false,
-    "photo": null,
-    "citySlug": "houston-tx"
-  },
-  {
     "id": "ep-ascarate",
     "name": "Ascarate Municipal Golf Course",
     "city": "El Paso",
@@ -494,7 +477,7 @@ window.TRACKPASS_COURSES = [
     "lng": -106.415,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/a9/e0/b6a5e68a1fc71936f163eb345e51/30497.jpg",
     "citySlug": "el-paso-tx"
   },
   {
@@ -510,7 +493,7 @@ window.TRACKPASS_COURSES = [
     "lng": -101.8752,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/e9/88/51707655baac6957eb17c4403ccc/14191.jpg",
     "citySlug": "lubbock-tx"
   },
   {
@@ -543,7 +526,7 @@ window.TRACKPASS_COURSES = [
     "lng": -99.7031,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/7f/77/fec2f5dfe9499d1e79c3e0b8a438/87575.jpg",
     "citySlug": "abilene-tx"
   },
   {
@@ -559,7 +542,7 @@ window.TRACKPASS_COURSES = [
     "lng": -99.7131,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/46/63/9a844a9df2b5d0767471f9ef6a17/84684.jpg",
     "citySlug": "abilene-tx"
   },
   {
@@ -575,7 +558,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.1367,
     "region": "Central Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/67/e7/96231ffb3d43ed2f9aef3915b648/18547.jpg",
     "citySlug": "waco-tx"
   },
   {
@@ -596,18 +579,18 @@ window.TRACKPASS_COURSES = [
   },
   {
     "id": "arl-chester-w-ditto",
-    "name": "Chester W. Ditto Golf Course",
+    "name": "Texas Rangers Golf Club",
     "city": "Arlington",
     "fee": 34,
     "tags": [
       "Municipal"
     ],
-    "blurb": "Arlington's links-influenced muni known for excellent greens and strong value for the area.",
+    "blurb": "Arlington's links-influenced muni renamed in 2019 — known for excellent greens and strong value in the DFW area.",
     "lat": 32.7557,
     "lng": -97.1281,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/1f/89/0754cbb4a8750ef9499ab3f1a335/53650.jpg",
     "citySlug": "arlington-tx"
   },
   {
@@ -689,7 +672,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.6489,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/43/e8/0915bbaca9baf0ff74f12d18ab99/74723.jpg",
     "citySlug": "garland-tx"
   },
   {
@@ -705,7 +688,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.3764,
     "region": "Texas Coast",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/8f/5c/bf5db0c5d91a46c026fb32db8ce5/47425.jpg",
     "citySlug": "corpus-christi-tx"
   },
   {
@@ -722,7 +705,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.4164,
     "region": "Texas Coast",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/40/6b/dd028981b30db3d588f6e89f17f3/47424.jpg",
     "citySlug": "corpus-christi-tx"
   },
   {
@@ -738,7 +721,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.22,
     "region": "South Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/1f/92/6d6301f1d84982f9fa13a233d649/46188.jpg",
     "citySlug": "mcallen-tx"
   },
   {
@@ -774,38 +757,6 @@ window.TRACKPASS_COURSES = [
     "citySlug": "amarillo-tx"
   },
   {
-    "id": "tyl-faulkner-park",
-    "name": "Faulkner Park Golf Course",
-    "city": "Tyler",
-    "fee": 30,
-    "tags": [
-      "Municipal"
-    ],
-    "blurb": "Tyler's primary muni — tree-lined East Texas layout known for well-manicured conditions.",
-    "lat": 32.3613,
-    "lng": -95.291,
-    "region": "East Texas",
-    "partner": false,
-    "photo": null,
-    "citySlug": "tyler-tx"
-  },
-  {
-    "id": "bcs-pebble-creek",
-    "name": "Pebble Creek Golf Course",
-    "city": "College Station",
-    "fee": 40,
-    "tags": [
-      "Public"
-    ],
-    "blurb": "Links-style 18-hole track in College Station — excellent conditions, go-to course for Aggie golfers.",
-    "lat": 30.638,
-    "lng": -96.3244,
-    "region": "Central Texas",
-    "partner": false,
-    "photo": null,
-    "citySlug": "college-station-tx"
-  },
-  {
     "id": "mid-hogan-park",
     "name": "Hogan Park Golf Course",
     "city": "Midland",
@@ -835,24 +786,24 @@ window.TRACKPASS_COURSES = [
     "lng": -94.1166,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/5c/18/c2f08a60d8b6e7fe9af4bca9a5a5/28561.jpg",
     "citySlug": "beaumont-tx"
   },
   {
     "id": "smk-springs-hill",
-    "name": "Springs Hill Golf Course",
+    "name": "Southwest Texas Golf Course",
     "city": "San Marcos",
-    "fee": 35,
+    "fee": 20,
     "tags": [
       "Public",
-      "Scenic"
+      "9-hole"
     ],
-    "blurb": "Beautiful public layout in San Marcos with Hill Country terrain and scenic views between Austin and San Antonio.",
+    "blurb": "One of Texas's oldest public courses (est. 1928) — a classic 9-hole layout in San Marcos, between Austin and San Antonio.",
     "lat": 29.8927,
     "lng": -97.9311,
     "region": "Central Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/16/24/bd40efe4ee785d6a500e026bf52c/44482.jpg",
     "citySlug": "san-marcos-tx"
   },
   {
@@ -868,7 +819,7 @@ window.TRACKPASS_COURSES = [
     "lng": -99.4975,
     "region": "South Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/a8/a3/8829177ff5a2288cbafa1472d9bf/105066.jpg",
     "citySlug": "laredo-tx"
   },
   {
@@ -885,23 +836,23 @@ window.TRACKPASS_COURSES = [
     "lng": -94.7877,
     "region": "Texas Coast",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/a3/d0/30e294bed331f805acf9551cc0ca/8409.jpg",
     "citySlug": "galveston-tx"
   },
   {
     "id": "kil-skylark-field",
-    "name": "Skylark Field Golf Course",
+    "name": "Stonetree Golf Club",
     "city": "Killeen",
-    "fee": 30,
+    "fee": 35,
     "tags": [
       "Public"
     ],
-    "blurb": "Straightforward public layout near Fort Cavazos — primary public golf option for the Killeen–Temple area.",
+    "blurb": "Jay Riviere-designed 7,153-yard public layout near Fort Cavazos — the premier public golf option for the Killeen–Temple area.",
     "lat": 31.1271,
     "lng": -97.7178,
     "region": "Central Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/63/b7/49529c100671c8067603c264315e/96651.jpg",
     "citySlug": "killeen-tx"
   },
   {
@@ -917,7 +868,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.3328,
     "region": "Central Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/d7/96/cc4c194e8fd1cc2a150caee9287b/21583.jpg",
     "citySlug": "temple-tx"
   },
   {
@@ -933,7 +884,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.4834,
     "region": "North Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/db/e3/fa3e923c6b1fe0911e0e1f0d053d/71889.jpg",
     "citySlug": "wichita-falls-tx"
   },
   {
@@ -984,24 +935,8 @@ window.TRACKPASS_COURSES = [
     "lng": -97.0681,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/23/91/2f477259f2986fc95576a084174c/40981.jpg",
     "citySlug": "grapevine-tx"
-  },
-  {
-    "id": "rr-old-settlers-park",
-    "name": "Old Settlers Park Golf Course",
-    "city": "Round Rock",
-    "fee": 35,
-    "tags": [
-      "Municipal"
-    ],
-    "blurb": "Round Rock's city-owned 18-hole course in Old Settlers Park — affordable, well-maintained, heavy local play.",
-    "lat": 30.4983,
-    "lng": -97.6689,
-    "region": "Austin",
-    "partner": false,
-    "photo": null,
-    "citySlug": "round-rock-tx"
   },
   {
     "id": "rr-teravista",
@@ -1033,7 +968,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.5538,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/3b/c9/82951f492d702b2ed7e78316d264/130242.jpg",
     "citySlug": "rowlett-tx"
   },
   {
@@ -1049,7 +984,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.9958,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://www.cedarhillgolfcourse.com/wp-content/uploads/2022/07/IMG_0012-scaled.jpg",
     "citySlug": "cedar-hill-tx"
   },
   {
@@ -1082,7 +1017,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.1231,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/55/e7/7c7b478d4bdbba7e8764361e0483/1440x350.jpg",
     "citySlug": "denton-tx"
   },
   {
@@ -1099,7 +1034,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.0131,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/55/d3/0981c53263aeb30139c4427280af/39139.jpg",
     "citySlug": "grand-prairie-tx"
   },
   {
@@ -1115,7 +1050,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.4497,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/d6/b5/f9c41ee55d785c8c27223180731e/58207.jpg",
     "citySlug": "rockwall-tx"
   },
   {
@@ -1131,7 +1066,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.276,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/d8/cc/e11b56caf4aa2d4feeb5c8b164c8/109862.jpg",
     "citySlug": "pearland-tx"
   },
   {
@@ -1147,7 +1082,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.6249,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://www.oystercreekgolfclub.com/wp-content/uploads/sites/9757/2025/09/oyster-creek.png",
     "citySlug": "sugar-land-tx"
   },
   {
@@ -1163,7 +1098,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.6872,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/6d/70/ba03b912a0073b70e4480f4c3f62/105094.jpg",
     "citySlug": "cypress-tx"
   },
   {
@@ -1179,7 +1114,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.9808,
     "region": "South Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/37/dc/a98429ce8187259211120a0ca822/96607.jpg",
     "citySlug": "weslaco-tx"
   },
   {
@@ -1196,7 +1131,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.1145,
     "region": "Central Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/9f/fc/3a121d1bf42ab70a0e6680454704/102454.jpg",
     "citySlug": "new-braunfels-tx"
   },
   {
@@ -1228,7 +1163,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.8103,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/a9/eb/760b732df4875f2a0545c03075aa/44476.jpg",
     "citySlug": "cedar-park-tx"
   },
   {
@@ -1244,23 +1179,23 @@ window.TRACKPASS_COURSES = [
     "lng": -95.446,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/7b/7a/bf747f8ae53394473ef26713ffbc/128617.jpg",
     "citySlug": "conroe-tx"
   },
   {
     "id": "bay-baytown",
-    "name": "Evergreen Point Golf Club",
+    "name": "Tabbs Bay Golf Club",
     "city": "Baytown",
-    "fee": 32,
+    "fee": 30,
     "tags": [
       "Public"
     ],
-    "blurb": "18-hole daily-fee course in Baytown — scenic, walkable, one of the better-value rounds on Houston's east side.",
+    "blurb": "Public 18-hole daily-fee course on Baytown's east side — scenic waterside setting and one of the better-value rounds near Houston.",
     "lat": 29.7455,
     "lng": -94.9674,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/45/e0/a54ddbf3a2b461d8fa4c2376a01d/126354.jpg",
     "citySlug": "baytown-tx"
   },
   {
@@ -1276,7 +1211,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.191,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/55/e7/7c7b478d4bdbba7e8764361e0483/1440x350.jpg",
     "citySlug": "friendswood-tx"
   },
   {
@@ -1292,7 +1227,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.4244,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/dc/6c/253339a33ce3f1175e0fb67f0110/72620.jpg",
     "citySlug": "lake-jackson-tx"
   },
   {
@@ -1308,7 +1243,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.5274,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/63/67/41a48a7011b1adfa2fb86a65cb44/69304.jpg",
     "citySlug": "missouri-city-tx"
   },
   {
@@ -1324,7 +1259,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.1991,
     "region": "Houston",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/82/dd/2818ec0d32b21af86855ac4edbd0/8440.jpg",
     "citySlug": "pasadena-tx"
   },
   {
@@ -1340,7 +1275,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.6676,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/55/e7/7c7b478d4bdbba7e8764361e0483/1440x350.jpg",
     "citySlug": "georgetown-tx"
   },
   {
@@ -1388,7 +1323,7 @@ window.TRACKPASS_COURSES = [
     "lng": -102.3576,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/3a/12/6f21be07bbafd1e6d9e6144135d0/84990.jpg",
     "citySlug": "odessa-tx"
   },
   {
@@ -1404,7 +1339,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.1045,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/0e/5d/2b691c3e9012615a34219f08722b/100151.jpg",
     "citySlug": "mineral-wells-tx"
   },
   {
@@ -1420,7 +1355,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.7875,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/42/ff/9b86b928a2d99d49bf29bfca1fdb/23213.jpg",
     "citySlug": "weatherford-tx"
   },
   {
@@ -1436,7 +1371,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.7845,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/6f/5d/dead606ea845527fa0ef757e01b0/101686.jpg",
     "citySlug": "granbury-tx"
   },
   {
@@ -1452,7 +1387,7 @@ window.TRACKPASS_COURSES = [
     "lng": -98.1925,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/dd/48/77c1d0277519c07bbfb821bf5273/30277.jpg",
     "citySlug": "stephenville-tx"
   },
   {
@@ -1468,7 +1403,7 @@ window.TRACKPASS_COURSES = [
     "lng": -100.9506,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/4f/24/1516469aa00c2c0cf7683ba3396f/85286.jpg",
     "citySlug": "pampa-tx"
   },
   {
@@ -1484,7 +1419,7 @@ window.TRACKPASS_COURSES = [
     "lng": -94.7191,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/01/d3/9e9fab5d2cab4e469c3765cfc1ce/84929.jpg",
     "citySlug": "lufkin-tx"
   },
   {
@@ -1500,7 +1435,7 @@ window.TRACKPASS_COURSES = [
     "lng": -94.7305,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/d6/61/1dec56a72285a224cfaf8ff46682/26271.jpg",
     "citySlug": "longview-tx"
   },
   {
@@ -1516,7 +1451,7 @@ window.TRACKPASS_COURSES = [
     "lng": -94.6452,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/a4/8c/f4f7f6ba5fd9373f10a52289b2e6/35346.jpg",
     "citySlug": "nacogdoches-tx"
   },
   {
@@ -1532,7 +1467,7 @@ window.TRACKPASS_COURSES = [
     "lng": -94.3574,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/c7/1a/83480fe73beedbc067887b407cf4/42641.jpg",
     "citySlug": "marshall-tx"
   },
   {
@@ -1548,7 +1483,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.6208,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/72/48/3e8f9f3798877d28a65756df711b/103150.jpg",
     "citySlug": "palestine-tx"
   },
   {
@@ -1564,7 +1499,7 @@ window.TRACKPASS_COURSES = [
     "lng": -95.591,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/36/35/05b6635a210ad729b02b88294194/85347.jpg",
     "citySlug": "sulphur-springs-tx"
   },
   {
@@ -1580,7 +1515,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.4875,
     "region": "South Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/2a/82/dbbe5083f1a2bff59fa24587372b/128425.jpg",
     "citySlug": "brownsville-tx"
   },
   {
@@ -1596,7 +1531,7 @@ window.TRACKPASS_COURSES = [
     "lng": -94.7863,
     "region": "East Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/49/26/3a5a8e2372e8471a5a794519357e/84885.jpg",
     "citySlug": "henderson-tx"
   },
   {
@@ -1612,7 +1547,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.9936,
     "region": "South Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/2a/18/6bc4e92e30681297672d8ed81144/116277.jpg",
     "citySlug": "victoria-tx"
   }
 ];
