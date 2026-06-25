@@ -175,3 +175,36 @@ Thanks,
 TrackPass
 trackpassgolf.com
 
+
+---
+
+## Template 6: Batch 1 follow-up (send June 27 — 4 days after initial)
+
+**Subject:** Re: TrackPass -- driving more rounds to [Course Name]
+
+Hi [Name or "there"],
+
+Following up on my note from a few days ago about TrackPass.
+
+We've had good traffic to your course page on trackpassgolf.com this week, and I wanted to check if you had a chance to take a look at the partner program.
+
+No changes to your operation, no contracts. Our members show up with a digital pass, play at your standard rate, and we pay you. It's built for courses that want more weekday rounds without any extra marketing cost.
+
+The partner sign-up takes about two minutes at trackpassgolf.com/partner.html, or just reply here with any questions.
+
+Thanks,
+TrackPass
+trackpassgolf.com
+
+---
+
+## Batch 1 Follow-up Send List (June 27)
+
+| Course | Contact | Email |
+|--------|---------|-------|
+| Cedar Crest Golf Course (Dallas) | I. McGraw | imcgraw@golfcedarcrest.com |
+| Hermann Park Golf Course (Houston) | M. Dotch | mdotch@bslgolf.com |
+| Riverside Golf Course (Austin) | Pro shop | info@riverside-gc.com |
+| Pecan Valley Golf Courses (Fort Worth) | Henry Cagigal | Henry.Cagigal@fortworthtexas.gov |
+| Rockwood Park Golf Course (Fort Worth) | Jordan Fain | Jordan.Fain@fortworthtexas.gov |
+| Meadowbrook Golf Course (Fort Worth) | Raymond Briggs | Raymond.Briggs@fortworthtexas.gov |

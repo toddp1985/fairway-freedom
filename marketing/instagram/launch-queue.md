@@ -31,15 +31,15 @@ trackpassgolf.com — link in bio.
 **Slide 1:** "Course Spotlight: TPC Craig Ranch, McKinney TX"
 **Slide 2:** Photo of course + "Par 72 | 7,437 yards | Rated one of Texas's best public courses"
 **Slide 3:** "Walk-up rate: $85-$150/round"
-**Slide 4:** "TrackPass members: 2 free rounds per year. Partner course."
-**Slide 5:** "Your $199 pass pays for itself here alone. trackpassgolf.com"
+**Slide 4:** "TrackPass members: 1 free round per year. (Partner courses get 2 rounds/yr.)"
+**Slide 5:** "Your $199 pass covers this and 99 other TX public courses. trackpassgolf.com"
 
 **Caption:**
 TPC Craig Ranch. McKinney, Texas.
 
-One of the finest public courses in the state — and TrackPass members play it free (2x/yr as a partner course).
+One of the finest public courses in the state — TrackPass members get 1 free round per year here.
 
-A single round here runs $85–$150. Your $199 pass covers it and 99 other TX public courses.
+A single round runs $85–$150. Your $199 pass covers it and 99 other TX public courses. Partner courses unlock 2 rounds/yr when they join the network.
 
 trackpassgolf.com
 
@@ -79,9 +79,9 @@ trackpassgolf.com
 **Caption:**
 Firewheel Golf Park. Garland, Texas.
 
-36 holes of championship public golf in DFW — and TrackPass members get 2 free rounds per year.
+36 holes of championship public golf in DFW — TrackPass members get 1 free round per year.
 
-Walk-up: $45–$65/round. Your pass covers it.
+Walk-up: $45–$65/round. Your $199 pass covers one free round here + 99 other TX courses.
 
 trackpassgolf.com
 
@@ -176,5 +176,7 @@ $199/yr · 100 TX public courses
 ## Posting Schedule
 - 9am CT daily (course spotlights, savings math, how-it-works)
 - 6pm CT daily (course spotlights, engagement posts)
-- Use Later.com free tier to schedule all 7 posts at once
+- Use Meta Business Suite (business.facebook.com) — FREE, built by Instagram/Meta, schedule directly
+  - Connect @trackpassgolf to a new Facebook Page (TrackPass Golf) during signup
+  - No third-party needed, no cost, no post limits
 - Respond to every comment within 2 hours for the first 30 days

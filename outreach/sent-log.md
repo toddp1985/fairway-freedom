@@ -1,4 +1,20 @@
 
+## Batch 4 — 2026-06-24
+
+Sent to 5 contacts via Resend (from: outreach@trackpassgolf.com, reply-to: hello@trackpassgolf.com):
+
+| Course | Contact | Email | Resend ID |
+|--------|---------|-------|-----------|
+| Texas Rangers Golf Club (Arlington, formerly Ditto) | Bill Ebdon, Parks | Bill.Ebdon@arlingtontx.gov | 4e869e72-8829-408c-ab0d-865cfbabcf32 |
+| Lake Arlington Golf Course | Arlington Golf dept | arlingtongolf@arlingtontx.gov | 8782c4a3-7122-4c3b-952c-4eb55054dd17 |
+| Cottonwood Creek Golf Course (Waco) | Parks dept | parksinfo@wacotx.gov | 6e893ad4-b387-473f-972b-0ca0f2dbd8d9 |
+| Ascarate Municipal Golf Course (El Paso) | Pablo Caballero, Asst. Director of Parks | pcaballero@elpasotexas.gov | 1479dd6b-547d-4832-8d57-367fbb3f4e21 |
+| Maxwell Municipal Golf Course (Abilene) | Parks & Rec dept | parksandrec@abilenetx.gov | e81ec2f6-d05f-4e69-a95e-1f9fa19cbb74 |
+
+Note: Chester W. Ditto Golf Course was renamed Texas Rangers Golf Club in 2019. Course data already updated.
+
+---
+
 ## Batch 3 — 2026-06-24
 
 Sent to 5 contacts via Resend (from: outreach@trackpassgolf.com, reply-to: hello@trackpassgolf.com):
