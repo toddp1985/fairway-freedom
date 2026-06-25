@@ -1,4 +1,20 @@
 
+## Batch 3 — 2026-06-24
+
+Sent to 5 contacts via Resend (from: outreach@trackpassgolf.com, reply-to: hello@trackpassgolf.com):
+
+| Course | Contact | Email | Resend ID |
+|--------|---------|-------|-----------|
+| Houston city golf (Memorial Park, Sharpstown) | Glenn Childers, Golf Ops Manager | glenn.childers@houstontx.gov | 2902da55-e1b3-4151-b4a2-8fc3d018cbfe |
+| Pecan Hollow Golf Course (Plano) | Pro shop | pecanhollowgolf@hotmail.com | 618387e8-adf7-4485-9529-0278a3f6eb80 |
+| Irving Golf Club (Twin Wells) | Paul Van Voorhis, GM | paulv@elitegolf.com | 82ea03f9-c599-4f7c-ab9a-a15b6f9ffb6a |
+| Firewheel Golf Park (Garland) | Don Kennedy, Director of Golf | dkennedy@garlandtx.gov | 14ba7c76-46bc-469c-bffd-26f30e7e559e |
+| Grapevine Golf Course | Robert Singletary, Director of Golf | rsingletary@grapevinetexas.gov | f61fa320-7d00-4674-8edf-769957855d51 |
+
+Note: Glenbrook Golf Course removed from course data — converted to Houston Botanic Garden (no longer operating).
+
+---
+
 ## Batch 2 — 2026-06-24
 
 Sent to 5 contacts via Resend (from: outreach@trackpassgolf.com, reply-to: todd@trackpassgolf.com):

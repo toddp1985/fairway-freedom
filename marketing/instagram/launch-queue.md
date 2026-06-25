@@ -166,9 +166,9 @@ $199/yr · 100 TX public courses
 ---
 
 ## Account Setup (Anonymous)
-1. New Gmail: trackpassgolf@gmail.com (not associated with Todd's accounts)
-2. Sign up at instagram.com with that Gmail
-3. No phone number from Todd's personal accounts — use a Google Voice number or skip
+1. Email: hello@trackpassgolf.com — sign up with this (domain email, zero personal name connection)
+2. Sign up at instagram.com with hello@trackpassgolf.com
+3. No phone — skip or use a Google Voice number not linked to personal accounts
 4. Profile photo: Texas flag + golf pin icon (generate in Canva)
 5. No location set on account profile
 6. UTM on every bio link: ?utm_source=instagram

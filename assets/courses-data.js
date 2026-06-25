@@ -448,22 +448,6 @@ window.TRACKPASS_COURSES = [
     "citySlug": "fort-worth-tx"
   },
   {
-    "id": "hou-glenbrook",
-    "name": "Glenbrook Golf Course",
-    "city": "Houston",
-    "fee": 30,
-    "tags": [
-      "Municipal"
-    ],
-    "blurb": "City of Houston muni on the southeast side — affordable 18-hole layout, reliable everyday round.",
-    "lat": 29.7104,
-    "lng": -95.2898,
-    "region": "Houston",
-    "partner": false,
-    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/07/f9/d310a49bea1bed0f06962ea25e6d/26934.jpg",
-    "citySlug": "houston-tx"
-  },
-  {
     "id": "hou-brock-park",
     "name": "Brock Park Golf Course",
     "city": "Houston",
@@ -989,7 +973,7 @@ window.TRACKPASS_COURSES = [
   },
   {
     "id": "grv-grapevine-golf",
-    "name": "Grapevine Golf Course — Dove Valley",
+    "name": "Grapevine Golf Course",
     "city": "Grapevine",
     "fee": 48,
     "tags": [
