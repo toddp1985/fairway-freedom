@@ -1,135 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#16412b"/>
-<title>TrackPass Blog — Texas Golf Tips, Deals &amp; Course Guides</title>
-<meta name="description" content="Texas golf tips, green fee guides, and insider advice on playing more golf for less. From the TrackPass team."/>
+<title>Texas Golf Blog — Course Guides, Tips & News | TrackPass</title>
+<meta name="description" content="Texas golf course guides, rankings, and tips from TrackPass. Austin, Dallas, Houston, San Antonio municipal golf reviews. How to play more golf for less."/>
 <link rel="canonical" href="https://trackpassgolf.com/blog/"/>
+<meta property="og:title" content="Texas Golf Blog — TrackPass"/>
+<meta property="og:description" content="Texas golf course guides and tips. Find the best public courses in Austin, Dallas, Houston, San Antonio and across Texas."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="TrackPass"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "TrackPass Blog",
-  "description": "Texas golf tips, green fee guides, and course reviews for public golfers.",
+  "name": "TrackPass Texas Golf Blog",
+  "description": "Texas golf course guides, rankings, and tips. How to play every Texas public course for less.",
   "url": "https://trackpassgolf.com/blog/",
   "publisher": { "@type": "Organization", "name": "TrackPass", "url": "https://trackpassgolf.com/" }
 }
 </script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<style>body { font-family: 'Manrope', sans-serif; background: #f0fdf4; color: #002113; }</style>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: Manrope, sans-serif; background: #f0fdf4; color: #002113; margin: 0; }
+  .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+  .post-card { background: white; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.07); text-decoration: none; color: inherit; display: block; transition: transform 0.15s; }
+  .post-card:hover { transform: translateY(-3px); }
+  .post-card .tag { display: inline-block; background: #dcfce7; color: #166534; padding: 0.15rem 0.5rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .post-card h2 { font-family: Sora; font-size: 1.1rem; font-weight: 700; margin: 0 0 0.5rem; line-height: 1.4; }
+  .post-card p { font-size: 0.875rem; color: #555; margin: 0; line-height: 1.6; }
+  .post-card .meta { font-size: 0.75rem; color: #888; margin-top: 0.75rem; }
+</style>
 </head>
 <body>
-<header class="bg-[#16412b] text-white px-6 py-4 flex items-center justify-between">
-  <a href="/" class="text-xl font-bold tracking-tight" style="font-family:Sora">TrackPass</a>
-  <nav class="flex gap-6 text-sm font-medium">
-    <a href="/courses.html" class="hover:text-green-300">Courses</a>
-    <a href="/plans.html" class="hover:text-green-300">Pricing</a>
-    <a href="/partner.html" class="hover:text-green-300">Add Your Course</a>
+<header style="background:#16412b;color:white;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between">
+  <a href="/" style="font-family:Sora;font-size:1.25rem;font-weight:800;color:white;text-decoration:none">TrackPass</a>
+  <nav style="display:flex;gap:1.25rem;font-size:0.875rem;font-weight:600">
+    <a href="/courses.html" style="color:#86efac;text-decoration:none">All Courses</a>
+    <a href="/plans.html" style="color:#fde047;text-decoration:none">Get Pass · $199</a>
   </nav>
 </header>
 
-<main class="max-w-3xl mx-auto px-6 py-12">
-  <h1 class="text-3xl font-bold mb-2" style="font-family:Sora">Texas Golf Blog</h1>
-  <p class="text-gray-600 mb-10">Tips for playing more public golf in Texas without spending a fortune.</p>
+<main style="max-width:72rem;margin:0 auto;padding:2.5rem 1.5rem">
+  <h1 style="font-family:Sora;font-size:2rem;font-weight:800;margin:0 0 0.25rem">Texas Golf Blog</h1>
+  <p style="color:#555;margin:0 0 2rem">Course guides, rankings, and tips from TrackPass. <a href="/plans.html" style="color:#16412b;font-weight:700">Play them all for $199/yr →</a></p>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-      <img src="/assets/courses/c1.jpg" alt="Lions Municipal Golf Course" class="w-full h-40 object-cover"/>
-      <div class="p-5 flex flex-col flex-1">
-        <time class="text-xs text-gray-400 uppercase tracking-wide">June 2026</time>
-        <h2 class="text-lg font-bold mt-1 mb-2 flex-1" style="font-family:Sora">
-          <a href="/blog/cheapest-golf-in-texas-2026.html" class="hover:text-green-700">The Cheapest Public Golf Courses in Texas (2026 Guide)</a>
-        </h2>
-        <p class="text-gray-600 text-sm mb-3">Texas has over 570 public courses. We ranked the best ones by value — cheap green fees, fast play, and conditions that don't embarrass you.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-xs text-gray-400">8 min read</span>
-          <a href="/blog/cheapest-golf-in-texas-2026.html" class="text-sm font-semibold text-green-700 hover:underline">Read more &rarr;</a>
-        </div>
-      </div>
-    </article>
+  <h2 style="font-family:Sora;font-size:1.15rem;font-weight:700;margin:0 0 0.75rem;color:#555">City Guides</h2>
+  <div class="post-grid">
+    <a class="post-card" href="/blog/austin-municipal-golf-guide.html">
+      <span class="tag">Austin</span>
+      <h2>Austin's Public Golf Courses, Ranked</h2>
+      <p>Roy Kizer is where locals actually play. Lions Muny gets all the love. The honest breakdown of all 7 Austin public courses.</p>
+      <div class="meta">June 2026 · 7 min</div>
+    </a>
+    <a class="post-card" href="/blog/dallas-public-golf-courses.html">
+      <span class="tag">Dallas</span>
+      <h2>Dallas Public Golf Courses 2026</h2>
+      <p>All 6 Dallas munis reviewed: Cedar Crest, Tenison Glen, Stevens Park, Keeton Park, Luna Vista, Tenison Highlands.</p>
+      <div class="meta">June 2026 · 8 min</div>
+    </a>
+    <a class="post-card" href="/blog/houston-public-golf-courses.html">
+      <span class="tag">Houston</span>
+      <h2>Houston Public Golf Courses 2026</h2>
+      <p>Memorial Park is world-class after the Tom Doak renovation. Plus the other 4 Houston city courses worth knowing.</p>
+      <div class="meta">June 2026 · 7 min</div>
+    </a>
+    <a class="post-card" href="/blog/san-antonio-public-golf-courses.html">
+      <span class="tag">San Antonio</span>
+      <h2>San Antonio Public Golf Courses 2026</h2>
+      <p>Brackenridge Park is the oldest public course in Texas. All 7 SA city courses reviewed with green fees and honest conditions.</p>
+      <div class="meta">June 2026 · 6 min</div>
+    </a>
+  </div>
 
-    <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-      <img src="/assets/courses/c7.jpg" alt="Austin public golf courses" class="w-full h-40 object-cover"/>
-      <div class="p-5 flex flex-col flex-1">
-        <time class="text-xs text-gray-400 uppercase tracking-wide">June 2026</time>
-        <h2 class="text-lg font-bold mt-1 mb-2 flex-1" style="font-family:Sora">
-          <a href="/blog/austin-municipal-golf-guide.html" class="hover:text-green-700">Austin's 6 Public Golf Courses, Ranked</a>
-        </h2>
-        <p class="text-gray-600 text-sm mb-3">Lions Muny gets all the love, but Roy Kizer is where the locals actually play. A real breakdown of Austin's public courses.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-xs text-gray-400">6 min read</span>
-          <a href="/blog/austin-municipal-golf-guide.html" class="text-sm font-semibold text-green-700 hover:underline">Read more &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-      <img src="/assets/courses/c16.jpg" alt="Texas golf for less" class="w-full h-40 object-cover"/>
-      <div class="p-5 flex flex-col flex-1">
-        <time class="text-xs text-gray-400 uppercase tracking-wide">June 2026</time>
-        <h2 class="text-lg font-bold mt-1 mb-2 flex-1" style="font-family:Sora">
-          <a href="/blog/how-to-play-more-golf-for-less-texas.html" class="hover:text-green-700">How to Play 30+ Rounds a Year in Texas for Under $7 a Round</a>
-        </h2>
-        <p class="text-gray-600 text-sm mb-3">Every discount pass, twilight deal, and membership worth considering for Texas public golfers in 2026.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-xs text-gray-400">7 min read</span>
-          <a href="/blog/how-to-play-more-golf-for-less-texas.html" class="text-sm font-semibold text-green-700 hover:underline">Read more &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-      <img src="/assets/img/img_0063edc7625f.jpg" alt="Golf pass Texas" class="w-full h-40 object-cover"/>
-      <div class="p-5 flex flex-col flex-1">
-        <time class="text-xs text-gray-400 uppercase tracking-wide">June 2026</time>
-        <h2 class="text-lg font-bold mt-1 mb-2 flex-1" style="font-family:Sora">
-          <a href="/blog/what-is-a-golf-pass.html" class="hover:text-green-700">What Is a Golf Pass and Is It Worth It? (Texas Edition)</a>
-        </h2>
-        <p class="text-gray-600 text-sm mb-3">Golf passes, season memberships, daily passes — what's the difference and which makes sense for a Texas golfer in 2026?</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-xs text-gray-400">5 min read</span>
-          <a href="/blog/what-is-a-golf-pass.html" class="text-sm font-semibold text-green-700 hover:underline">Read more &rarr;</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-      <img src="/assets/courses/c13.jpg" alt="Empty tee times at Texas municipal golf" class="w-full h-40 object-cover" onerror="this.src='/assets/courses/c1.jpg'"/>
-      <div class="p-5 flex flex-col flex-1">
-        <time class="text-xs text-gray-400 uppercase tracking-wide">June 2026</time>
-        <span class="inline-block text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full mb-1 w-fit">For course managers</span>
-        <h2 class="text-lg font-bold mt-1 mb-2 flex-1" style="font-family:Sora">
-          <a href="/blog/how-to-fill-empty-tee-times-texas-municipal-golf.html" class="hover:text-green-700">How to Fill Empty Tee Times at Your Texas Municipal Golf Course</a>
-        </h2>
-        <p class="text-gray-600 text-sm mb-3">Most TX munis run 40–60% weekday utilization. Five strategies that fill empty slots without discounting your standard green fee rate.</p>
-        <div class="flex items-center justify-between mt-auto">
-          <span class="text-xs text-gray-400">6 min read</span>
-          <a href="/blog/how-to-fill-empty-tee-times-texas-municipal-golf.html" class="text-sm font-semibold text-green-700 hover:underline">Read more &rarr;</a>
-        </div>
-      </div>
-    </article>
+  <h2 style="font-family:Sora;font-size:1.15rem;font-weight:700;margin:2rem 0 0.75rem;color:#555">Texas Golf Tips</h2>
+  <div class="post-grid">
+    <a class="post-card" href="/blog/cheapest-golf-in-texas-2026.html">
+      <span class="tag">Value</span>
+      <h2>Cheapest Golf in Texas 2026</h2>
+      <p>The most affordable rounds in Austin, Dallas, Houston, and San Antonio — under $30 for a full 18.</p>
+      <div class="meta">June 2026 · 5 min</div>
+    </a>
+    <a class="post-card" href="/blog/how-to-play-more-golf-for-less-texas.html">
+      <span class="tag">Tips</span>
+      <h2>How to Play More Golf for Less in Texas</h2>
+      <p>Twilight rates, city passes, annual memberships, and the math that actually works for regular Texas golfers.</p>
+      <div class="meta">June 2026 · 5 min</div>
+    </a>
+    <a class="post-card" href="/blog/what-is-a-golf-pass.html">
+      <span class="tag">Explainer</span>
+      <h2>What Is a Golf Pass?</h2>
+      <p>Golf passes, golf cards, multi-course memberships — explained. How TrackPass compares to other options.</p>
+      <div class="meta">June 2026 · 4 min</div>
+    </a>
+    <a class="post-card" href="/blog/how-to-fill-empty-tee-times-texas-municipal-golf.html">
+      <span class="tag">For Courses</span>
+      <h2>How to Fill Empty Tee Times at Your Texas Muni</h2>
+      <p>Strategies for golf course operators to drive consistent weekday traffic without discounting green fees.</p>
+      <div class="meta">June 2026 · 6 min</div>
+    </a>
   </div>
 </main>
 
-<footer class="bg-[#16412b] text-green-200 text-sm px-6 py-8 mt-16">
-  <div class="max-w-3xl mx-auto flex flex-wrap gap-6 justify-between">
-    <div>
-      <p class="font-bold text-white mb-1" style="font-family:Sora">TrackPass</p>
-      <p>The Texas golf pass. $199/year.</p>
-    </div>
-    <nav class="flex flex-col gap-1">
-      <a href="/" class="hover:text-white">Home</a>
-      <a href="/courses.html" class="hover:text-white">Find a course</a>
-      <a href="/plans.html" class="hover:text-white">Get a pass</a>
-      <a href="/partner.html" class="hover:text-white">Add your course</a>
-    </nav>
+<section style="background:#16412b;color:white;padding:2.5rem 1.5rem;margin-top:2rem" aria-label="About TrackPass">
+  <div style="max-width:48rem;margin:0 auto;text-align:center">
+    <h2 style="font-family:Sora;font-size:1.25rem;font-weight:700;margin:0 0 0.5rem">Play every Texas public course for $199/year</h2>
+    <p style="color:#bbf7d0;margin:0 0 1rem;font-size:0.95rem">Partner courses: 2 free rounds/yr. Out-of-network: 1 free round/yr. 95 TX public courses.</p>
+    <a href="/plans.html" style="background:#fde047;color:#002113;padding:0.75rem 2rem;border-radius:999px;font-weight:700;text-decoration:none;display:inline-block">Get TrackPass — $199/year →</a>
   </div>
+</section>
+
+<footer style="background:#002113;color:#86efac;text-align:center;padding:1rem;font-size:0.8rem">
+  <a href="/" style="color:#86efac">TrackPass</a> · <a href="/courses.html" style="color:#86efac">All TX Courses</a> · <a href="/plans.html" style="color:#86efac">$199/yr Pass</a>
 </footer>
-<script>window.TRACKPASS_WAITLIST_ENDPOINT = 'https://trackpass-waitlist.todd-676.workers.dev';</script>
-<script src="../assets/analytics.js"></script>
-<div class="fixed bottom-0 left-0 right-0 bg-[#002a17] text-white text-center py-3 px-4 z-50 md:hidden shadow-lg"><a href="../plans.html" class="font-bold text-[#ffdea8]">Get TrackPass — $199/year </body>#x2192;</a></div>
-</body>
-</html>
+</body></html>

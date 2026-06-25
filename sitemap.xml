@@ -118,4 +118,39 @@
   </url>
   <url><loc>https://trackpassgolf.com/blog/what-is-a-golf-pass.html</loc><changefreq>monthly</changefreq><priority>0.8</priority><lastmod>2026-06-24</lastmod></url>
   <url><loc>https://trackpassgolf.com/blog/how-to-fill-empty-tee-times-texas-municipal-golf.html</loc><changefreq>monthly</changefreq><priority>0.7</priority><lastmod>2026-06-24</lastmod></url>
+  <!-- City hub pages -->
+  <url><loc>https://trackpassgolf.com/courses/austin-tx/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/dallas-tx/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/houston-tx/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/san-antonio-tx/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/fort-worth-tx/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/arlington-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/el-paso-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/lubbock-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/amarillo-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/corpus-christi-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/garland-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/plano-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/irving-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/denton-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/grapevine-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/round-rock-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/waco-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/abilene-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/mcallen-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/laredo-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/brownsville-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/galveston-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/beaumont-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/wichita-falls-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/courses/killeen-tx/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Blog posts -->
+  <url><loc>https://trackpassgolf.com/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/austin-municipal-golf-guide.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/dallas-public-golf-courses.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/houston-public-golf-courses.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/cheapest-golf-in-texas-2026.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/how-to-fill-empty-tee-times-texas-municipal-golf.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/how-to-play-more-golf-for-less-texas.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://trackpassgolf.com/blog/what-is-a-golf-pass.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
