@@ -315,9 +315,9 @@ ${tailwindConfig()}
       <div class="text-label-lg text-on-surface-variant font-label-lg uppercase tracking-wide mb-1">Without TrackPass</div>
       <div class="text-3xl font-bold text-primary font-headline-lg">~$${course.fee}<span class="text-base font-normal text-on-surface-variant">/round</span></div>
     </div>
-    <div class="p-5 rounded-2xl bg-primary-container border border-primary/20">
-      <div class="text-label-lg text-on-primary-container font-label-lg uppercase tracking-wide mb-1">With TrackPass</div>
-      <div class="text-3xl font-bold text-primary-fixed font-headline-lg">1 free round<span class="text-base font-normal text-on-primary-container">/year at this course</span></div>
+    <div class="p-5 rounded-2xl ${course.partner ? 'bg-[#b8860b]/10 border border-[#b8860b]/30' : 'bg-primary-container border border-primary/20'}">
+      <div class="text-label-lg ${course.partner ? 'text-[#7a5c00]' : 'text-on-primary-container'} font-label-lg uppercase tracking-wide mb-1">${course.partner ? '⭐ Partner Course' : 'Out-of-Network'}</div>
+      <div class="text-3xl font-bold ${course.partner ? 'text-[#7a5c00]' : 'text-primary-fixed'} font-headline-lg">${course.partner ? '2 free rounds' : '1 free round'}<span class="text-base font-normal ${course.partner ? 'text-[#7a5c00]' : 'text-on-primary-container'}">/year at this course</span></div>
     </div>
     <div class="p-5 rounded-2xl bg-secondary-container border border-secondary/20">
       <div class="text-label-lg text-on-secondary-container font-label-lg uppercase tracking-wide mb-1">TrackPass Annual Cost</div>
@@ -348,7 +348,7 @@ ${tailwindConfig()}
           </li>
           <li class="flex items-start gap-3">
             <span class="material-symbols-outlined text-secondary mt-0.5">check_circle</span>
-            <span>Log in to your TrackPass member dashboard and log your round. TrackPass covers 1 free round per year at this course (or 2/year if it's a partner course).</span>
+            <span>Log in to your TrackPass member dashboard and log your round. ${course.partner ? 'As a <strong>partner course</strong>, you get <strong>2 free rounds per year</strong> here.' : 'TrackPass covers <strong>1 free round per year</strong> at this course. Partner courses get 2 rounds/year when they join the network.'}</span>
           </li>
         </ul>
       </section>
