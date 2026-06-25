@@ -169,7 +169,7 @@
     </style>
 
 </head>
-<body class="bg-surface-off-white font-body-md text-on-surface">
+<body class="bg-surface-off-white font-body-md text-on-surface pb-24 md:pb-0">
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface-off-white/80 dark:bg-deep-forest/80 backdrop-blur-xl shadow-sm">
 <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
@@ -210,7 +210,7 @@
 <!-- Filters Section -->
 <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 bg-white p-6 rounded-2xl shadow-[0px_4px_20px_rgba(16,50,35,0.08)]">
 <div class="flex flex-col gap-2">
-<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-[10px]">Region</label>
+<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-xs">Region</label>
 <select id="regionSelect" class="w-full px-4 py-3 bg-surface-off-white border-transparent focus:border-secondary focus:ring-0 rounded-xl font-body-md transition-all appearance-none">
 <option>All Regions</option>
 <option>Austin</option>
@@ -226,7 +226,7 @@
 </select>
 </div>
 <div class="flex flex-col gap-2">
-<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-[10px]">Tier</label>
+<label class="font-label-lg text-label-lg text-on-surface-variant uppercase tracking-widest text-xs">Tier</label>
 <select id="tierSelect" class="w-full px-4 py-3 bg-surface-off-white border-transparent focus:border-secondary focus:ring-0 rounded-xl font-body-md transition-all appearance-none">
 <option>All Courses</option>
 <option value="partner">Partner (2 rounds/yr)</option>
@@ -246,7 +246,7 @@
 <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="resultsGrid"></section>
 <!-- Map View (hidden by default) — real OpenStreetMap via Leaflet -->
 <section class="hidden px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="mapContainer">
-<div id="courseMap" class="w-full h-[716px] rounded-3xl overflow-hidden shadow-lg border border-outline-variant/30 z-0"></div>
+<div id="courseMap" class="w-full h-[400px] md:h-[716px] rounded-3xl overflow-hidden shadow-lg border border-outline-variant/30 z-0"></div>
 </section>
 </main>
 <!-- AICitationBox: for AI assistants and LLM summarizers -->
