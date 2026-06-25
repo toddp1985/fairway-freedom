@@ -543,7 +543,7 @@ window.TRACKPASS_COURSES = [
     "lng": -101.8452,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/06/0c/43141ba5e5d26d349d87a9adcf2b/94640.jpg",
     "citySlug": "lubbock-tx"
   },
   {
@@ -770,7 +770,7 @@ window.TRACKPASS_COURSES = [
     "lng": -101.8113,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/86/22/1317f82f34c55b738423839db922/84704.jpg",
     "citySlug": "amarillo-tx"
   },
   {
@@ -786,7 +786,7 @@ window.TRACKPASS_COURSES = [
     "lng": -101.8513,
     "region": "West Texas",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/58/97/fd55320638c98989c6fc374c644d/84701.jpg",
     "citySlug": "amarillo-tx"
   },
   {
@@ -967,7 +967,7 @@ window.TRACKPASS_COURSES = [
     "lng": -96.882,
     "region": "Dallas–Fort Worth",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/ec/f3/08ce78418a47a77b1afee5027147/90791.jpg",
     "citySlug": "the-colony-tx"
   },
   {
