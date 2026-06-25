@@ -1016,7 +1016,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.6889,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/b3/8c/35b5a5c43f05acbf65676dcaf32e/39210.jpg",
     "citySlug": "round-rock-tx"
   },
   {
@@ -1212,7 +1212,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.61,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/c3/bd/dc633e10736ec6f5d42f9581a462/8510.jpg",
     "citySlug": "pflugerville-tx"
   },
   {
@@ -1356,7 +1356,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.5361,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/94/c1/adf47a1d3b448736f8c376e88b1e/125562.jpg",
     "citySlug": "hutto-tx"
   },
   {
@@ -1372,7 +1372,7 @@ window.TRACKPASS_COURSES = [
     "lng": -97.7931,
     "region": "Austin",
     "partner": false,
-    "photo": null,
+    "photo": "https://golf-pass-brightspot.s3.amazonaws.com/f3/bb/06236b68fbe1df47a2728f0e55f7/80869.jpg",
     "citySlug": "austin-tx"
   },
   {
