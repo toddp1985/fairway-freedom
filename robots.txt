@@ -23,4 +23,7 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://trackpassgolf.com/sitemap.xml
