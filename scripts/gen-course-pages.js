@@ -245,6 +245,8 @@ function generatePage(course) {
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#16412b"/>
+<link rel="icon" type="image/png" href="../../assets/favicon.png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <title>${course.name} Green Fees &amp; Tee Times | TrackPass Texas Golf Pass</title>
 <meta name="description" content="Play ${course.name} in ${course.city}, TX with TrackPass — the $199/year Texas golf pass. Partner courses: 2 free rounds/year. Out-of-network courses: 1 free round/year. $199/year, any Texas public course."/>
 <link rel="canonical" href="${canonical}"/>
@@ -303,7 +305,7 @@ ${tailwindConfig()}
 <!-- Nav -->
 <nav class="fixed top-0 w-full z-50 bg-surface-off-white/80 backdrop-blur-xl shadow-sm">
   <div class="flex justify-between items-center h-20 px-4 md:px-8 max-w-5xl mx-auto">
-    <a class="text-2xl font-bold tracking-tight text-primary font-headline-lg" href="${SITE_URL}/">TrackPass</a>
+    <a href="${SITE_URL}/"><img src="../../assets/trackpass-logo.png" alt="TrackPass" class="h-9 md:h-11 w-auto"></a>
     <div class="hidden md:flex items-center gap-8">
       <a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="${SITE_URL}/courses.html">Find Courses</a>
       <a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="${SITE_URL}/plans.html">Membership</a>
