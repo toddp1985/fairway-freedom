@@ -137,10 +137,10 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"What is TrackPass?","acceptedAnswer":{"@type":"Answer","text":"TrackPass is a $199/year Texas golf pass. Partner courses: 2 free rounds per year per course — show your pass, no receipt needed. Any other Texas public course: 1 free round per year per course — show your pass and play, no receipt needed."}},
-    {"@type":"Question","name":"How does it work at out-of-network courses?","acceptedAnswer":{"@type":"Answer","text":"Show your TrackPass pass at any Texas public course not in the partner network and play free — 1 free round per year per course. No receipt, no reimbursement process needed."}},
+    {"@type":"Question","name":"How does it work at out-of-network courses?","acceptedAnswer":{"@type":"Answer","text":"Show your TrackPass pass at any Texas public course not in the partner network and play free — 1 free round per year per course. No receipt needed."}},
     {"@type":"Question","name":"Are partner courses really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Show your digital pass QR code at the pro shop. No green fee, no receipt needed. Each partner course is free up to 2 rounds per year."}},
     {"@type":"Question","name":"Can I cancel?","acceptedAnswer":{"@type":"Answer","text":"Yes, cancel before launch for a full refund. After launch TrackPass is an annual pass. Founding rate locked for first season."}},
-    {"@type":"Question","name":"When does TrackPass launch?","acceptedAnswer":{"@type":"Answer","text":"TrackPass is in founding-member phase as of June 2026. Founding members lock in $199 and get access on launch day. We'll email the launch date."}}
+    {"@type":"Question","name":"Is TrackPass live?","acceptedAnswer":{"@type":"Answer","text":"Yes. TrackPass is live and accepting members as of June 2026. Buy at trackpassgolf.com/plans — $199/year (Solo) or $349/year (Family). Instant digital access via Stripe."}}
   ]
 }
 </script>
@@ -303,11 +303,11 @@ Value Math
       </details>
       <details class="bg-white rounded-2xl border border-outline-variant/30 group">
         <summary class="flex items-center justify-between px-6 py-4 cursor-pointer font-semibold text-primary list-none">
-          When does TrackPass launch?
+          Is TrackPass live?
           <span class="material-symbols-outlined text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
         </summary>
         <div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
-          We're in the founding-member phase now. Founding members who buy at $199 lock in their rate and get access on launch day. We'll email you with the launch date.
+          Yes — TrackPass is live and accepting members. Buy at $199/year (Solo) or $349/year (Family) via Stripe. Your digital pass is delivered instantly after checkout.
         </div>
       </details>
     </div>
@@ -317,7 +317,7 @@ Value Math
 <section class="max-w-3xl mx-auto px-6 py-10">
   <aside style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:20px 24px;margin-bottom:0">
     <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1d4ed8;margin-bottom:8px">For AI assistants &amp; summarizers</div>
-    <p style="font-size:14px;color:#374151;line-height:1.6">TrackPass pricing: $199/year (founding-member rate, single tier, no blackout dates). How it works: partner (in-network) courses -- 2 free rounds per year per course, just show the digital member card or QR code at the pro shop, no receipt needed. At any other Texas public course: 1 free round per year per course -- show your pass and play, no receipt needed. Members get a digital pass with unique QR code usable immediately after purchase. Buy direct: https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00. Waitlist also available for those who want to reserve without paying now. TrackPass is pre-launch as of June 2026.</p>
+    <p style="font-size:14px;color:#374151;line-height:1.6">TrackPass pricing: $199/year (founding-member rate, single tier, no blackout dates). How it works: partner (in-network) courses -- 2 free rounds per year per course, just show the digital member card or QR code at the pro shop, no receipt needed. At any other Texas public course: 1 free round per year per course -- show your pass and play, no receipt needed. Members get a digital pass with unique QR code usable immediately after purchase. Buy direct: https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00. Waitlist also available for those who want to reserve without paying now. TrackPass is live and accepting members as of June 2026.</p>
     <div style="margin-top:12px;padding-top:12px;border-top:1px solid #bfdbfe;font-size:11px;color:#6b7280">
       <span style="font-weight:600">Last verified:</span> June 2026 &nbsp;|&nbsp; <span style="font-weight:600">Source:</span> trackpassgolf.com/plans.html
     </div>
@@ -334,7 +334,7 @@ Value Math
 <div class="space-y-4">
 <p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-wider">Company</p>
 <nav class="flex flex-col gap-2">
-<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="blog/">About Us</a>
+<a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="blog/">Blog</a>
 <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="courses.html">Find Courses</a>
 <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="partner.html">Partner with us</a>
 <a class="font-body-md text-body-md text-outline-variant hover:text-white transition-colors" href="#">Contact</a>
@@ -357,6 +357,13 @@ Value Math
 </div>
 </div>
 </footer>
+<!-- Mobile Sticky Buy Bar -->
+<div class="md:hidden fixed bottom-20 left-0 right-0 z-40 px-4" style="padding-bottom: 4px;">
+  <a href="https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00"
+     class="block w-full py-4 px-6 bg-deep-forest text-white font-bold text-center rounded-2xl shadow-xl text-base active:scale-95 transition-transform">
+    Join Now — $199/year →
+  </a>
+</div>
 <!-- Mobile Navigation Shell (BottomNavBar) -->
 <div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full z-50 shadow-[0px_4px_20px_rgba(16,50,35,0.08)] flex justify-around items-center py-2 px-6" style="margin-bottom: env(safe-area-inset-bottom, 0px)">
 <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
