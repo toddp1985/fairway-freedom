@@ -1,65 +1,76 @@
 # Reddit Posts — For Todd to Post Manually
 
-Post these yourself from your personal Reddit account. Space them out — don't post all on the same day.
+Post these yourself from your personal Reddit account. Space them out — don't post all on the same day. Respond to comments within the first hour.
 
 ---
 
 ## Post 1 — r/golf
 
-**Title:** Built a $199/year Texas golf pass — play any public course in the state, feedback welcome
+**Title:** Built a $199/year Texas golf pass — play any public course in the state, looking for feedback
 
 **Body:**
-Been thinking about this for a while. There are 570+ public golf courses in Texas and no good pass that covers all of them.
+Been thinking about this for a while. Texas has 570+ public golf courses and no good statewide pass.
 
-Here's what I built: TrackPass. One flat $199/year. Partner courses play free (just show your digital pass at the counter). Any other Texas public course: we cover your green fee up to $50, once per month.
+Here's what I built: TrackPass. One flat $199/year. Partner courses: 2 free rounds per year per course -- just show your digital pass at the pro shop, no receipt needed. Any other Texas public course: 1 free round per year per course, same deal.
 
-Site is at trackpassgolf.com. Still in early days, so the price is founder rate -- it goes up once we have more partner courses signed up.
+Site is at trackpassgolf.com. Still in early days as a founding-member launch, so the price is locked at $199 before it goes to $279.
 
-Honest question for golfers here: is $199/year the right price? I've been looking at Indy Pass ($399 for ski resorts) as a comp but golf is a different animal. What would you pay for something like this?
+Honest question: is $199/year the right price? Looked at Indy Pass ($299-399 for ski resorts across multiple mountains) as the comp. Golf is different but the multi-venue pass model seemed right. What would you pay?
 
 ---
 
 ## Post 2 — r/Austin
 
-**Title:** Building a golf pass for Austin's public courses (Lions, Roy Kizer, Morris Williams, etc.) -- want feedback
+**Title:** Built a golf pass for Austin's public courses (Lions, Roy Kizer, Morris Williams, etc.) -- feedback welcome
 
 **Body:**
 Working on a project that might be useful for Austin golfers.
 
-It's called TrackPass -- $199/year covers any public or municipal golf course in Texas. Lions Municipal, Roy Kizer, Morris Williams, Riverside, Jimmy Clay -- all listed. Play free at partner courses or get reimbursed up to $50/round anywhere else.
+It's called TrackPass -- $199/year covers any public or municipal golf course in Texas. Lions Municipal, Roy Kizer, Morris Williams, Riverside, Jimmy Clay -- all covered. Partner courses play free (2 rounds/year per course, show your pass). Any other Texas course: 1 free round/year per course.
 
-Still building out the partner network, but the pass is available to reserve now at the founding rate.
+Still building the partner network, but the pass is available at the founding rate now. Austin golfers get the benefit of all 5 city courses plus coverage for anything outside Austin.
 
-Anyone else frustrated with not having a good way to explore all the Austin munis without booking each one separately? That's what this is trying to solve.
+Anyone else frustrated there's no good way to explore all the Austin munis without paying full price each time? That's what this is trying to solve.
 
 trackpassgolf.com if you want to check it out.
 
 ---
 
-## Post 3 — r/Texas or r/dfw
+## Post 3 — r/DFW
 
 **Title:** Texas golf pass -- $199/year for any public course in the state, launching soon
 
 **Body:**
-Quick share in case this is useful: I'm building a golf pass for Texas golfers.
+Sharing this in case it's useful: I built a statewide golf pass for Texas.
 
-TrackPass: $199/year flat. Works at any Texas public course. Partner courses are free (show your pass). Any other course: we cover your green fee up to $50 once a month.
+TrackPass: $199/year flat. Works at any Texas public course. Partner courses play free (show your pass at the counter, 2 rounds/year per course). Any other Texas course: 1 free round/year per course, same process.
 
-Focused on Texas munis -- Dallas, Fort Worth, Austin, Houston, San Antonio, Amarillo, Lubbock, Corpus Christi. Over 100 courses listed right now.
+Covered courses include Dallas city munis (Tenison, Stevens Park, LB Houston, Keeton Park), Fort Worth (Pecan Valley, Rockwood, Meadowbrook), plus courses all across Austin, Houston, San Antonio.
 
-Founding member rate is $199 -- will go up as the partner network grows. trackpassgolf.com
+Founding rate is $199 -- goes to $279 as the partner network grows. trackpassgolf.com
 
 ---
 
-## Subreddits to consider (beyond these three)
-- r/golf (largest, best for product feedback)
-- r/Austin (local, golfers will recognize the courses)
-- r/DFW (good if Dallas courses get added as partners first)
-- r/texas (broad, good for awareness)
-- r/golfcourses (niche, engaged)
+## Subreddits to target
+
+- r/golf (largest, most engagement, product feedback)
+- r/Austin (local golfers who know the specific courses)
+- r/DFW (Dallas/Fort Worth — big golf market)
+- r/texas (broad awareness)
+- r/golfcourses (niche but engaged)
 
 ## Posting notes
+
 - Don't post the same day as each other -- space by 3-7 days
-- Reply to comments promptly (first hour matters for Reddit algorithms)
-- Don't link in comments on other posts -- that reads as spam. Only post as a new thread.
-- If you get a negative response about "not enough partner courses," respond with "that's exactly why we're doing founding pricing -- first members lock in $199 forever as the network builds."
+- Reply to comments promptly (first hour matters most for Reddit algorithms)
+- Don't link in comments on other people's posts -- reads as spam
+- If someone pushes back on "not enough partner courses yet": "That's why we're doing founding pricing -- first members lock in $199 forever as the network builds. Courses are signing up now."
+- If someone asks about specific courses: check trackpassgolf.com/courses.html and tell them which ones are listed
+- Do NOT say reimbursement, receipts, or forms -- the model is show-pass-and-play, no paperwork
+
+## NOTE on old draft copy
+
+Old versions of these posts mentioned "reimbursement up to $50/month" -- that was an old model. The current model is:
+- Partner courses: show pass, play free, no receipt
+- Any other TX course: show pass, play free, 1 round/year per course
+Never mention reimbursement or receipts in any post or comment.
