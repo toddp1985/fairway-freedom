@@ -50,8 +50,8 @@
     <div class="tp-wl-modal" role="dialog" aria-modal="true" aria-labelledby="tpwl-h">
       <button class="tp-wl-close" aria-label="Close">&times;</button>
       <div class="tp-wl-body">
-        <h3 id="tpwl-h">Join the founding list</h3>
-        <p class="sub">Lock in the $199/year founding rate. No payment required to reserve your spot — we'll email you when TrackPass launches in Texas.</p>
+        <h3 id="tpwl-h">Free: The Texas Muni Golf Guide</h3>
+        <p class="sub">95 public courses across Austin, San Antonio, DFW &amp; Houston — green fees, the best values, and how to play more golf for less. Straight to your inbox.</p>
         <form class="tp-wl-form" novalidate>
           <div class="tp-wl-field">
             <label for="tpwl-email">Email *</label>
@@ -73,10 +73,10 @@
             </select>
           </div>
           <div class="tp-wl-hp"><label>Company<input name="company" tabindex="-1" autocomplete="off" /></label></div>
-          <button class="tp-wl-submit" type="submit">Reserve my founding rate</button>
+          <button class="tp-wl-submit" type="submit">Send me the guide</button>
           <div class="tp-wl-msg" role="status" aria-live="polite"></div>
         </form>
-        <p class="tp-wl-foot">We'll only email you about your TrackPass founding membership.</p>
+        <p class="tp-wl-foot">One email with the guide, then the occasional Texas golf tip. Unsubscribe anytime.</p>
       </div>
     </div>`;
   document.body.appendChild(overlay);
@@ -118,11 +118,11 @@
     body.innerHTML = `
       <div class="tp-wl-done">
         <div class="ico">⛳️</div>
-        <h3>You're on the list!</h3>
-        <p class="sub">Your founding rate is reserved.${emailed === false ? "<br><small>(Saved — confirmation email pending.)</small>" : ""}</p>
-        <a href="${STRIPE_LINK}" class="tp-wl-submit" style="display:block;text-align:center;text-decoration:none;margin-bottom:.75rem">Lock it in now — $199/year →</a>
-        <button class="tp-wl-submit" type="button" style="background:#5b6b61">I'll pay later</button>
-        <p class="tp-wl-foot">We'll email you when TrackPass goes live. Pay now to guarantee your founding rate.</p>
+        <h3>Check your inbox!</h3>
+        <p class="sub">The Texas Muni Golf Guide is on its way.${emailed === false ? "<br><small>(Saved — email pending.)</small>" : ""}</p>
+        <a href="${STRIPE_LINK}" class="tp-wl-submit" style="display:block;text-align:center;text-decoration:none;margin-bottom:.75rem">Get the pass — $199/year →</a>
+        <button class="tp-wl-submit" type="button" style="background:#5b6b61">Maybe later</button>
+        <p class="tp-wl-foot">Founding-member rate, 30-day money-back guarantee.</p>
       </div>`;
     body.querySelectorAll("button").forEach(b => b.addEventListener("click", close));
     if (window.posthog) posthog.capture("stripe_cta_shown");
@@ -131,6 +131,7 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form).entries());
+    data.type = "guide";
     try { const ref = localStorage.getItem('tp_ref'); if (ref) data.ref = ref; } catch(_) {}
     const email = (data.email || "").trim();
     msg.className = "tp-wl-msg";
@@ -141,7 +142,7 @@
       return;
     }
     const btn = form.querySelector(".tp-wl-submit");
-    btn.disabled = true; btn.textContent = "Reserving…";
+    btn.disabled = true; btn.textContent = "Sending…";
 
     if (!ENDPOINT) {
       // Preview mode: endpoint not wired yet. Complete the UX, log locally.
@@ -181,22 +182,43 @@
       msg.className = "tp-wl-msg err";
       msg.textContent = "Network error — please try again.";
     } finally {
-      btn.disabled = false; btn.textContent = "Reserve my founding rate";
+      btn.disabled = false; btn.textContent = "Send me the guide";
     }
   });
 
-  // Wire every "join the founding list" / "join now" CTA to open the modal.
+  // Open only on explicit triggers — never intercept Join Now / Sign In / plans links.
   function wire() {
-    const links = document.querySelectorAll('a[href$="plans.html"], a[href="#waitlist"], [data-waitlist]');
-    document.querySelectorAll("a, button").forEach((el) => {
-      const t = (el.textContent || "").trim().toLowerCase();
-      if (/join (the founding list|now)|reserve|founding rate|founding member|sign in/.test(t) && t.length < 60) {
-        // "Sign in" also routes here for now (no auth yet)
-        el.addEventListener("click", open);
-      }
-    });
-    links.forEach((el) => el.addEventListener("click", open));
+    document.querySelectorAll('[data-waitlist], a[href="#guide"]').forEach((el) => el.addEventListener("click", open));
   }
+
+  // One-time soft trigger: exit-intent on desktop, deep-scroll on mobile.
+  (function () {
+    const SEEN_KEY = "tp_guide_seen";
+    try { if (localStorage.getItem(SEEN_KEY)) return; } catch (_) { return; }
+    function fireOnce() {
+      try { localStorage.setItem(SEEN_KEY, "1"); } catch (_) {}
+      open();
+    }
+    if (matchMedia("(pointer: fine)").matches) {
+      document.addEventListener("mouseout", function onOut(e) {
+        if (!e.relatedTarget && e.clientY <= 0) {
+          document.removeEventListener("mouseout", onOut);
+          fireOnce();
+        }
+      });
+    } else {
+      let armed = false;
+      setTimeout(() => { armed = true; }, 15000);
+      window.addEventListener("scroll", function onScroll() {
+        if (!armed) return;
+        const depth = (window.scrollY + innerHeight) / document.body.scrollHeight;
+        if (depth > 0.65) {
+          window.removeEventListener("scroll", onScroll);
+          fireOnce();
+        }
+      }, { passive: true });
+    }
+  })();
   if (document.readyState !== "loading") wire();
   else document.addEventListener("DOMContentLoaded", wire);
 

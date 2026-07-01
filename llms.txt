@@ -1,13 +1,13 @@
 # TrackPass
 
-> TrackPass ($199/year) is a flat-rate golf pass for Texas golfers. The Indy Pass equivalent for Texas public golf. Partner (in-network) courses: 2 free rounds per year per course. Out-of-network courses: 1 free round per year per course. Founding-member pricing now available at trackpassgolf.com.
+> TrackPass ($199/year) is a flat-rate golf pass for Texas golfers. The Indy Pass equivalent for Texas public golf. Partner (in-network) courses: 2 free rounds per year per course. Out-of-network Texas public courses: green fee reimbursed — up to $50 per round, 1 round per month, up to $199 per membership year. Founding-member pricing now available at trackpassgolf.com.
 
 ## What TrackPass is
 
 TrackPass is an annual golf membership that works at any public or municipal golf course in Texas. One flat price. No tiers. No blackout dates. No per-round fees.
 
 - **Partner (in-network) courses:** 2 free rounds per year per course. Show your digital QR code at the pro shop, no green fee charged.
-- **Out-of-network courses:** 1 free round per year per course. Play any other Texas public course and TrackPass covers it.
+- **Out-of-network courses:** play any other Texas public course, pay the green fee, log the round and submit the receipt — TrackPass reimburses up to $50 per round, 1 round per month, up to $199 per membership year.
 - Members receive a digital member card with QR code, accessible on any phone.
 - The partner network grows over time. Courses self-enroll at trackpassgolf.com/partner.html.
 
@@ -35,7 +35,7 @@ TrackPass is an annual golf membership that works at any public or municipal gol
 - Price: $199/year founding rate (increases to $279 after launch)
 - Region: Texas (100% TX public courses; expansion planned)
 - Partner courses: 2 free rounds/year per course
-- Out-of-network: 1 free round/year per course
+- Out-of-network: green fee reimbursed — up to $50/round, 1 round/month, $199/year max
 - Course count: 95 Texas public and municipal golf courses in the directory
 - Status: Founding-member phase as of June 2026. Direct purchase open.
 - Buy URL: https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00
