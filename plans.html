@@ -22,7 +22,7 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap"/></noscript>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Tailwind CSS -->
@@ -277,29 +277,18 @@ Value Math
 </div>
 </footer>
 <!-- Mobile Sticky Buy Bar -->
-<div class="md:hidden fixed bottom-20 left-0 right-0 z-40 px-4" style="padding-bottom: 4px;">
-  <a href="https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00"
-     class="block w-full py-4 px-6 bg-deep-forest text-white font-bold text-center rounded-2xl shadow-xl text-base active:scale-95 transition-transform">
-    Join Now — $199/year →
-  </a>
-</div>
-<!-- Mobile Navigation Shell (BottomNavBar) -->
-<div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white/70 backdrop-blur-2xl rounded-full z-50 shadow-[0px_4px_20px_rgba(16,50,35,0.08)] flex justify-around items-center py-2 px-6" style="margin-bottom: env(safe-area-inset-bottom, 0px)">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pt-3 bg-white/85 backdrop-blur-2xl border-t border-outline-variant/30 shadow-[0px_-4px_20px_rgba(16,50,35,0.08)]" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px)">
+<div class="flex items-center gap-3 max-w-md mx-auto">
+<a href="courses.html" class="flex flex-col items-center justify-center text-primary shrink-0 px-3 active:scale-90 transition-transform">
 <span class="material-symbols-outlined">explore</span>
-<span class="font-label-sm text-label-sm mt-1">Explore</span>
+<span class="text-[10px] font-semibold">Courses</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-full w-12 h-12 active:scale-90 transition-transform" href="plans.html">
-<span class="material-symbols-outlined">confirmation_number</span>
+<a href="https://buy.stripe.com/5kQ28r7vmbGP0SW11p2Ji00" class="flex-1 py-3.5 bg-deep-forest text-white font-bold text-center rounded-2xl shadow-lg text-base active:scale-95 transition-transform">Buy Now — $199/yr</a>
+<a href="dashboard.html" class="flex flex-col items-center justify-center text-primary shrink-0 px-3 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">badge</span>
+<span class="text-[10px] font-semibold">My Pass</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="courses.html">
-<span class="material-symbols-outlined">favorite</span>
-<span class="font-label-sm text-label-sm mt-1">Favorites</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all p-2 rounded-full" href="dashboard.html">
-<span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-label-sm mt-1">Profile</span>
-</a>
+</div>
 </div>
 <script>
         // Subtle interaction for pricing cards
