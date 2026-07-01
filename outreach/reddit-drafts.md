@@ -11,7 +11,7 @@ Post these yourself from your personal Reddit account. Space them out — don't 
 **Body:**
 Been thinking about this for a while. Texas has 570+ public golf courses and no good statewide pass.
 
-Here's what I built: TrackPass. One flat $199/year. Partner courses: 2 free rounds per year per course -- just show your digital pass at the pro shop, no receipt needed. Any other Texas public course: 1 free round per year per course, same deal.
+Here's what I built: TrackPass. One flat $199/year. Partner courses: 2 free rounds per year per course -- just show your digital pass at the pro shop. Any other Texas public course: 1 free round per year per course, same deal.
 
 Site is at trackpassgolf.com. Still in early days as a founding-member launch, so the price is locked at $199 before it goes to $279.
 

@@ -3,3 +3,9 @@ blueprint.html
 node_modules/
 package-lock.json
 *.instagram-creds.txt
+
+# secrets — never commit
+marketing/instagram/credentials.md
+.instagram-creds.txt
+*.creds.txt
+.pw-session/

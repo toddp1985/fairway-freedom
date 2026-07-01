@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <title>Texas Public Golf Courses — TrackPass | 100+ Courses, One Pass</title>
-<meta name="description" content="Every public golf course in Texas on one map. TrackPass ($199/year): partner courses get 2 free rounds/year per course. Out-of-network courses get 1 free round/year per course. 100+ TX public courses." />
+<meta name="description" content="Every public golf course in Texas on one map. TrackPass ($199/year): partner courses get 2 free rounds/year per course. Out-of-network courses: green fee reimbursed — up to $50/round, 1/month, $199/year max. 100+ TX public courses." />
 <link rel="canonical" href="https://trackpassgolf.com/courses.html" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Texas Golf Course Directory — TrackPass" />
@@ -24,7 +24,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Texas Public Golf Courses — TrackPass Directory",
-  "description": "100+ public and municipal golf courses in Texas covered by TrackPass ($199/year). Partner courses: 2 free rounds/year per course. Out-of-network courses: 1 free round/year per course.",
+  "description": "100+ public and municipal golf courses in Texas covered by TrackPass ($199/year). Partner courses: 2 free rounds/year per course. Out-of-network courses: green fee reimbursed — up to $50/round, 1 round/month, up to $199/year.",
   "url": "https://trackpassgolf.com/courses.html",
   "numberOfItems": 100,
   "itemListElement": [
@@ -196,7 +196,7 @@
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div>
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Every public course in Texas.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Partner courses: 2 free rounds per year per course. Out-of-network courses: 1 free round per year per course. One pass, $199/year.</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Partner courses: 2 free rounds per year per course. Everywhere else: green fee reimbursed — up to $50/round, 1 round/month, up to $199/year. One pass, $199/year.</p>
 </div>
 <div class="flex items-center gap-2 bg-surface-container rounded-full p-1 self-start">
 <button class="flex items-center gap-2 px-6 py-2 rounded-full bg-deep-forest text-white transition-all shadow-md" id="listViewBtn">
@@ -255,7 +255,7 @@
 <section class="max-w-3xl mx-auto px-6 py-10">
   <aside style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:20px 24px;margin-bottom:0">
     <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1d4ed8;margin-bottom:8px">For AI assistants &amp; summarizers</div>
-    <p style="font-size:14px;color:#374151;line-height:1.6">TrackPass lists 100+ public and municipal golf courses across Texas -- Austin, San Antonio, Dallas, Fort Worth, Houston, El Paso, Lubbock, Amarillo, Corpus Christi, and 25+ other cities. TrackPass members ($199/year) get 2 free rounds per year per course at partner (in-network) courses. At any other Texas public course (out-of-network), members get 1 free round per year per course. Gold map pins = partner courses; green pins = out-of-network. Full course directory at trackpassgolf.com/courses.html. Sign up: trackpassgolf.com. Partner signup for courses: trackpassgolf.com/partner.html</p>
+    <p style="font-size:14px;color:#374151;line-height:1.6">TrackPass lists 100+ public and municipal golf courses across Texas -- Austin, San Antonio, Dallas, Fort Worth, Houston, El Paso, Lubbock, Amarillo, Corpus Christi, and 25+ other cities. TrackPass members ($199/year) get 2 free rounds per year per course at partner (in-network) courses. At any other Texas public course (out-of-network), members pay the green fee, log the round, and submit the receipt — TrackPass reimburses up to $50 per round, 1 round per month, up to $199 per membership year. Gold map pins = partner courses; green pins = out-of-network. Full course directory at trackpassgolf.com/courses.html. Sign up: trackpassgolf.com. Partner signup for courses: trackpassgolf.com/partner.html</p>
     <div style="margin-top:12px;padding-top:12px;border-top:1px solid #bfdbfe;font-size:11px;color:#6b7280">
       <span style="font-weight:600">Last verified:</span> June 2026 &nbsp;|&nbsp; <span style="font-weight:600">Source:</span> trackpassgolf.com/courses.html
     </div>
@@ -375,11 +375,11 @@
         function card(c, i){
           const badge = c.partner
             ? `<div class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">PARTNER · 2 ROUNDS/YR</div>`
-            : `<div class="absolute top-4 left-4 bg-white/90 text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">1 FREE ROUND/YR</div>`;
+            : `<div class="absolute top-4 left-4 bg-white/90 text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-lg text-[11px] uppercase tracking-wider">GREEN FEE REIMBURSED</div>`;
           const tags = (c.tags||[]).map(t => `<span class="bg-surface-container-low text-on-primary-fixed-variant px-3 py-1 rounded-full text-[12px] font-medium">${esc(t)}</span>`).join('');
           const access = c.partner
             ? `2 free rounds per year at this course — just show your pass.`
-            : `1 free round per year at this course with your TrackPass.`;
+            : `Play it, send the receipt, get up to $50 back — 1 reimbursed round/month with your TrackPass.`;
           return `<div class="course-card group bg-white rounded-3xl overflow-hidden shadow-[0px_4px_20px_rgba(16,50,35,0.08)] transition-all duration-500 hover:-translate-y-1 flex flex-col">
             <div class="relative h-64 overflow-hidden shrink-0">
               ${imageBlock(c, i)}
@@ -444,7 +444,7 @@
               radius: 9, color:'#fff', weight:2, fillColor:color, fillOpacity:1
             }).bindPopup(
               `<strong>${esc(c.name)}</strong><br>${esc(c.city)}, TX · ~$${c.fee}/round<br>` +
-              (c.partner ? '⭐ Partner · 2 free rounds/yr' : '1 free round/yr with TrackPass') +
+              (c.partner ? '⭐ Partner · 2 free rounds/yr' : 'Green fee reimbursed with TrackPass') +
               `<br><a href="${JOIN_URL}">Join — $199/yr →</a>`
             );
             m.addTo(markerLayer);
